@@ -240,8 +240,13 @@ body {
   border: 1px solid $c_white !important;
   box-shadow: 0px 4px 30px rgba(137, 96, 255, 0.3) !important;
   padding: 7px 20px 6px 20px !important;
+  text-transform: inherit !important;
+  text-decoration: none;
   &:hover {
     background-color: #113e0e !important;
+  }
+  &.sdw_nn {
+    box-shadow: none !important;
   }
 }
 .rsp_pdngmn {
@@ -271,7 +276,7 @@ body {
 }
 .main {
   padding-top: 80px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 .hm_bg {
   background: url(../img/home_bg.jpg) no-repeat center 0;
@@ -342,4 +347,90 @@ body {
 }
 @media screen and (max-width: 575px) {
   .ftrlg {height: auto;}
+}
+.defp_tp {
+  padding-top: 60px !important;
+}
+.hm_cntnr {
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.hn_ttl h3 {
+  font-family: $f_secondary;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 66px;
+  text-align: center;
+  color: #2C3D17;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+}
+.homesc_one {
+  height: 456px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.cntrmddl {
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.p_rltv {
+  position: relative;
+}
+.sc_wt_bg {
+  position: relative;
+  .bg_img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
+}
+.wel_img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.v1_rltv_pddng {
+  position: relative;
+  padding: 45px 45px 0px 45px;
+  max-width: 515px;
+  margin: 0 auto;
+}
+.hm_img_03 {
+  margin-top: 40px;
+}
+@media screen and (max-width: 1199px) {
+  .hm_img_03 {
+    margin: 40px auto 0px auto;
+    display: flex;
+  }
+}
+@media screen and (max-width: 991px) {
+  .hn_ttl h3 {
+    font-size: 44px;
+    line-height: 56px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .hn_ttl h3 {
+    font-size: 34px;
+    line-height: 46px;
+    margin-bottom: 20px;
+  }
+  .homesc_one {height: inherit;}
+}
+@media screen and (max-width: 400px) {
+  .homesc_one {padding: 25px;}
+  .v1_rltv_pddng {padding: 35px 30px 0px 30px;}
 }
