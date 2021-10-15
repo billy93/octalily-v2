@@ -462,6 +462,7 @@ a.def_blk_btn {
 }
 .rdmp_sc01 {
   position: relative;
+  padding-top: 30px;
 }
 .rdmp_sc01 .hn_ttl h3 {
   text-align: left;
@@ -771,6 +772,7 @@ a.def_blk_btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 60px;
 }
 .sc05_bg {
   position: absolute;
@@ -779,4 +781,174 @@ a.def_blk_btn {
 }
 @media screen and (max-width: 1199px) {
   .sc05_bg {display: none;}
+}
+.sc06_cntnr {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.crtnwclcn_btn {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end !important;
+  align-items: center;
+  background: #DDFFB1 !important;
+  backdrop-filter: blur(22.2069px);
+  border-radius: 22.2069px !important;
+  height: 315px;
+  width: 100%;
+  box-shadow: none !important;
+  font-family: $f_primary !important;
+  font-weight: bold !important;
+  font-size: 18px !important;
+  color: #2C3D17 !important;
+  text-transform: inherit !important;
+}
+.btntxt {
+  margin-bottom: 20px !important;
+}
+.crtnwclcn_btn {
+  svg {
+    color: #85BF3A !important;
+    height: 60px;
+    width: 60px;
+    margin-bottom: 85px;
+  }
+}
+.bd_box {
+  position: relative;
+  height: 315px;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  .def_blk_btn {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+    background: #85BF3A !important;
+    border: 1px solid #FFFFFF !important;
+    backdrop-filter: blur(22.2069px);
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    span {margin-right: 0;}
+    svg {
+      color: #fff !important;
+      margin-right: 0;
+    }
+    &:hover {
+      background: #6fa727 !important;
+    }
+    @media screen and (max-width: 575px) {
+      font-size: 16px !important;
+    }
+  }
+}
+.bed_img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+}
+.bd_box_txt {
+  font-family: $f_primary;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  color: #2C3D17;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 44%;
+}
+.mn-190 {
+  min-width: 150px !important;
+}
+.social_link {
+  margin: 0 30px;
+  position: relative;
+  top: 0;
+  transition: all 0.2s ease-out;
+  &:hover {
+    top: -3px;
+  }
+}
+.rdmp_sc07 {
+  padding-bottom: 60px;
+  position: relative;
+}
+.rdmp_sc07 h3 {
+  font-family: "Avanti";
+  font-weight: bold;
+  font-size: 42px;
+  text-align: center;
+  color: #2C3D17;
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+.rdmp_sc07 .v1_rltv_pddng {
+  padding: 15px 25px 0px 23px;
+  max-width: 455px;
+}
+.rdmp_sc07 .homesc_one {
+  padding: 30px 20px;
+  height: auto;
+}
+.rdmp_sc07 .mddl_df_cntnt h4 {
+  font-family: $f_primary;
+  font-weight: bold;
+  font-size: 24px;
+  color: #2C3D17;
+  text-align: center;
+}
+.rdmp_sc07 .mddl_df_cntnt p {
+  font-family: $f_primary;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #2C3D17;
+  max-width: 330px;
+  margin: 0 auto 30px auto;
+}
+.frm_lbl {
+  font-family: $f_primary;
+  font-weight: normal;
+  font-size: 14px;
+  color: #2C3D17;
+}
+.rdmp_sc07 {
+  .upld_btn {
+    @media screen and (min-width: 992px) {
+      max-width: 80%;
+      margin: 0 auto;
+      margin: 0 auto 25px auto !important;
+      display: flex;
+    }
+  }
+  
+}
+.sc07_bg {
+  position: absolute;
+  left: 18%;
+  top: -24px;
+}
+@media screen and (max-width: 1199px) {
+  .sc07_bg {
+    left: 0%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .rdmp_sc04 h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+}
+@media screen and (max-width: 400px) {
+  .rdmp_sc07 .upld_btn {
+    font-size: 12px !important;
+  }
 }

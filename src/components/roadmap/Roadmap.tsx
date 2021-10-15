@@ -3,6 +3,7 @@ import { Box, Grid, Typography, Button, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import {Link} from 'react-router-dom'
 import {Form} from 'react-bootstrap'
+import PlusIcon from '@mui/icons-material/Add';
 
 const Input = styled('input')({
   display: 'none',
@@ -184,8 +185,108 @@ export default function Roadmap() {
             <Box component="img" src="/img/sc05_bg.png" className="sc05_bg" />
             <Box component="img" src="/img/sc05_img.png" className="img-fluid" />
           </Box>
-
-
+          <Box className="rdmp_sc02 zindx1">
+            <Box className="v1_rltv_pddng">
+                <Box component="img" src="/img/sc06_well_img.png" className="wel_img" />
+                <Box className="homesc_one sc_wt_bg">
+                    <Box component="img" src="/img/vctr_bg_v2.png" className="bg_img" />
+                    <Box className="p_rltv w-100">
+                      <Grid container spacing={3}>
+                        <Grid item xs={12} className="csm_bx_cntnt">
+                          <Typography component="h2">Add your flower to your flower bed</Typography>
+                        </Grid>              
+                        <Grid item xs={12}>
+                          <Box className="sc06_cntnr">
+                            <Grid container spacing={3}>
+                              <Grid item xs={12} md={4}>
+                                <Button variant="contained" className="crtnwclcn_btn">
+                                  <PlusIcon />
+                                  <span className="btntxt">Create new collection</span>
+                                </Button>
+                              </Grid>
+                              <Grid item xs={12} md={4}>
+                                <Box className="bd_box">
+                                  <Box component="img" src="/img/bed_img01.png" className="bed_img" />
+                                  <span className="bd_box_txt">Name of bed</span>
+                                  <Button 
+                                      variant="contained" 
+                                      startIcon={<PlusIcon />}
+                                      className="def_blk_btn"
+                                  >
+                                      Connect Wallet
+                                  </Button>
+                                </Box>
+                              </Grid>
+                              <Grid item xs={12} md={4}>
+                                <Box className="bd_box">
+                                  <Box component="img" src="/img/bed_img01.png" className="bed_img" />
+                                  <span className="bd_box_txt">Name of bed</span>
+                                  <Button 
+                                      variant="contained" 
+                                      startIcon={<PlusIcon />}
+                                      className="def_blk_btn"
+                                  >
+                                      Connect Wallet
+                                  </Button>
+                                </Box>
+                              </Grid>
+                            </Grid>
+                            
+                          </Box>
+                        </Grid>    
+                        <Grid item xs={12} className="text-center mb-4">
+                          <Button className="def_blk_btn sdw_nn mn-190">
+                              Done
+                          </Button>
+                        </Grid>          
+                                 
+                      </Grid>
+                      
+                      
+                    </Box>
+                </Box>
+            </Box>
+          </Box>
+          <Box className="rdmp_sc07">
+            <Box component="img" src="/img/sc07_bg.png" className="sc07_bg img-fluid" alt="" />
+            <Grid container spacing={3} className="zindx1">
+              <Grid item xs={12}>
+                <Typography component="h3">Customise your Flower</Typography>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <Box className="v1_rltv_pddng">
+                  
+                  <Box component="img" src="/img/wel_img_v1_v2.png" className="wel_img" />
+                  <Box className="homesc_one sc_wt_bg">
+                    <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
+                    <Box className="p_rltv mddl_df_cntnt w-100">
+                      <Typography component="h4">Your flower contract address</Typography>
+                      <Typography component="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan in varius integer sit mi Lorem ipsum dolor sit amet, consectetur</Typography>
+                      <label className="frm_lbl">Your contract address</label>
+                      <Form.Control type="text" placeholder="0x0000012052fwafa51.......awfaw" className="formfld" />
+                      <Button variant="contained"
+                        startIcon={<Box component="img" src="/img/copy_ic.svg" alt="" />}
+                        className="upld_btn"
+                      >
+                        Copy contract Address
+                      </Button>
+                      <label className="frm_lbl">Paste contract address</label>
+                      <Form.Control type="text" placeholder="Paste here..." className="formfld" />
+                      <Button variant="contained"
+                        startIcon={<Box component="img" src="/img/past_ic.svg" alt="" />}
+                        className="upld_btn"
+                      >
+                        Click for paste
+                      </Button>
+                    </Box>
+                  </Box>
+                </Box>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <Box component="img" src="/img/sc07_img.png" className="img-fluid" />
+              </Grid>
+            </Grid>
+          </Box>
 
 
 

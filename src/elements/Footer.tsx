@@ -78,7 +78,17 @@ function Footer() {
                             <Grid item xs={12} lg={4}>
                                 <Typography component="p">RootFinance. All rights reserved (c) 2021</Typography>
                             </Grid>
-                            <Grid item xs={12} lg={4} className="text-center">as</Grid>
+                            <Grid item xs={12} lg={4} className="text-center">
+                                <a href="#" className="social_link">
+                                    <Box component="img" src="/img/medium_ic.svg" />
+                                </a>
+                                <a href="#" className="social_link">
+                                    <Box component="img" src="/img/github_ic.svg" />
+                                </a>
+                                <a href="#" className="social_link">
+                                    <Box component="img" src="/img/discord_ic.svg" />
+                                </a>
+                            </Grid>
                             <Grid item xs={12} lg={4} className="as_text_right">
                                 <Typography component="p">
                                     <Link to="/">Privacy policy </Link>
