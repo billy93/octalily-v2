@@ -3,11 +3,6 @@ import { Box, Grid, Typography, Button } from '@mui/material';
 import {Link} from 'react-router-dom'
 
 export default function HomePage() {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event:any) => {
-    setAge(event.target.value);
-  };
 
   return (
     <Box className="main hm_bg">
@@ -37,7 +32,7 @@ export default function HomePage() {
           <Grid item xs={12} lg={4}>
             <Box component="img" src="/img/hm_img_03.png" className="img-fluid hm_img_03" />
           </Grid>
-          <Grid item xs={12} lg={4}>
+          <Grid item xs={12} lg={4} className="rsp_mrgn_bt">
             <Box className="v1_rltv_pddng">
               <Box component="img" src="/img/wel_img_v1.png" className="wel_img" />
               <Box className="homesc_one sc_wt_bg">
