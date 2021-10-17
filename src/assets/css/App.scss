@@ -3,10 +3,10 @@
   font-family: 'Avanti';
   src: url('../fonts/Avanti.eot');
   src: url('../fonts/Avanti.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Avanti.woff2') format('woff2'),
-      url('../fonts/Avanti.woff') format('woff'),
-      url('../fonts/Avanti.ttf') format('truetype'),
-      url('../fonts/Avanti.svg#Avanti') format('svg');
+    url('../fonts/Avanti.woff2') format('woff2'),
+    url('../fonts/Avanti.woff') format('woff'),
+    url('../fonts/Avanti.ttf') format('truetype'),
+    url('../fonts/Avanti.svg#Avanti') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,10 +16,10 @@
   font-family: 'Avanti';
   src: url('../fonts/AvantiBold.eot');
   src: url('../fonts/AvantiBold.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/AvantiBold.woff2') format('woff2'),
-      url('../fonts/AvantiBold.woff') format('woff'),
-      url('../fonts/AvantiBold.ttf') format('truetype'),
-      url('../fonts/AvantiBold.svg#AvantiBold') format('svg');
+    url('../fonts/AvantiBold.woff2') format('woff2'),
+    url('../fonts/AvantiBold.woff') format('woff'),
+    url('../fonts/AvantiBold.ttf') format('truetype'),
+    url('../fonts/AvantiBold.svg#AvantiBold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -28,10 +28,10 @@
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-Bold.eot');
   src: url('../fonts/BaiJamjuree-Bold.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-Bold.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-Bold.woff') format('woff'),
-      url('../fonts/BaiJamjuree-Bold.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-Bold.svg#BaiJamjuree-Bold') format('svg');
+    url('../fonts/BaiJamjuree-Bold.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-Bold.woff') format('woff'),
+    url('../fonts/BaiJamjuree-Bold.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-Bold.svg#BaiJamjuree-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -41,10 +41,10 @@
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-Italic.eot');
   src: url('../fonts/BaiJamjuree-Italic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-Italic.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-Italic.woff') format('woff'),
-      url('../fonts/BaiJamjuree-Italic.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-Italic.svg#BaiJamjuree-Italic') format('svg');
+    url('../fonts/BaiJamjuree-Italic.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-Italic.woff') format('woff'),
+    url('../fonts/BaiJamjuree-Italic.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-Italic.svg#BaiJamjuree-Italic') format('svg');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -54,10 +54,10 @@
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-Light.eot');
   src: url('../fonts/BaiJamjuree-Light.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-Light.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-Light.woff') format('woff'),
-      url('../fonts/BaiJamjuree-Light.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-Light.svg#BaiJamjuree-Light') format('svg');
+    url('../fonts/BaiJamjuree-Light.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-Light.woff') format('woff'),
+    url('../fonts/BaiJamjuree-Light.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-Light.svg#BaiJamjuree-Light') format('svg');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -66,11 +66,13 @@
 @font-face {
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-ExtraLightItalic.eot');
-  src: url('../fonts/BaiJamjuree-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-ExtraLightItalic.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-ExtraLightItalic.woff') format('woff'),
-      url('../fonts/BaiJamjuree-ExtraLightItalic.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-ExtraLightItalic.svg#BaiJamjuree-ExtraLightItalic') format('svg');
+  src: url('../fonts/BaiJamjuree-ExtraLightItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/BaiJamjuree-ExtraLightItalic.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-ExtraLightItalic.woff') format('woff'),
+    url('../fonts/BaiJamjuree-ExtraLightItalic.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-ExtraLightItalic.svg#BaiJamjuree-ExtraLightItalic')
+      format('svg');
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -79,11 +81,13 @@
 @font-face {
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-BoldItalic.eot');
-  src: url('../fonts/BaiJamjuree-BoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-BoldItalic.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-BoldItalic.woff') format('woff'),
-      url('../fonts/BaiJamjuree-BoldItalic.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-BoldItalic.svg#BaiJamjuree-BoldItalic') format('svg');
+  src: url('../fonts/BaiJamjuree-BoldItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/BaiJamjuree-BoldItalic.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-BoldItalic.woff') format('woff'),
+    url('../fonts/BaiJamjuree-BoldItalic.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-BoldItalic.svg#BaiJamjuree-BoldItalic')
+      format('svg');
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -92,11 +96,13 @@
 @font-face {
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-LightItalic.eot');
-  src: url('../fonts/BaiJamjuree-LightItalic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-LightItalic.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-LightItalic.woff') format('woff'),
-      url('../fonts/BaiJamjuree-LightItalic.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-LightItalic.svg#BaiJamjuree-LightItalic') format('svg');
+  src: url('../fonts/BaiJamjuree-LightItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/BaiJamjuree-LightItalic.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-LightItalic.woff') format('woff'),
+    url('../fonts/BaiJamjuree-LightItalic.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-LightItalic.svg#BaiJamjuree-LightItalic')
+      format('svg');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -105,11 +111,13 @@
 @font-face {
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-ExtraLight.eot');
-  src: url('../fonts/BaiJamjuree-ExtraLight.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-ExtraLight.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-ExtraLight.woff') format('woff'),
-      url('../fonts/BaiJamjuree-ExtraLight.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-ExtraLight.svg#BaiJamjuree-ExtraLight') format('svg');
+  src: url('../fonts/BaiJamjuree-ExtraLight.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/BaiJamjuree-ExtraLight.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-ExtraLight.woff') format('woff'),
+    url('../fonts/BaiJamjuree-ExtraLight.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-ExtraLight.svg#BaiJamjuree-ExtraLight')
+      format('svg');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -118,11 +126,12 @@
 @font-face {
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-SemiBold.eot');
-  src: url('../fonts/BaiJamjuree-SemiBold.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-SemiBold.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-SemiBold.woff') format('woff'),
-      url('../fonts/BaiJamjuree-SemiBold.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-SemiBold.svg#BaiJamjuree-SemiBold') format('svg');
+  src: url('../fonts/BaiJamjuree-SemiBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/BaiJamjuree-SemiBold.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-SemiBold.woff') format('woff'),
+    url('../fonts/BaiJamjuree-SemiBold.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-SemiBold.svg#BaiJamjuree-SemiBold') format('svg');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -131,11 +140,13 @@
 @font-face {
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-SemiBoldItalic.eot');
-  src: url('../fonts/BaiJamjuree-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-SemiBoldItalic.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-SemiBoldItalic.woff') format('woff'),
-      url('../fonts/BaiJamjuree-SemiBoldItalic.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-SemiBoldItalic.svg#BaiJamjuree-SemiBoldItalic') format('svg');
+  src: url('../fonts/BaiJamjuree-SemiBoldItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/BaiJamjuree-SemiBoldItalic.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-SemiBoldItalic.woff') format('woff'),
+    url('../fonts/BaiJamjuree-SemiBoldItalic.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-SemiBoldItalic.svg#BaiJamjuree-SemiBoldItalic')
+      format('svg');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -144,11 +155,12 @@
 @font-face {
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-Regular.eot');
-  src: url('../fonts/BaiJamjuree-Regular.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-Regular.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-Regular.woff') format('woff'),
-      url('../fonts/BaiJamjuree-Regular.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-Regular.svg#BaiJamjuree-Regular') format('svg');
+  src: url('../fonts/BaiJamjuree-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/BaiJamjuree-Regular.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-Regular.woff') format('woff'),
+    url('../fonts/BaiJamjuree-Regular.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-Regular.svg#BaiJamjuree-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -157,11 +169,13 @@
 @font-face {
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-MediumItalic.eot');
-  src: url('../fonts/BaiJamjuree-MediumItalic.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-MediumItalic.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-MediumItalic.woff') format('woff'),
-      url('../fonts/BaiJamjuree-MediumItalic.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-MediumItalic.svg#BaiJamjuree-MediumItalic') format('svg');
+  src: url('../fonts/BaiJamjuree-MediumItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/BaiJamjuree-MediumItalic.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-MediumItalic.woff') format('woff'),
+    url('../fonts/BaiJamjuree-MediumItalic.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-MediumItalic.svg#BaiJamjuree-MediumItalic')
+      format('svg');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -171,18 +185,18 @@
   font-family: 'Bai Jamjuree';
   src: url('../fonts/BaiJamjuree-Medium.eot');
   src: url('../fonts/BaiJamjuree-Medium.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/BaiJamjuree-Medium.woff2') format('woff2'),
-      url('../fonts/BaiJamjuree-Medium.woff') format('woff'),
-      url('../fonts/BaiJamjuree-Medium.ttf') format('truetype'),
-      url('../fonts/BaiJamjuree-Medium.svg#BaiJamjuree-Medium') format('svg');
+    url('../fonts/BaiJamjuree-Medium.woff2') format('woff2'),
+    url('../fonts/BaiJamjuree-Medium.woff') format('woff'),
+    url('../fonts/BaiJamjuree-Medium.ttf') format('truetype'),
+    url('../fonts/BaiJamjuree-Medium.svg#BaiJamjuree-Medium') format('svg');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 $f_primary: 'Avanti';
 $f_secondary: 'Bai Jamjuree';
-$c_primary: #3B6738;
-$c_secondary: #2C3D17;
+$c_primary: #3b6738;
+$c_secondary: #2c3d17;
 $c_black: #000000;
 $c_white: #ffffff;
 body {
@@ -205,8 +219,10 @@ body {
   padding: 0;
   background-color: transparent !important;
 }
-.in_header .bg-dark .navbar-brand {padding: 0;}
-.in_header .navbar .navbar-nav .nav-link{
+.in_header .bg-dark .navbar-brand {
+  padding: 0;
+}
+.in_header .navbar .navbar-nav .nav-link {
   font-family: $f_primary;
   font-size: 18px;
   font-weight: 700;
@@ -216,12 +232,13 @@ body {
   padding: 0;
   margin: 0 20px;
   transition: all 0.2s ease-out;
-  &:hover, &.active {
+  &:hover,
+  &.active {
     color: #9fe346;
   }
 }
 .mn_ic {
-  background: #FFFFFF;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,7 +252,7 @@ body {
   font-family: $f_primary !important;
   font-size: 18px !important;
   font-weight: 700 !important;
-  color: #EEEEEE !important;
+  color: #eeeeee !important;
   background-color: $c_black !important;
   border: 1px solid $c_white !important;
   box-shadow: 0px 4px 30px rgba(137, 96, 255, 0.3) !important;
@@ -261,7 +278,7 @@ a.def_blk_btn {
 
 @media screen and (max-width: 991px) {
   .in_header .navbar .navbar-toggler {
-    background-color: #9fe346; 
+    background-color: #9fe346;
     box-shadow: none !important;
     padding: 5px 10px;
   }
@@ -326,7 +343,9 @@ a.def_blk_btn {
   margin-bottom: 12px;
   list-style: none;
 }
-.top_footer ul li:last-child {margin-bottom: 0px;}
+.top_footer ul li:last-child {
+  margin-bottom: 0px;
+}
 .top_footer ul li a {
   font-family: $f_primary;
   font-weight: normal;
@@ -334,16 +353,20 @@ a.def_blk_btn {
   color: $c_white;
   text-decoration: none;
   transition: all 0.2s ease-out;
-  &:hover, &.active {
+  &:hover,
+  &.active {
     color: #9fe346;
   }
 }
 .bottom_footer {
   padding: 9px 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-.as_text_right {text-align: right;}
-.bottom_footer p, .bottom_footer p a {
+.as_text_right {
+  text-align: right;
+}
+.bottom_footer p,
+.bottom_footer p a {
   font-family: $f_primary;
   font-weight: 400;
   font-size: 12px;
@@ -357,12 +380,18 @@ a.def_blk_btn {
   }
 }
 @media screen and (max-width: 1200px) {
-  .top_footer h4 {margin-top: 30px;} 
-  .as_text_right, .bottom_footer {text-align: center;}
-   
+  .top_footer h4 {
+    margin-top: 30px;
+  }
+  .as_text_right,
+  .bottom_footer {
+    text-align: center;
+  }
 }
 @media screen and (max-width: 575px) {
-  .ftrlg {height: auto;}
+  .ftrlg {
+    height: auto;
+  }
 }
 .defp_tp {
   padding-top: 60px !important;
@@ -378,7 +407,7 @@ a.def_blk_btn {
   font-size: 64px;
   line-height: 66px;
   text-align: center;
-  color: #2C3D17;
+  color: #2c3d17;
   text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
   margin-bottom: 40px;
 }
@@ -391,7 +420,7 @@ a.def_blk_btn {
   flex-direction: column;
 }
 .cntrmddl {
- display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -454,11 +483,17 @@ a.def_blk_btn {
     line-height: 46px;
     margin-bottom: 20px;
   }
-  .homesc_one {height: inherit;}
+  .homesc_one {
+    height: inherit;
+  }
 }
 @media screen and (max-width: 400px) {
-  .homesc_one {padding: 25px;}
-  .v1_rltv_pddng {padding: 35px 30px 0px 30px;}
+  .homesc_one {
+    padding: 25px;
+  }
+  .v1_rltv_pddng {
+    padding: 35px 30px 0px 30px;
+  }
 }
 .rdmp_sc01 {
   position: relative;
@@ -489,7 +524,7 @@ a.def_blk_btn {
   font-weight: bold;
   font-size: 40px;
   text-align: center;
-  color: #2C3D17;
+  color: #2c3d17;
   margin-bottom: 10px;
 }
 .csm_bx_cntnt p {
@@ -498,7 +533,7 @@ a.def_blk_btn {
   font-size: 24px;
   line-height: 32px;
   text-align: center;
-  color: #2C3D17;
+  color: #2c3d17;
   margin-bottom: 20px;
 }
 .plntsd_img {
@@ -508,10 +543,13 @@ a.def_blk_btn {
 .csm_bx_cntnt_v2 {
   padding-top: 50px !important;
 }
-.csm_bx_cntnt_v2 h2, .csm_bx_cntnt_v2 p {
+.csm_bx_cntnt_v2 h2,
+.csm_bx_cntnt_v2 p {
   text-align: left !important;
 }
-.rdmp_sc02 .sc_wt_bg .bg_img {border-radius: 55px}
+.rdmp_sc02 .sc_wt_bg .bg_img {
+  border-radius: 55px;
+}
 .fram_img {
   position: absolute;
   right: 0;
@@ -522,14 +560,21 @@ a.def_blk_btn {
     top: 78%;
     left: 16%;
   }
-  .rdmp_sc01 .hn_ttl {margin-bottom: -30px;}
-  .rdmp_sc02 .homesc_one {padding: 40px 20px 40px 20px;}
-  .csm_bx_cntnt h2 {font-size: 30px;}
+  .rdmp_sc01 .hn_ttl {
+    margin-bottom: -30px;
+  }
+  .rdmp_sc02 .homesc_one {
+    padding: 40px 20px 40px 20px;
+  }
+  .csm_bx_cntnt h2 {
+    font-size: 30px;
+  }
   .csm_bx_cntnt p {
     font-size: 18px;
     line-height: 24px;
   }
-  .csm_bx_cntnt_v2 h2, .csm_bx_cntnt_v2 p {
+  .csm_bx_cntnt_v2 h2,
+  .csm_bx_cntnt_v2 p {
     text-align: center !important;
   }
   .csm_bx_cntnt_v2 .m-auto-lg {
@@ -543,23 +588,33 @@ a.def_blk_btn {
     left: 40px;
     width: 205px;
   }
-  .fram_img {width: 160px;}
+  .fram_img {
+    width: 160px;
+  }
 }
 @media screen and (max-width: 575px) {
-  .rdmp_sc02 .v1_rltv_pddng {padding: 10px 10px 0px 10px !important;}
+  .rdmp_sc02 .v1_rltv_pddng {
+    padding: 10px 10px 0px 10px !important;
+  }
   .csm_bx_cntnt_v2 .m-auto-lg {
     flex-direction: column;
     justify-content: center;
   }
-  .csm_bx_cntnt_v2 .m-auto-lg .def_blk_btn {margin-bottom: 8px !important;}
-  .csm_bx_cntnt h2 {font-size: 24px;}
+  .csm_bx_cntnt_v2 .m-auto-lg .def_blk_btn {
+    margin-bottom: 8px !important;
+  }
+  .csm_bx_cntnt h2 {
+    font-size: 24px;
+  }
   .csm_bx_cntnt p {
     font-size: 15px;
     line-height: 18px;
   }
 }
 @media screen and (max-width: 480px) {
-  .rdmp_sc_bx01 {padding: 10px 15px 0px 15px;}
+  .rdmp_sc_bx01 {
+    padding: 10px 15px 0px 15px;
+  }
 }
 .rdmp_sc02 .v1_rltv_pddng {
   max-width: 100%;
@@ -598,7 +653,7 @@ a.def_blk_btn {
   font-family: $f_primary;
   font-weight: bold;
   font-size: 28px;
-  color: #2C3D17;
+  color: #2c3d17;
   margin-bottom: 17px;
 }
 .mddl_df_cntnt p {
@@ -606,10 +661,12 @@ a.def_blk_btn {
   font-weight: normal;
   font-size: 22px;
   line-height: 28px;
-  color: #2C3D17;
+  color: #2c3d17;
   margin-bottom: 17px;
 }
-.rdmp_sc03 .homesc_one {padding: 30px 25px;}
+.rdmp_sc03 .homesc_one {
+  padding: 30px 25px;
+}
 .rdmp_sc03 .def_blk_btn {
   margin: 0 auto !important;
   display: flex;
@@ -639,12 +696,16 @@ a.def_blk_btn {
   }
 }
 @media screen and (max-width: 575px) {
-  .mddl_df_cntnt h4 {font-size: 22px;}
+  .mddl_df_cntnt h4 {
+    font-size: 22px;
+  }
   .mddl_df_cntnt p {
     font-size: 16px;
     line-height: 23px;
   }
-  .rdmp_sc03 .v1_rltv_pddng {padding: 12px 20px 0px 20px;}
+  .rdmp_sc03 .v1_rltv_pddng {
+    padding: 12px 20px 0px 20px;
+  }
 }
 .rdmp_sc04 {
   position: relative;
@@ -670,7 +731,7 @@ a.def_blk_btn {
   font-weight: bold;
   font-size: 42px;
   text-align: center;
-  color: #2C3D17;
+  color: #2c3d17;
   margin-top: 100px;
   margin-bottom: 40px;
 }
@@ -683,10 +744,17 @@ a.def_blk_btn {
   border-radius: 22px;
   overflow: hidden;
 }
-.sc4v1_rltv_pddng {padding: 12px 22px 0px 20px !important;}
-.sc4v2_rltv_pddng {padding: 12px 18px 0px 20px !important;}
-.sc4v3_rltv_pddng {padding: 12px 35px 0px 23px !important;}
-.sc4v1_rltv_pddng, .sc4v3_rltv_pddng {
+.sc4v1_rltv_pddng {
+  padding: 12px 22px 0px 20px !important;
+}
+.sc4v2_rltv_pddng {
+  padding: 12px 18px 0px 20px !important;
+}
+.sc4v3_rltv_pddng {
+  padding: 12px 35px 0px 23px !important;
+}
+.sc4v1_rltv_pddng,
+.sc4v3_rltv_pddng {
   position: relative;
   bottom: -50px;
 }
@@ -710,11 +778,15 @@ a.def_blk_btn {
   justify-content: center;
   align-items: center;
 }
-.rdmp_sc04 .def_blk_btn img {margin-left: 4px;}
-.rdmp_sc04 .p_rltv {width: 100%;}
+.rdmp_sc04 .def_blk_btn img {
+  margin-left: 4px;
+}
+.rdmp_sc04 .p_rltv {
+  width: 100%;
+}
 .formfld {
   font-family: $f_primary;
-  background: rgba(0,0,0,0.3) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
   border-radius: 6px;
   border: none !important;
   outline: none !important;
@@ -724,9 +796,15 @@ a.def_blk_btn {
   width: 100%;
   margin-bottom: 25px;
 }
-.formfld::-webkit-input-placeholder {color: $c_white;}
-.formfld:-ms-input-placeholder {color: $c_white;}
-.formfld::placeholder {color: $c_white;}
+.formfld::-webkit-input-placeholder {
+  color: $c_white;
+}
+.formfld:-ms-input-placeholder {
+  color: $c_white;
+}
+.formfld::placeholder {
+  color: $c_white;
+}
 .upldprnt {
   width: 100%;
 }
@@ -736,7 +814,7 @@ a.def_blk_btn {
   border-radius: 6px !important;
   border: none !important;
   outline: none !important;
-  color: #DDFFB1 !important;
+  color: #ddffb1 !important;
   font-weight: 700 !important;
   box-shadow: none !important;
   height: 45px;
@@ -750,9 +828,15 @@ a.def_blk_btn {
   margin-right: 10px;
 }
 @media screen and (max-width: 1199px) {
-  .sc4_bg01 {left: 0;}
-  .sc4v1_rltv_pddng, .sc4v3_rltv_pddng {bottom: 0px;}
-  .sc4_bg02, .sc4_bg03 {
+  .sc4_bg01 {
+    left: 0;
+  }
+  .sc4v1_rltv_pddng,
+  .sc4v3_rltv_pddng {
+    bottom: 0px;
+  }
+  .sc4_bg02,
+  .sc4_bg03 {
     top: auto;
     left: calc(50% - 164px);
     bottom: -30%;
@@ -760,12 +844,16 @@ a.def_blk_btn {
   }
 }
 @media screen and (max-width: 991px) {
-  .sc4_bg01 {display: none;}
+  .sc4_bg01 {
+    display: none;
+  }
   .rdmp_sc04 h3 {
     font-size: 32px;
     margin-bottom: 20px;
   }
-  .upld_btn img {margin-right: 2px;}
+  .upld_btn img {
+    margin-right: 2px;
+  }
 }
 .rdmp_sc05 {
   position: relative;
@@ -780,7 +868,9 @@ a.def_blk_btn {
   top: -20px;
 }
 @media screen and (max-width: 1199px) {
-  .sc05_bg {display: none;}
+  .sc05_bg {
+    display: none;
+  }
 }
 .sc06_cntnr {
   max-width: 920px;
@@ -791,7 +881,7 @@ a.def_blk_btn {
   flex-direction: column;
   justify-content: flex-end !important;
   align-items: center;
-  background: #DDFFB1 !important;
+  background: #ddffb1 !important;
   backdrop-filter: blur(22.2069px);
   border-radius: 22.2069px !important;
   height: 315px;
@@ -800,7 +890,7 @@ a.def_blk_btn {
   font-family: $f_primary !important;
   font-weight: bold !important;
   font-size: 18px !important;
-  color: #2C3D17 !important;
+  color: #2c3d17 !important;
   text-transform: inherit !important;
 }
 .btntxt {
@@ -808,7 +898,7 @@ a.def_blk_btn {
 }
 .crtnwclcn_btn {
   svg {
-    color: #85BF3A !important;
+    color: #85bf3a !important;
     height: 60px;
     width: 60px;
     margin-bottom: 85px;
@@ -826,12 +916,14 @@ a.def_blk_btn {
     bottom: 20px;
     right: 20px;
     width: calc(100% - 40px);
-    background: #85BF3A !important;
-    border: 1px solid #FFFFFF !important;
+    background: #85bf3a !important;
+    border: 1px solid #ffffff !important;
     backdrop-filter: blur(22.2069px);
     border-radius: 8px !important;
     box-shadow: none !important;
-    span {margin-right: 0;}
+    span {
+      margin-right: 0;
+    }
     svg {
       color: #fff !important;
       margin-right: 0;
@@ -857,7 +949,7 @@ a.def_blk_btn {
   font-weight: bold;
   font-size: 18px;
   text-align: center;
-  color: #2C3D17;
+  color: #2c3d17;
   position: absolute;
   left: 0;
   width: 100%;
@@ -880,11 +972,11 @@ a.def_blk_btn {
   position: relative;
 }
 .rdmp_sc07 h3 {
-  font-family: "Avanti";
+  font-family: 'Avanti';
   font-weight: bold;
   font-size: 42px;
   text-align: center;
-  color: #2C3D17;
+  color: #2c3d17;
   margin-top: 100px;
   margin-bottom: 40px;
 }
@@ -900,7 +992,7 @@ a.def_blk_btn {
   font-family: $f_primary;
   font-weight: bold;
   font-size: 24px;
-  color: #2C3D17;
+  color: #2c3d17;
   text-align: center;
 }
 .rdmp_sc07 .mddl_df_cntnt p {
@@ -909,7 +1001,7 @@ a.def_blk_btn {
   font-size: 15px;
   line-height: 20px;
   text-align: center;
-  color: #2C3D17;
+  color: #2c3d17;
   max-width: 330px;
   margin: 0 auto 30px auto;
 }
@@ -917,7 +1009,7 @@ a.def_blk_btn {
   font-family: $f_primary;
   font-weight: normal;
   font-size: 14px;
-  color: #2C3D17;
+  color: #2c3d17;
 }
 .rdmp_sc07 {
   .upld_btn {
@@ -928,7 +1020,6 @@ a.def_blk_btn {
       display: flex;
     }
   }
-  
 }
 .sc07_bg {
   position: absolute;
@@ -945,7 +1036,6 @@ a.def_blk_btn {
     font-size: 32px;
     margin-bottom: 20px;
   }
-  
 }
 @media screen and (max-width: 400px) {
   .rdmp_sc07 .upld_btn {
