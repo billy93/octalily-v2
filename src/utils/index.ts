@@ -1,0 +1,1 @@
+export { getRpcUrl } from './getRpcUrl';
