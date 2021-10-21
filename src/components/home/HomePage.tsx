@@ -14,7 +14,7 @@ export default function HomePage() {
           <Grid item xs={12} lg={4}>
             <Box className="v1_rltv_pddng">
               <Box component="img" src="/img/wel_img_v1.png" className="wel_img" />
-              <Box className="homesc_one sc_wt_bg">
+              <Box className="homesc_one sc_wt_bg hm_sdw_bx">
                 <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                 <Box className="p_rltv cntrmddl">
                   <Box component="img" src="/img/hm_img_01.png" className="img-fluid mb-4" />
@@ -35,7 +35,7 @@ export default function HomePage() {
           <Grid item xs={12} lg={4} className="rsp_mrgn_bt">
             <Box className="v1_rltv_pddng">
               <Box component="img" src="/img/wel_img_v1.png" className="wel_img" />
-              <Box className="homesc_one sc_wt_bg">
+              <Box className="homesc_one sc_wt_bg hm_sdw_bx">
                 <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                 <Box className="p_rltv cntrmddl">
                   <Box component="img" src="/img/hm_img_02.png" className="img-fluid mb-4" />

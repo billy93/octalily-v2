@@ -27,7 +27,8 @@ export default function Roadmap() {
                     <Box className="v1_rltv_pddng rdmp_sc_bx01">
                         <Box component="img" src="/img/rdmp_wl_01.png" className="wel_img" />
                         <Box className="p_rltv">
-                            <Box component="img" src="/img/video_img.png" className="img-fluid w-100" />
+                            {/* <Box component="img" src="/img/video_img.png" className="img-fluid w-100" /> */}
+                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/SJwfkJQP3bY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         </Box>
                     </Box>
                 </Grid>
@@ -36,7 +37,7 @@ export default function Roadmap() {
           <Box className="rdmp_sc02 zindx1">
             <Box className="v1_rltv_pddng">
                 <Box component="img" src="/img/rdmp_wl_02.png" className="wel_img" />
-                <Box className="homesc_one sc_wt_bg">
+                <Box className="homesc_one sc_wt_bg sdw_bx_v2">
                     <Box component="img" src="/img/vctr_bg_v2.png" className="bg_img" />
                     <Box component="img" src="/img/fram_img.png" className="img-fluid fram_img" />
                     <Box className="p_rltv">
@@ -85,7 +86,7 @@ export default function Roadmap() {
               <Grid item xs={12} lg={6}>
                 <Box className="v1_rltv_pddng">
                   <Box component="img" src="/img/rdmp_wl_03.png" className="wel_img" />
-                  <Box className="homesc_one sc_wt_bg">
+                  <Box className="homesc_one sc_wt_bg sdw_bx_v3">
                     <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                     <Box className="p_rltv mddl_df_cntnt">
                       <Typography component="h4">Read the package</Typography>
@@ -112,7 +113,7 @@ export default function Roadmap() {
                 <Box className="v1_rltv_pddng sc4v1_rltv_pddng">
                     <Box component="img" src="/img/sc4_bg02.png" className="sc4_bg02 img-fluid" />
                     <Box component="img" src="/img/sc4_wl_01.png" className="wel_img" />
-                    <Box className="homesc_one sc_wt_bg">
+                    <Box className="homesc_one sc_wt_bg sdw_bx_v3">
                       <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                       <Box className="p_rltv mddl_df_cntnt">
                         <Typography component="h4">Give name for your Flower</Typography>
@@ -133,7 +134,7 @@ export default function Roadmap() {
                 <Box className="v1_rltv_pddng sc4v2_rltv_pddng">
                     <Box component="img" src="/img/sc4_bg03.png" className="sc4_bg03 img-fluid" />
                     <Box component="img" src="/img/sc4_wl_02.png" className="wel_img" />
-                    <Box className="homesc_one sc_wt_bg">
+                    <Box className="homesc_one sc_wt_bg sdw_bx_v3">
                       <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                       <Box className="p_rltv mddl_df_cntnt">
                         <Typography component="h4">Give your flower a picture </Typography>
@@ -163,7 +164,7 @@ export default function Roadmap() {
               <Grid item xs={12} lg={4}>
                 <Box className="v1_rltv_pddng sc4v3_rltv_pddng">
                     <Box component="img" src="/img/sc4_wl_03.png" className="wel_img" />
-                    <Box className="homesc_one sc_wt_bg">
+                    <Box className="homesc_one sc_wt_bg sdw_bx_v3">
                       <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                       <Box className="p_rltv mddl_df_cntnt">
                         <Typography component="h4">Add a description</Typography>
@@ -186,9 +187,9 @@ export default function Roadmap() {
             <Box component="img" src="/img/sc05_img.png" className="img-fluid" />
           </Box>
           <Box className="rdmp_sc02 zindx1">
-            <Box className="v1_rltv_pddng">
+            <Box className="v1_rltv_pddng v1_rltv_pddng_v2">
                 <Box component="img" src="/img/sc06_well_img.png" className="wel_img" />
-                <Box className="homesc_one sc_wt_bg">
+                <Box className="homesc_one sc_wt_bg sdw_bx_v3">
                     <Box component="img" src="/img/vctr_bg_v2.png" className="bg_img" />
                     <Box className="p_rltv w-100">
                       <Grid container spacing={3}>
@@ -197,15 +198,15 @@ export default function Roadmap() {
                         </Grid>              
                         <Grid item xs={12}>
                           <Box className="sc06_cntnr">
-                            <Grid container spacing={3}>
+                            <Grid container spacing={5}>
                               <Grid item xs={12} md={4}>
-                                <Button variant="contained" className="crtnwclcn_btn">
+                                <Button variant="contained" className="crtnwclcn_btn sdw_bx_v3">
                                   <PlusIcon />
                                   <span className="btntxt">Create new collection</span>
                                 </Button>
                               </Grid>
                               <Grid item xs={12} md={4}>
-                                <Box className="bd_box">
+                                <Box className="bd_box sdw_bx_v3">
                                   <Box component="img" src="/img/bed_img01.png" className="bed_img" />
                                   <span className="bd_box_txt">Name of bed</span>
                                   <Button 
@@ -218,7 +219,7 @@ export default function Roadmap() {
                                 </Box>
                               </Grid>
                               <Grid item xs={12} md={4}>
-                                <Box className="bd_box">
+                                <Box className="bd_box sdw_bx_v3">
                                   <Box component="img" src="/img/bed_img01.png" className="bed_img" />
                                   <span className="bd_box_txt">Name of bed</span>
                                   <Button 
@@ -251,13 +252,13 @@ export default function Roadmap() {
             <Box component="img" src="/img/sc07_bg.png" className="sc07_bg img-fluid" alt="" />
             <Grid container spacing={3} className="zindx1">
               <Grid item xs={12}>
-                <Typography component="h3">Customise your Flower</Typography>
+                <Typography component="h3">Share your flower with the world</Typography>
               </Grid>
               <Grid item xs={12} lg={6}>
                 <Box className="v1_rltv_pddng">
                   
                   <Box component="img" src="/img/wel_img_v1_v2.png" className="wel_img" />
-                  <Box className="homesc_one sc_wt_bg">
+                  <Box className="homesc_one sc_wt_bg sdw_bx_v3">
                     <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                     <Box className="p_rltv mddl_df_cntnt w-100">
                       <Typography component="h4">Your flower contract address</Typography>

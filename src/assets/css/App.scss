@@ -404,12 +404,13 @@ a.def_blk_btn {
 .hn_ttl h3 {
   font-family: $f_secondary;
   font-weight: bold;
-  font-size: 64px;
-  line-height: 66px;
+  font-size: 70px;
+  line-height: 70px;
   text-align: center;
-  color: #2c3d17;
-  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  color: #fff;
   margin-bottom: 40px;
+  text-shadow: 0px 5px 14px rgba(0, 0, 0, 0.54);
+  -webkit-text-stroke: 1px #8960FF;
 }
 .homesc_one {
   height: 456px;
@@ -448,7 +449,7 @@ a.def_blk_btn {
 }
 .v1_rltv_pddng {
   position: relative;
-  padding: 45px 45px 0px 45px;
+  padding: 20px 40px 0px 40px;
   max-width: 515px;
   margin: 0 auto;
 }
@@ -492,7 +493,7 @@ a.def_blk_btn {
     padding: 25px;
   }
   .v1_rltv_pddng {
-    padding: 35px 30px 0px 30px;
+    padding: 20px 30px 0px 30px;
   }
 }
 .rdmp_sc01 {
@@ -501,7 +502,7 @@ a.def_blk_btn {
 }
 .rdmp_sc01 .hn_ttl h3 {
   text-align: left;
-  max-width: 430px;
+  max-width: 465px;
   margin-bottom: 25px;
 }
 .rdmp_sc_bx01 {
@@ -620,6 +621,9 @@ a.def_blk_btn {
   max-width: 100%;
   padding: 15px 30px 0px 30px;
   margin-top: -20px;
+}
+.rdmp_sc02 .v1_rltv_pddng_v2 {
+  padding: 15px 30px 0px 40px;
 }
 @media screen and (max-width: 1199px) {
   .rdmp_sc02 {
@@ -974,11 +978,21 @@ a.def_blk_btn {
 .rdmp_sc07 h3 {
   font-family: 'Avanti';
   font-weight: bold;
-  font-size: 42px;
   text-align: center;
   color: #2c3d17;
-  margin-top: 100px;
   margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 65px;
+  font-size: 55px;
+  line-height: 62px;
+  @media screen and (max-width: 575px) {
+    font-size: 36px;
+    line-height: 42px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+  }
 }
 .rdmp_sc07 .v1_rltv_pddng {
   padding: 15px 25px 0px 23px;
@@ -1041,4 +1055,18 @@ a.def_blk_btn {
   .rdmp_sc07 .upld_btn {
     font-size: 12px !important;
   }
+}
+.hm_sdw_bx {
+  filter: drop-shadow(0px 5px 14px rgba(0, 0, 0, 0.54));
+}
+.p_rltv iframe {
+  border-radius: 17px;
+  filter: drop-shadow(0px 5px 14px rgba(0, 0, 0, 0.54));
+}
+.sdw_bx_v2 {
+  box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+}
+.sdw_bx_v3 {
+  filter: drop-shadow(0px 5px 12px rgba(0, 0, 0, 0.54));
 }
