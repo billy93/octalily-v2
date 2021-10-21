@@ -19,7 +19,7 @@ export default function HomePage() {
                 <Box className="p_rltv cntrmddl">
                   <Box component="img" src="/img/hm_img_01.png" className="img-fluid mb-4" />
                     <Link 
-                        to="/"
+                        to="/roadmap"
                         className="def_blk_btn sdw_nn"
                     >
                         Create a Flower
