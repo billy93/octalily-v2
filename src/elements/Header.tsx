@@ -41,6 +41,7 @@ function Header() {
                       className='nav-link'
                       onClick={() => changeNetwork(4)}
                     >
+                      <span className="drk_lbl">Buy</span>
                       <Box component='span' className='mn_ic'>
                         <Box
                           component='img'
@@ -71,6 +72,21 @@ function Header() {
                       MATIC
                     </Link>
                   </Nav>
+                  <Link
+                      to='/'
+                      onClick={() => changeNetwork(4)}
+                      className="extrlnk"
+                    >
+                      <span className="drk_lbl">sell</span>
+                      <Box component='span' className='mn_ic'>
+                        <Box
+                          component='img'
+                          src='/img/sell_ic.svg'
+                          alt=''
+                        />
+                      </Box>
+                      SELL
+                    </Link>
                   {/* <Button
                     variant='contained'
                     startIcon={

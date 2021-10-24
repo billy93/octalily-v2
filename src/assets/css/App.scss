@@ -222,7 +222,8 @@ body {
 .in_header .bg-dark .navbar-brand {
   padding: 0;
 }
-.in_header .navbar .navbar-nav .nav-link {
+.in_header .navbar .navbar-nav .nav-link, .extrlnk {
+  position: relative;
   font-family: $f_primary;
   font-size: 18px;
   font-weight: 700;
@@ -735,7 +736,7 @@ a.def_blk_btn {
   left: 60%;
   bottom: 20px;
 }
-.rdmp_sc04 h3 {
+.rdmp_sc04 h3, .dark_theme .tkn_title {
   font-family: $f_primary;
   font-weight: bold;
   font-size: 42px;
@@ -1416,4 +1417,13 @@ a.def_blk_btn {
     width: 85px;
     left: 20px;
   }
+}
+.drk_lbl {
+  display: none;
+}
+.dark_theme .drk_lbl {
+  font-family: $f_primary;
+}
+.extrlnk {
+  display: none;
 }
