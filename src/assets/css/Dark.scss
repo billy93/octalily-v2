@@ -87,6 +87,12 @@ body.dark_theme {
     // background-attachment: fixed;
     min-height: calc(100vh - 282px);
 }
+.plgn_d_pg_bg {
+    background: url(../img/plgn_d_pg_bg.jpg) no-repeat center 0px;
+    background-size: cover;
+    // background-attachment: fixed;
+    min-height: calc(100vh - 282px);
+}
 .v1_rltv_pddng.v1_rltv_pddng_tkn {
     max-width: 765px;
     z-index: 1;
@@ -364,6 +370,7 @@ body.dark_theme {
 .v1_rltv_pddng_tkn_v2 {
     padding: 15px 35px 0px 60px;
     max-width: 1220px;
+    z-index: 2;
     .homesc_one {
         padding: 15px 15px 70px 15px;
         height: auto !important;
@@ -445,6 +452,7 @@ body.dark_theme {
         line-height: inherit;
         width: auto !important;
         margin-left: 5px;
+        padding: 5px 20px;
         .MuiButton-startIcon {
             margin-right: 4px;
         }
@@ -490,4 +498,155 @@ body.dark_theme {
 }
 .tkntp_lnbg_v6 {
     top: 65% !important;
+}
+.dt_frst_bx {
+    padding-top: 60px;
+    position: relative;
+}
+.defmx {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.dtls_d_prnt01.v1_rltv_pddng{
+    max-width: 100% !important;
+    padding: 20px 45px 0px 45px !important;
+}
+.dtls_d_prnt02.v1_rltv_pddng {
+    max-width: 100% !important;
+    padding: 20px 43px 0px 25px !important;
+}
+.dtls_d_prnt02.v1_rltv_pddng_tkn .homesc_one {
+    padding: 15px 0;
+}
+.d_all_infobx {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 10px 15px 0 15px;
+    h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #3C1F8D;
+        margin-bottom: 14.3px;
+        span {
+            font-weight: 400;
+            color: #695850;
+            min-width: 155px;
+            display: inline-flex;
+        }
+    }
+}
+.d_hr {
+    background: #9f8a78 !important;
+    opacity: 1;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+.more_shadow {
+    box-shadow: 0px 4px 30px #8960FF !important;
+}
+.d_all_infobx_btm {
+    padding: 15px 15px 15px 15px;
+    max-width: 375px;
+    margin: 0 auto;
+}
+.dt_tw_bx {
+    margin-top: 20px;
+    position: relative;
+    .v1_rltv_pddng_tkn_v2 {
+        max-width: 100%;
+        padding: 15px 55px 0px 45px;
+    }
+}
+.token_table_wtbrdr {
+    tbody {
+        tr {
+            &:first-child {
+                td {
+                    border-top: none !important;    
+                }
+            }
+            td {
+                border-top: none !important;
+                border-bottom: none !important;
+                .tbldrkbtn {
+                    min-width: 260px;
+                    padding: 10px;
+                }
+                p {
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: #89603E;
+                }
+                .reg_txt {
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 400;
+                    font-size: 18px;
+                    color: #89603E;
+                }
+            }
+        }
+    }
+    
+    
+}
+.v1_rltv_pddng_tkn_v3 {
+    padding-bottom: 100px !important;
+}
+.pl_ex_img01 {
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+.pl_ex_img02 {
+    position: absolute;
+    right: -167px;
+    top: 44%;
+}
+.pl_ex_img03 {
+    position: absolute;
+    right: 7%;
+    top: -220px;
+}
+.pl_ex_img04 {
+    position: absolute;
+    left: 7%;
+    top: -200px;
+}
+@media screen and (max-width: 1600px) {
+    .pl_ex_img03 {
+        right: 0px;
+    }
+    .pl_ex_img04 {
+        left: 0;
+    }
+}
+@media screen and (max-width: 1199px) {
+    .pl_ex_img02 {display: none;}
+}
+@media screen and (max-width: 575px) {
+    .dtls_d_prnt01.v1_rltv_pddng {
+        padding: 20px 15px 0px 20px !important;
+    }
+    .dtls_d_prnt02.v1_rltv_pddng {
+        padding: 20px 20px 0px 15px !important;
+    }
+    .dt_tw_bx .v1_rltv_pddng_tkn_v2 {
+        padding: 15px 15px 0px 15px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .d_all_infobx h4 {
+        font-size: 12px;
+        span {
+            min-width: 115px;
+        }
+    }
+    .d_all_infobx_btm {
+        .cncl_btn {
+            font-size: 15px !important;
+        }
+    }
+    
 }

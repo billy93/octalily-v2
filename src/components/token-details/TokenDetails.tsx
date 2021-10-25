@@ -26,7 +26,7 @@ export default function TokenDetails() {
                             <ShowAll />
                         </Tab>
                         <Tab eventKey="show_owned" title="Show Owned">
-                            bbbb
+                            <ShowAll />
                         </Tab>
                     </Tabs>
                     

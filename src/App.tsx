@@ -7,6 +7,7 @@ import Footer from './elements/Footer';
 import Header from './elements/Header';
 import TokenListPolygon from 'components/token-list-polygon/TokenListPolygon';
 import TokenDetails from 'components/token-details/TokenDetails';
+import Details from 'components/details/Details';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/token-list" component={TokenList} />
           <Route exact path="/token-list-polygon" component={TokenListPolygon} />
           <Route exact path="/token-details" component={TokenDetails} />
+          <Route exact path="/details" component={Details} />
           
         </Switch>
         <Footer />
