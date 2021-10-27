@@ -4,9 +4,11 @@ import { Box, Grid, Typography, Button, Stack } from '@mui/material';
 export default function TokenList() {
     useEffect(() => {
         const body = document.querySelector("body");
-        document.body.classList.add("dark_theme");
+            document.body.classList.add("dark_theme");
+            // document.body.classList.add("bsc_theme");
+            // document.body.classList.add("eth_theme");
         return () => {
-        body.classList.remove("dark_theme");
+            body.classList.remove("dark_theme");
         }
     });
     return (

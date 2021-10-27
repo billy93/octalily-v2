@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './assets/css/App.scss';
 import './assets/css/Dark.scss';
+import './assets/css/BSC-theme.scss';
+import './assets/css/ETH-theme.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Providers from 'Providers';

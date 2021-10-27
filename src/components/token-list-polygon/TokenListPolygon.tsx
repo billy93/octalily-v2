@@ -4,9 +4,11 @@ import { Box, Grid, Typography, Button, Stack } from '@mui/material';
 export default function TokenListPolygon() {
     useEffect(() => {
         const body = document.querySelector("body");
-        document.body.classList.add("dark_theme");
+            document.body.classList.add("dark_theme");
+            // document.body.classList.add("bsc_theme");
+            // document.body.classList.add("eth_theme");
         return () => {
-        body.classList.remove("dark_theme");
+            body.classList.remove("dark_theme");
         }
     });
     return (
@@ -16,7 +18,7 @@ export default function TokenListPolygon() {
                 <Box className="tkn_tp_bx" sx={{ pb: 20, }}>
                     
                     <Box component="img" src="/img/tkntp_lnbg_v5.png" className="img-fluid tkntp_lnbg_v3 tkntp_lnbg_v5" />
-                    <Typography component="h3" className="tkn_title_v2">For trade Flower connect Token</Typography>
+                    <Typography component="h3" className="tkn_title_v2 tkn_title_v2_wt">For trade Flower connect Token</Typography>
                     <Box className="v1_rltv_pddng v1_rltv_pddng_tkn">
                         <Box component="img" src="/img/tkn_wll_v2.png" className="wel_img" />
                             <Box className="homesc_one sc_wt_bg hm_sdw_bx">
