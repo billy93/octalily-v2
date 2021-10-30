@@ -18,8 +18,8 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/roadmap" component={Roadmap} />
           <Route exact path="/token-list" component={TokenList} />
-          <Route exact path="/token-list-polygon" component={TokenListPolygon} />
-          <Route exact path="/token-details" component={TokenDetails} />
+          <Route exact path="/token-list-polygon/:address" component={TokenListPolygon} />
+          <Route exact path="/token-details/:address" component={TokenDetails} />
           <Route exact path="/details" component={Details} />
           
         </Switch>

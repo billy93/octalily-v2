@@ -2,45 +2,45 @@ import { AbstractConnector } from "@web3-react/abstract-connector"
 import { injected, walletconnect, walletlink } from "../connectors"
 
 export const NETWORK_LABELS: { [chainId in number]?: string } = {
-  1: "Ethereum",  
-  56: "Binance",
+  // 1: "Ethereum",  
+  // 56: "Binance",
   137: "Matic"
 }
 
 export enum Chain {
-  Ethereum,
+  // Ethereum,
   Matic,
-  Bsc
+  // Bsc
 }
 
 export const startBlocks = new Map([
-  [Chain.Ethereum, 12792128],
+  // [Chain.Ethereum, 12792128],
   [Chain.Matic, 16666316],
-  [Chain.Bsc, 9000659],
+  // [Chain.Bsc, 9000659],
 ])
 
 export const baseDecimals = new Map([
-  [Chain.Ethereum, 18],
-  [Chain.Matic, 6],
-  [Chain.Bsc, 18],
+  // [Chain.Ethereum, 18],
+  [Chain.Matic, 18],
+  // [Chain.Bsc, 18],
 ])
 
 export const chainNumbers = new Map([
-  [Chain.Ethereum, 1],
+  // [Chain.Ethereum, 1],
   [Chain.Matic, 137],
-  [Chain.Bsc, 56],
+  // [Chain.Bsc, 56],
 ])
 
 export const chains = new Map([
-  [1, Chain.Ethereum],
+  // [1, Chain.Ethereum],
   [137, Chain.Matic],
-  [56, Chain.Bsc],
+  // [56, Chain.Bsc],
 ])
 
 export const gardenAddresses = new Map([
-  [Chain.Ethereum, "0x2D30Db015b0794C8fB163EeEEc1CB861F3dD17E7"],
+  // [Chain.Ethereum, "0x2D30Db015b0794C8fB163EeEEc1CB861F3dD17E7"],
   [Chain.Matic, "0x464C82D5fb956422822951cA296EA05E33A5A873"],
-  [Chain.Bsc, "0x743Ac5BE16DA070e7c12663D50Ab17A0c13ac4E2"],
+  // [Chain.Bsc, "0x743Ac5BE16DA070e7c12663D50Ab17A0c13ac4E2"],
 ])
 
 export interface WalletInfo {
@@ -68,28 +68,28 @@ export interface WalletInfo {
       blockExplorerUrls: string[]
     }
   } = {
-    [Chain.Ethereum]: {
-      chainId: '0x1',
-      chainName: 'Ethereum',
-      nativeCurrency: {
-        name: 'Ethereum',
-        symbol: 'ETH',
-        decimals: 18,
-      },
-      rpcUrls: ['https://mainnet.infura.io/v3'],
-      blockExplorerUrls: ['https://etherscan.com'],
-    },
-    [Chain.Bsc]: {
-      chainId: '0x38',
-      chainName: 'Binance Smart Chain',
-      nativeCurrency: {
-        name: 'Binance Coin',
-        symbol: 'BNB',
-        decimals: 18,
-      },
-      rpcUrls: ['https://bsc-dataseed.binance.org'],
-      blockExplorerUrls: ['https://bscscan.com'],
-    },
+    // [Chain.Ethereum]: {
+    //   chainId: '0x1',
+    //   chainName: 'Ethereum',
+    //   nativeCurrency: {
+    //     name: 'Ethereum',
+    //     symbol: 'ETH',
+    //     decimals: 18,
+    //   },
+    //   rpcUrls: ['https://mainnet.infura.io/v3'],
+    //   blockExplorerUrls: ['https://etherscan.com'],
+    // },
+    // [Chain.Bsc]: {
+    //   chainId: '0x38',
+    //   chainName: 'Binance Smart Chain',
+    //   nativeCurrency: {
+    //     name: 'Binance Coin',
+    //     symbol: 'BNB',
+    //     decimals: 18,
+    //   },
+    //   rpcUrls: ['https://bsc-dataseed.binance.org'],
+    //   blockExplorerUrls: ['https://bscscan.com'],
+    // },
     [Chain.Matic]: {
       chainId: '0x89',
       chainName: 'Matic',

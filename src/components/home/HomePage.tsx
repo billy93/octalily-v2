@@ -1,8 +1,24 @@
-import * as React from 'react';
+import { useWeb3React } from "@web3-react/core"
+import React, {useEffect, useContext, useState} from 'react'
 import { Box, Grid, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
+  const { account, library, chainId } = useWeb3React();
+
+  useEffect(() => {
+      const body = document.querySelector("body");
+      
+      if(chainId == 137){
+          document.body.classList.add("dark_theme");
+      }
+          // document.body.classList.add("bsc_theme");
+          // document.body.classList.add("eth_theme");
+      return () => {
+          body.classList.remove("dark_theme");
+      }
+  }, [chainId, library, account]);
+
   return (
     <Box className='main hm_bg'>
       <Box className='hm_cntnr defp_tp'>

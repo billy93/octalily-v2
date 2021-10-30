@@ -1,4 +1,5 @@
-import React from 'react';
+import { useWeb3React } from "@web3-react/core"
+import React, {useEffect, useContext, useState} from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -7,20 +8,7 @@ import { networkSetup } from 'utils/networkSetup';
 // import { useWallet } from '@binance-chain/bsc-use-wallet';
 
 function Header() {
-  // const { account, connect } = useWallet();
-  const changeNetwork = (currentChainId) => {
-    // window.localStorage.setItem('chain', currentChainId);
 
-    networkSetup(currentChainId)
-      .then(() => {
-        // connect('injected');
-        // localStorage.setItem('web3', 'injected');
-        window.location.reload();
-      })
-      .catch((e) => {
-        console.error(e);
-      });
-  };
   return (
     <>
       <header className='header'>
@@ -64,7 +52,6 @@ function Header() {
                     <Link
                       to='/'
                       className='nav-link'
-                      onClick={() => changeNetwork(137)}
                     >
                       <Box component='span' className='mn_ic'>
                         <Box component='img' src='/img/matic_ic.svg' alt='' />

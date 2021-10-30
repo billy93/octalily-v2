@@ -1,0 +1,590 @@
+[
+    {
+        "address": "0xFfD8Ea97c9983E17187874bc05dbda9792cB3ca5",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.9",
+        "upPercent": "4.2",
+        "upDelay": "690",
+        "petalsLoaded": true
+    },
+    {
+        "address": "0xAaB920867f316a44A5ccfbEfCa26408413f6d71E",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.92",
+        "upPercent": "6.2",
+        "upDelay": "635",
+        "petalsLoaded": true
+    },
+    {
+        "address": "0x4Ffc76a9398A89B6bA565270B71e329680Ec4499",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.43",
+        "upPercent": "7.2",
+        "upDelay": "686",
+        "petalsLoaded": true
+    },
+    {
+        "address": "0x2908057073553fe217137319A727776897918980",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.81",
+        "upPercent": "3.2",
+        "upDelay": "824",
+        "petalsLoaded": true
+    },
+    {
+        "address": "0x5f3Ad10F56B3D7abD4e9256f57cae526d788154d",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.73",
+        "upPercent": "7.2",
+        "upDelay": "716",
+        "petalsLoaded": true
+    },
+    {
+        "address": "0xE8FD82646cf8048883208F858566009Aca804f50",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "5.99",
+        "upPercent": "3",
+        "upDelay": "542",
+        "petalsLoaded": true
+    },
+    {
+        "address": "0x0Ba2cC7cC377e4aba40Cd3b7B08548f91ce0A012",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.2",
+        "upPercent": "5.09",
+        "upDelay": "563",
+        "petalsLoaded": true
+    },
+    {
+        "address": "0x515A0042b4Cd4229EA51971864E9122e4e20bB9f",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "9.24",
+        "upPercent": "4.2",
+        "upDelay": "867",
+        "petalsLoaded": true
+    },
+    {
+        "address": "0xc93c1Af57530465075799624bC68cE685A8297e8",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6",
+        "upPercent": "4.2",
+        "upDelay": "543",
+        "petalsLoaded": true
+    },
+    {
+        "address": "0x94cD9305BB3772eb5083362cB243Cdc82b11b762",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.3",
+        "upPercent": "7.2",
+        "upDelay": "616",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x2645129D74CbA05CE187D12AB3c8e2D26B19026a",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "9.21",
+        "upPercent": "4.2",
+        "upDelay": "807",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x27cEcA104524295682C2158d48db48D425652C1A",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "9.34",
+        "upPercent": "4.2",
+        "upDelay": "820",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x0A505678e606fc168a07E51F6aF352D21086edEf",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.74",
+        "upPercent": "5.63",
+        "upDelay": "560",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x6Bb33ef0459D78E9434Fb624A3597B83Abb58f05",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.33",
+        "upPercent": "6.2",
+        "upDelay": "619",
+        "petalCount": 1,
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x5c2bA9EDd8a65b84CE72f37d555D06549E1cF8Ab",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.76",
+        "upPercent": "6.65",
+        "upDelay": "662",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xccBEc4354d8fbc4a987aC93FDa4D05352b123dE7",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.02",
+        "upPercent": "4.91",
+        "upDelay": "488",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x3Ee96fF34Ed4A793a5BD6203aa53d37AFF73Dc06",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.15",
+        "upPercent": "4.2",
+        "upDelay": "601",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x86FB565620e184b0c18452eabe3B12C1c3EA43DD",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.52",
+        "upPercent": "8.2",
+        "upDelay": "738",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x9be5Ea6210d2083a70eedD328F2E7Ed22b2950c8",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.72",
+        "upPercent": "5.61",
+        "upDelay": "558",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x3db91B75349A4a3999E38fE0d870DA8D6C2851fa",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "9.11",
+        "upPercent": "8.2",
+        "upDelay": "797",
+       "petalsLoaded": false
+    },
+    {
+        "address": "0xdeBAb7b99C3D6C7Bf96141FE9266fC98f7ed4C1D",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.77",
+        "upPercent": "7.66",
+        "upDelay": "763",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x5CbB778317F1AaD2c04cfa4c6394FEfD12D471BB",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "9.77",
+        "upPercent": "5.2",
+        "upDelay": "863",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x0597878978495CF29116b6456D99BC44e72ff446",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.87",
+        "upPercent": "7.76",
+        "upDelay": "773",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x0A75EeeE9e1b2350c050dBd0bBBc9ec88AfE825E",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.62",
+        "upPercent": "6.51",
+        "upDelay": "648",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xE27498fb2dd127e981b2b0a60d213e32ad8CF5D3",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.75",
+        "upPercent": "5.64",
+        "upDelay": "561",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x66c53697f00df05a5e9a5895dF294dc0c3d608EC",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.66",
+        "upPercent": "3.2",
+        "upDelay": "752",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xEb745d2D27d8898B61346947588AEAdfB6a089d3",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.97",
+        "upPercent": "6.2",
+        "upDelay": "683",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x19C22a75B581DBAAf80ce613da7AC56923fd855C",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "11.12",
+        "upPercent": "4.2",
+        "upDelay": "998",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xf8cc65062022805eCd6aDE9d8543797C9c14c1a1",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+         "burnRate": "10.3",
+        "upPercent": "5.2",
+        "upDelay": "916",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xA0cdE0AC0F4ca2F94109C27aC9510f1863efADBe",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.27",
+        "upPercent": "6.2",
+        "upDelay": "713",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x1d5f5DeBDCa7E79115021Ecf6247CA5E48999D09",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "9.22",
+        "upPercent": "4.2",
+        "upDelay": "808",
+       "petalsLoaded": false
+    },
+    {
+        "address": "0xdF0f1E807927d6A142a8301F9350c95aA71788df",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "upPercent": "7.2",
+        "upDelay": "711",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x01088a83EeFf9Ed017630C9cA8e84705dF0032fD",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.96",
+        "upPercent": "5.2",
+        "upDelay": "682",
+        "petalsLoaded": false
+    },
+
+    {
+        "address": "0x72aeA029Ec15954C2cf2878B0fA7BCCc8979F7e8",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+       "burnRate": "9.11",
+        "upPercent": "8",
+        "upDelay": "797",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xAc275bde3B4a98CC6728a2e2CA53917bc6298f2e",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.57",
+        "upPercent": "7.2",
+        "upDelay": "743",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xfAe8A99C385c9Ec24fA1445859D77Ca61cc9C2d2",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.03",
+        "upPercent": "5.2",
+        "upDelay": "689",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x918b65e62A10C34f3D089df076Bf76AAEFc287e8",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.08",
+        "upPercent": "6.97",
+        "upDelay": "694",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xc22bB4e6f338A742a775Ae9Beb6f75b3f50CED51",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+       "burnRate": "7.73",
+        "upPercent": "6.62",
+        "upDelay": "659",
+       "petalsLoaded": false
+    },
+    {
+        "address": "0x4fEF6fE0d11CBE750083CE48F077446fA1561A7d",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+       "burnRate": "8.07",
+        "upPercent": "6.96",
+        "upDelay": "693",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x8bE98F66655e82F56eeEEC431c963b404F648FF4",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+       "burnRate": "10.18",
+        "upPercent": "9.2",
+        "upDelay": "904",
+        "petalCount": 6,
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x0872C67FCdAd29f94f548D218C39701e3F8f6218",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.15",
+        "upPercent": "7.04",
+        "upDelay": "701",
+        "petalsLoaded": false
+    },
+
+    {
+        "address": "0x7b20E0b711aAEb5BFdC5d401d6724eA9b3C51fa3",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.45",
+        "upPercent": "3",
+        "upDelay": "631",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x972b15111D8871e7185c9231C16248B0F6D3791b",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+         "burnRate": "5.53",
+        "upPercent": "3",
+        "upDelay": "439",
+       "petalsLoaded": false
+    },
+    {
+        "address": "0x84DE21A430e1E4EeF213a61CBB0011258CA4B1F8",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.3",
+        "upPercent": "4",
+        "upDelay": "516",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x507Bd8eAF6548a236a43F0cBdFF966b29EB014f1",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+       "burnRate": "8.17",
+        "upPercent": "5",
+        "upDelay": "703",
+       "petalsLoaded": false
+    },
+    {
+        "address": "0x3a531CaE570d518FbF14aAab7b56eeB8AE5d4eF7",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.69",
+        "upPercent": "5",
+        "upDelay": "655",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x0269A361398710B129e5559289A3D217C1ACD056",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.06",
+        "upPercent": "3",
+        "upDelay": "592",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x0FfbaE4F2F1570c0F804f8F462246bc479DC2B53",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.9",
+        "upPercent": "6",
+        "upDelay": "676",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x45D89B9d4A3373a05798Dc46BeacbfbD1e78eB35",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.9",
+        "upPercent": "6",
+        "upDelay": "576",
+        "petalsLoaded": false
+    },
+
+    {
+        "address": "0x6CE16DccD57A36BE09Dd64548c50F6Fe43b6B21f",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.96",
+        "upPercent": "4.09",
+        "upDelay": "682",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x8B9C782EF878d4d96C3F3F8ea0cEfecB8d651788",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.39",
+        "upPercent": "6.09",
+        "upDelay": "725",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x606831A5EB376cf3575Ddcb09082665552413750",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.19",
+        "upPercent": "8.09",
+        "upDelay": "705",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x9b1788CB3eF5F4A29aF83ad426C590f9bc0A0Fd1",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.94",
+        "upPercent": "6.09",
+        "upDelay": "580",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x0eE7dB423302e9EA5eDbE17B117fDF3348DA134d",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.71",
+        "upPercent": "4.09",
+        "upDelay": "657",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x0feFE84995aC9F93fC1090c6E08F05d50431079e",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "5.52",
+        "upPercent": "4.41",
+        "upDelay": "438",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xe1314F740Fdbe13e0748bb06Fd6eF593152547D3",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.89",
+        "upPercent": "5.78",
+        "upDelay": "575",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x6B373C1bAED4b9909900034e6897Aab40a4d7121",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.36",
+        "upPercent": "6.25",
+        "upDelay": "622",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x68cAf54411da7E496f17C7dEb9617bD129C21167",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.48",
+        "upPercent": "8.2",
+        "upDelay": "734",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xb36253c40FE7203B091455636e548E45c312638a",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "9.48",
+        "upPercent": "3.2",
+        "upDelay": "834",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x978bf947259268520736256eC3c69aAf76b435eb",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "11.03",
+        "upPercent": "4.2",
+        "upDelay": "989",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xC95A1A584512B6e90d775a7dEDb1E4B3f4f19B49",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "10.82",
+        "upPercent": "6.2",
+        "upDelay": "968",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x46Ca350478580f5c646966aC6b9a66b8cE352BE4",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "10.27",
+        "upPercent": "3",
+        "upDelay": "913",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x9D997D7e3432bB5526fE4c216FAac197ac882e44",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "11.51",
+        "upPercent": "3",
+        "upDelay": "1037",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xA87E71f271a92b905774a4388C60a79709b9e37a",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "9.41",
+        "upPercent": "5.2",
+        "upDelay": "827",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x6700EeE42Fc414fD8761F89f1C3E34175633A485",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "8.53",
+        "upPercent": "3",
+        "upDelay": "739",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x6185B0B654600d48b52F13fBC162168b1f1a6C26",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.83",
+        "upPercent": "5.72",
+        "upDelay": "569",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xDF2E3944aB5036CC308c89525495c1B06F90e2C4",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.14",
+        "upPercent": "4.2",
+        "upDelay": "500",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x2CFE5b90F411b7CEfb513E8a04c7581f2DDCBE05",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.94",
+        "upPercent": "4.2",
+        "upDelay": "580",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x0842C2C18c8690A0aAC13bD4aCD63CC755Ef3b1C",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "5.25",
+        "upPercent": "4.14",
+        "upDelay": "411",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xaB85cc5544882939DA0F419b6144f63Dd11743F8",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.69",
+        "upPercent": "4.2",
+        "upDelay": "555",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x90087F41546Eb9353a3c32318b6B0814cc1fB20B",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "6.87",
+        "upPercent": "6.2",
+        "upDelay": "573",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0x291B4846e66e8330972F49486E8A6f0733477F9C",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "5.18",
+        "upPercent": "3",
+        "upDelay": "404",
+        "petalsLoaded": false
+    },
+    {
+        "address": "0xA966dBA890656C47dEe4F640e225FceEcAe7156f",
+        "pairedAddress": "0x1759254EB142bcF0175347D5A0f3c19235538a9A",
+        "burnRate": "7.99",
+        "upPercent": "6.88",
+        "upDelay": "685",
+        "petalsLoaded": false
+    }
+]
