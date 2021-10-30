@@ -4,17 +4,17 @@ import { Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { Web3ConnectButton } from './Web3ConnectButton';
 import { networkSetup } from 'utils/networkSetup';
-import { useWallet } from '@binance-chain/bsc-use-wallet';
+// import { useWallet } from '@binance-chain/bsc-use-wallet';
 
 function Header() {
-  const { account, connect } = useWallet();
+  // const { account, connect } = useWallet();
   const changeNetwork = (currentChainId) => {
-    window.localStorage.setItem('chain', currentChainId);
+    // window.localStorage.setItem('chain', currentChainId);
 
     networkSetup(currentChainId)
       .then(() => {
-        connect('injected');
-        localStorage.setItem('web3', 'injected');
+        // connect('injected');
+        // localStorage.setItem('web3', 'injected');
         window.location.reload();
       })
       .catch((e) => {
@@ -36,7 +36,7 @@ function Header() {
               <Navbar.Collapse id='responsive-navbar-nav'>
                 <Box className='rsp_pdngmn'>
                   <Nav className='m-auto'>
-                    <Link
+                    {/* <Link
                       to='/'
                       className='nav-link'
                       onClick={() => changeNetwork(4)}
@@ -60,7 +60,7 @@ function Header() {
                         <Box component='img' src='/img/bsc_ic.svg' alt='' />
                       </Box>
                       BSC
-                    </Link>
+                    </Link> */}
                     <Link
                       to='/'
                       className='nav-link'
@@ -72,9 +72,9 @@ function Header() {
                       MATIC
                     </Link>
                   </Nav>
-                  <Link
+                  {/* <Link
                       to='/'
-                      onClick={() => changeNetwork(4)}
+                      onClick={() => changeNetwork(137)}
                       className="extrlnk"
                     >
                       <span className="drk_lbl">sell</span>
@@ -86,16 +86,7 @@ function Header() {
                         />
                       </Box>
                       SELL
-                    </Link>
-                  {/* <Button
-                    variant='contained'
-                    startIcon={
-                      <Box component='img' src='/img/wallet_ic.svg' alt='' />
-                    }
-                    className='def_blk_btn'
-                  >
-                    Connect Wallet
-                  </Button> */}
+                  </Link> */}
                   <Web3ConnectButton useWalletIcon={false} />
                 </Box>
               </Navbar.Collapse>

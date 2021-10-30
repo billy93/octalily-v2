@@ -3,7 +3,10 @@ import React, { useEffect } from 'react';
 import MetamaskLogo from '../../assets/img/metamask.svg';
 import WalletConnectLogo from '../../assets/img/walletconnect.svg';
 import { Web3ProviderButton } from './components/Web3ProviderButton';
-import { useWallet } from '@binance-chain/bsc-use-wallet';
+// import { useWallet } from '@binance-chain/bsc-use-wallet';
+import { InjectedConnector } from '@web3-react/injected-connector'
+import { useWeb3React, UnsupportedChainIdError } from "@web3-react/core"
+
 import { Modal, ModalProps } from '../Modal';
 import { networkSetup } from 'utils/networkSetup';
 
@@ -11,14 +14,15 @@ export const Web3ConnectModal: React.FC<ModalProps> = ({
   isOpen,
   onDismiss,
 }) => {
-  const { account, connect } = useWallet();
+  // const { account, connect } = useWallet();
+  const { active, account, connector, activate, error } = useWeb3React()
 
   const currentChainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10);
-  useEffect(() => {
-    if (account && onDismiss) {
-      onDismiss();
-    }
-  }, [account, onDismiss]);
+  // useEffect(() => {
+  //   if (account && onDismiss) {
+  //     onDismiss();
+  //   }
+  // }, [account, onDismiss]);
 
   const login = (connectorId) => {
     // connect(connectorId);
@@ -26,13 +30,24 @@ export const Web3ConnectModal: React.FC<ModalProps> = ({
 
     // onDismiss();
     const chainId = parseInt(window.localStorage.getItem('chain'));
-    console.log(chainId ? chainId : currentChainId);
     networkSetup(chainId ? chainId : currentChainId)
       .then(() => {
-        connect(connectorId);
-        localStorage.setItem('web3', connectorId);
 
-        onDismiss();
+        const conn = new InjectedConnector({
+          supportedChainIds: [137]
+        });
+
+        activate(conn, undefined, true).then(() => {
+          onDismiss();
+        }).catch(error => {
+          // console.log("ERROR");
+          // console.log(error);
+          if (error instanceof UnsupportedChainIdError) {
+              activate(conn) // a little janky...can't use setError because the connector isn't set
+          } else {
+              // setPendingError(true)
+          }
+        })
       })
       .catch((e) => {
         onDismiss();

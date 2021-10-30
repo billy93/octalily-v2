@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import Web3 from 'web3';
 import { HttpProviderOptions } from 'web3-core-helpers';
 import { provider as ProviderType } from 'web3-core';
-import { useWallet } from '@binance-chain/bsc-use-wallet';
+// import { useWallet } from '@binance-chain/bsc-use-wallet';
 
 const RPC_URL = getRpcUrl();
 const httpProvider = new Web3.providers.HttpProvider(RPC_URL);
@@ -14,18 +14,18 @@ const httpProvider = new Web3.providers.HttpProvider(RPC_URL);
  * Recreate web3 instance only if the ethereum provider change
  */
 const useWeb3 = () => {
-  const { ethereum }: { ethereum: ProviderType } = useWallet();
-  const refEth = useRef(ethereum);
-  const [web3, setweb3] = useState(new Web3(ethereum || httpProvider));
+  // const { ethereum }: { ethereum: ProviderType } = useWallet();
+  // const refEth = useRef(ethereum);
+  // const [web3, setweb3] = useState(new Web3(ethereum || httpProvider));
 
-  useEffect(() => {
-    if (ethereum !== refEth.current) {
-      setweb3(new Web3(ethereum || httpProvider));
-      refEth.current = ethereum;
-    }
-  }, [ethereum]);
+  // useEffect(() => {
+  //   if (ethereum !== refEth.current) {
+  //     setweb3(new Web3(ethereum || httpProvider));
+  //     refEth.current = ethereum;
+  //   }
+  // }, [ethereum]);
 
-  return web3;
+  return null;
 };
 
 export default useWeb3;
