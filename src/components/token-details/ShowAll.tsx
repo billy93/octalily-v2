@@ -24,7 +24,7 @@ function ShowAll() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                {/* <tr>
                                     <td>0x235D...1A2A</td>
                                     <td>6.9</td>
                                     <td>4.2</td>
@@ -34,7 +34,7 @@ function ShowAll() {
                                         <Link to="/" className="tbldrkbtn">Details</Link>
                                         <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
                                     </td>
-                                </tr>
+                                </tr> */}
                                 <tr>
                                     <td>0x235D...1A2A</td>
                                     <td>6.9</td>
@@ -43,92 +43,13 @@ function ShowAll() {
                                     <td>
                                         <Button variant="contained" className="tbldrkbtn">Up Only</Button>
                                         <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                        <Link to="/" className="tbldrkbtn">Details</Link>
-                                        <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0x235D...1A2A</td>
-                                    <td>6.9</td>
-                                    <td>4.2</td>
-                                    <td>690</td>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                        <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                        <Link to="/" className="tbldrkbtn">Details</Link>
-                                        <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0x235D...1A2A</td>
-                                    <td>6.9</td>
-                                    <td>4.2</td>
-                                    <td>690</td>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                        <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                        <Link to="/" className="tbldrkbtn">Details</Link>
-                                        <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0x235D...1A2A</td>
-                                    <td>6.9</td>
-                                    <td>4.2</td>
-                                    <td>690</td>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                        <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                        <Link to="/" className="tbldrkbtn">Details</Link>
-                                        <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0x235D...1A2A</td>
-                                    <td>6.9</td>
-                                    <td>4.2</td>
-                                    <td>690</td>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                        <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                        <Link to="/" className="tbldrkbtn">Details</Link>
-                                        <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0x235D...1A2A</td>
-                                    <td>6.9</td>
-                                    <td>4.2</td>
-                                    <td>690</td>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                        <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                        <Link to="/" className="tbldrkbtn">Details</Link>
-                                        <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0x235D...1A2A</td>
-                                    <td>6.9</td>
-                                    <td>4.2</td>
-                                    <td>690</td>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                        <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                        <Link to="/" className="tbldrkbtn">Details</Link>
-                                        <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0x235D...1A2A</td>
-                                    <td>6.9</td>
-                                    <td>4.2</td>
-                                    <td>690</td>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                        <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                        <Link to="/" className="tbldrkbtn">Details</Link>
-                                        <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
+                                        <Link to="/details/test" className="tbldrkbtn">Details</Link>
+
+                                        <Link to="/details/test">
+                                            <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>
+                                                Buy
+                                            </Button>
+                                        </Link>
                                     </td>
                                 </tr>
                             </tbody>

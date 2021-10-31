@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/token-list" component={TokenList} />
           <Route exact path="/token-list-polygon/:address" component={TokenListPolygon} />
           <Route exact path="/token-details/:address" component={TokenDetails} />
-          <Route exact path="/details" component={Details} />
+          <Route exact path="/details/:token/:address" component={Details} />
           
         </Switch>
         <Footer />
