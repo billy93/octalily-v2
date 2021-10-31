@@ -9,9 +9,9 @@ export default function HomePage() {
   useEffect(() => {
       const body = document.querySelector("body");
       
-      if(chainId == 137){
-          document.body.classList.add("dark_theme");
-      }
+      // if(chainId == 137){
+      //     document.body.classList.add("dark_theme");
+      // }
           // document.body.classList.add("bsc_theme");
           // document.body.classList.add("eth_theme");
       return () => {
