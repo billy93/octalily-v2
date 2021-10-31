@@ -1,17 +1,96 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Grid, Typography, Button, Dialog } from '@mui/material';
 import {Link} from 'react-router-dom'
+import { useTheme } from '@mui/material/styles';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { Web3ConnectButton } from '../../../elements/Web3ConnectButton/Web3ConnectButton';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { useWeb3React } from "@web3-react/core"
+import { CacheService } from "../../../services/CacheService"
+import { TokenInfo } from "../../../dtos/TokenInfo"
+import { FlowerOwnershipGiverService } from 'services/FlowerOwnershipGiver';
+import LoadingButton from '@mui/lab/LoadingButton';
 
-function RoadmapScOne() {
+const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
+    const { account, library, chainId } = useWeb3React();
     const [open, setOpen] = React.useState(false);
+    const [openAlert, setOpenAlert] = React.useState(false);
+    const [tokens, setTokens] = useState<TokenInfo[]>();
+    const [loading, setLoading] = React.useState(false);
+    const [alertMessage, setAlertMessage] = React.useState("");
 
+    useEffect(() => {
+        const getTokens = async () => {
+            const service = new CacheService(chainId);
+            setTokens(await service.getParentTokens());
+        }
+        getTokens();
+    }, [chainId, library, account])
+    
+    const handleChange = (event) => {
+        const {
+        target: { value },
+        } = event;
+
+        setTokenAddress(
+        // On autofill we get a the stringified value.
+        typeof value === 'string' ? value.split(',') : value,
+        );
+    };
+    
     const handleClickOpen = () => {
-        setOpen(true);
+        if(tokenAddress != ""){
+            setOpen(true);
+        }
+        else{
+            setAlertMessage("Please select token first");
+            setOpenAlert(true);
+        }
     };
 
     const handleClose = () => {
         setOpen(false);
     };
+
+    const handleAlertClose = () => {
+        setOpenAlert(false);
+    };
+
+    const buy = async () => {
+        setLoading(true);
+
+        try{
+            const flowerGiver = new FlowerOwnershipGiverService(library, account);
+            const txResponse = await flowerGiver.giveMeFlower(tokenAddress[0]);
+            if (txResponse) {
+                const receipt = await txResponse.wait()
+                console.log(receipt);
+                if (receipt?.status === 1) {
+                    console.log("Success");
+                    setLoading(false);
+                    handleClose();
+                }
+                else {
+                    console.log("Error");
+                    setLoading(false);
+                    setAlertMessage("Failed, please try again");
+                    setOpenAlert(true);
+                    handleClose();
+                }
+            }
+        } catch(e){
+            setAlertMessage(e["data"].message);
+            setLoading(false);
+            setOpenAlert(true);
+        }
+    }
+
     return (
         <>
             <Box className="rdmp_sc02 zindx1">
@@ -23,7 +102,7 @@ function RoadmapScOne() {
                         <Box className="p_rltv">
                         
                         <Grid container spacing={3}>
-                            <Grid item xs={12} className="csm_bx_cntnt">
+                        <Grid item xs={12} className="csm_bx_cntnt">
                             <Typography component="h2">Welcome to your garden</Typography>
                             <Typography component="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum massa leo duis semper viverra fermentum. Pharetra pharetra massa dui mi sapien, facilisis et. Sem gravida neque velit mauris feugiat. Augue lectus felis urna commodo nisi, mauris. Ut consectetur a, in amet, porta tellus.</Typography>
                             </Grid>              
@@ -33,23 +112,56 @@ function RoadmapScOne() {
                             <Grid item xs={12} lg={7} className="csm_bx_cntnt csm_bx_cntnt_v2">
                             <Typography component="h2">Plant a Seed</Typography>
                             <Typography component="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum massa leo duis semper viverra fermentum. Pharetra pharetra massa dui mi sapien, facilisis et. Sem gravida neque velit mauris feugiat. Augue lectus felis urna commodo nisi, mauris. Ut consectetur a, in amet, porta </Typography>
-                            <Box className="m-auto-lg">
-                                <Button 
-                                    variant="contained" 
-                                    startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}
-                                    className="def_blk_btn me-2"
-                                >
-                                    Connect Wallet
-                                </Button>
-                                <Button 
-                                    className="def_blk_btn sdw_nn"
-                                    onClick={handleClickOpen}
-                                >
-                                    Pay Gas Fee
-                                </Button>
-                            </Box>
                             
-                            </Grid>              
+                            
+                            </Grid>  
+                            <Grid item xs={12} lg={3}></Grid>
+                                <Grid item xs={12} lg={9}>
+                                    <Box className="bttn_bx">
+                                        <Web3ConnectButton useWalletIcon={false} />
+                                        <Box component="img" src="/img/bsd_arrow.png" className="bsd_arr_img" />
+                                        <FormControl className="cstmslct">
+                                            <Select
+                                            
+                                            displayEmpty
+                                            value={tokenAddress}
+                                            onChange={handleChange}
+                                            input={<OutlinedInput />}
+                                            inputProps={{ 'aria-label': 'Without label' }}
+                                            MenuProps={{ classes: { paper: 'inner_slct_clss' } }}
+                                            >
+                                                <MenuItem value="">
+                                                    Choose Garden
+                                                </MenuItem>
+
+                                                {
+                                                    tokens?.map(x => (
+                                                    
+                                                    <MenuItem key={x.address} value={x.address}>
+                                                        <Box component="img" src={"/img/"+x.img} width="25px" className="slsct_in_img" />
+                                                        <span>{x.symbol}</span>
+                                                        <Box component="img" src="/img/slsctarrow.svg" width="45px" className="slsct_in_arr" />
+                                                    </MenuItem>
+                                                    // <Box key={x.address} className="token_chkbx" >
+                                                    //     <input onChange={() => selectToken(x.address)} type="radio" name="token" value={x.address}/>
+                                                    //     <label>
+                                                    //         <Typography component="h6">{x.symbol}</Typography>
+                                                    //         <Box component="img" src="/img/tkn_i.svg" />
+                                                    //     </label>
+                                                    // </Box>
+                                                    ))
+                                                }                                                 
+                                            </Select>
+                                        </FormControl>
+                                        <Box component="img" src="/img/bsd_arrow.png" className="bsd_arr_img" />
+                                        <Button 
+                                            className="def_blk_btn sdw_nn"
+                                            onClick={handleClickOpen}
+                                        >
+                                            Pay Gas Fee
+                                        </Button>
+                                    </Box>
+                                </Grid>               
                         </Grid>
                         
                         
@@ -127,7 +239,11 @@ function RoadmapScOne() {
                                         <Button variant="contained" className="cncl_btn" onClick={handleClose}>Cancel</Button>
                                     </Grid>
                                     <Grid item xs={6}>
-                                        <Button variant="contained" className="sbmt_btn">Buy</Button>
+                                        <LoadingButton 
+                                            loading={loading}
+                                            loadingIndicator="Loading..." 
+                                            variant="contained" 
+                                            className="sbmt_btn" onClick={buy}>Buy</LoadingButton>
                                     </Grid>
                                 </Grid>
                             </Box>
@@ -135,6 +251,28 @@ function RoadmapScOne() {
                         
                     </Box>
                 </Box>
+            </Dialog>
+
+
+            <Dialog
+                open={openAlert}
+                onClose={handleAlertClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                {"Alert"}
+                </DialogTitle>
+                <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                    {alertMessage}
+                </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={handleAlertClose} autoFocus>
+                    Ok
+                </Button>
+                </DialogActions>
             </Dialog>
         </>
     )

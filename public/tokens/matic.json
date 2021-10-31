@@ -1,10 +1,12 @@
 [
     {
         "symbol": "upMATIC",
-        "address": "0x0BE4fA46B9a1E484Ba3EDbf507E425C84B07Fa16"
+        "address": "0x0BE4fA46B9a1E484Ba3EDbf507E425C84B07Fa16",
+        "img":"matic_icon.png"
     },
     {
         "symbol": "WMATIC",
-        "address": "0xaFb250Da16bD715b32653240937b17bC720d1e99"
+        "address": "0xaFb250Da16bD715b32653240937b17bC720d1e99",
+        "img":"upMatic.png"
     }
 ]

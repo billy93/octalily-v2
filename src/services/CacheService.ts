@@ -1,11 +1,11 @@
-import { Chain } from '../constants'
 
 export class CacheService {
-    private chain: Chain;
+    private chainId: number;
 
-    constructor(chain: Chain) {
-        this.chain = chain;
+    constructor(chainId: number) {
+        this.chainId = chainId;
     }
+
     public getParentTokens = async () => await this.loadJsonData(`tokens/${this.chainToFileName()}.json`);
     
     public getFlowerTokens = async () => await this.loadJsonData(`flowers/${this.chainToFileName()}.json`);

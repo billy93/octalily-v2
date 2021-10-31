@@ -14,6 +14,7 @@ const Input = styled('input')({
 });
 
 export default function Roadmap() {
+  const [tokenAddress, setTokenAddress] = React.useState("");
 
   return (
     <Box className="main rdmp_bg">
@@ -38,8 +39,8 @@ export default function Roadmap() {
                 </Grid>
             </Grid>
           </Box>
-          <RoadmapScOne />
-          <RoadmapScTwo />
+          <RoadmapScOne setTokenAddress={setTokenAddress} tokenAddress={tokenAddress}/>
+          <RoadmapScTwo tokenAddress={tokenAddress} />
           <RoadmapScThree />
           
           

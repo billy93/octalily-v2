@@ -3,7 +3,7 @@ import { Box, Grid, Typography, Button, Dialog } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
 import ClockIcon from '@mui/icons-material/WatchLaterOutlined';
 
-function RoadmapScTwo() {
+const RoadmapScTwo = ({ tokenAddress }) =>  {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
