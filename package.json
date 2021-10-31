@@ -2,6 +2,7 @@
   "name": "strigoi",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rootkitfinance.github.io/octalily-v2-ui-build",  
   "dependencies": {
     "-": "^0.0.1",
     "@ethersproject/experimental": "^5.0.5",
