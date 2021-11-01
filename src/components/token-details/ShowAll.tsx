@@ -3,6 +3,8 @@ import { Box, Grid, Typography, Button, Stack } from '@mui/material';
 import { Table } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { isAddress, supportedChain } from "../../utils"
+import { formatAddress } from 'utils/address';
+
 import { useWeb3React } from "@web3-react/core"
 import { useParams } from "react-router-dom"
 import {
@@ -53,7 +55,7 @@ export default function ShowAll() {
                                     dataFlower != undefined ? dataFlower.pairedTokens[0].flowers?.map(x => (
                                     
                                     <tr key={x.id}>
-                                        <td>{x.id}</td>
+                                        <td>{formatAddress(x.id)}</td>
                                         <td>{x.burnRate}</td>
                                         <td>{x.upPercent}</td>
                                         <td>{x.upDelay}</td>
