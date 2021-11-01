@@ -1,0 +1,3 @@
+graph auth --product hosted-service 6acdfca1d527486cb4be745068a64995
+graph deploy --product hosted-service billy93/octalily-matic
+

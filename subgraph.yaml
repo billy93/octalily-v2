@@ -47,9 +47,11 @@ templates:
         - name: Owned
           file: ./abis/Owned.json
       eventHandlers:
-        - event: AnotherOctalilyBeginsToGrow(address)
-          handler: handleWaveOfLove
+        # - event: AnotherOctalilyBeginsToGrow(address)
+          # handler: handleAnotherOctalilyBeginsToGrow
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
+        - event: PriceChanged(uint256)
+          handler: handlePriceChanged

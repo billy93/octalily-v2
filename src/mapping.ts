@@ -1,7 +1,7 @@
 import {
   FlowerPlanted
 } from "../generated/GardenOfInfiniteLove/GardenOfInfiniteLove"
-import { Octalily as OctalilyContract, Transfer  } from "../generated/templates/Octalily/Octalily";
+import { Octalily as OctalilyContract, Transfer, AnotherOctalilyBeginsToGrow  } from "../generated/templates/Octalily/Octalily";
 import { Octalily, User, PairedToken } from "../generated/schema"
 import { OwnershipTransferred } from "../generated/templates/Octalily/Owned";
 import { Octalily as OctalilyTemplate } from '../generated/templates'
@@ -17,7 +17,7 @@ export function handleFlowerPlanted(event: FlowerPlanted): void {
   octalily.upPercent = octalilyContract.upPercent();
   octalily.upDelay = octalilyContract.upDelay();
   octalily.nonce = octalilyContract.nonce();
-
+  octalily.totalSupply = octalilyContract.totalSupply();
   let pairedToken = PairedToken.load(event.params.pairedToken.toHexString());
   if (pairedToken === null) {
     pairedToken = new PairedToken(event.params.pairedToken.toHexString());
@@ -42,13 +42,23 @@ export function handleFlowerPlanted(event: FlowerPlanted): void {
     owner3.save();
   }
 
+  let owner4 = User.load(octalilyContract.owners(new BigInt(4)).toHexString());
+  if (owner4 === null) {
+    owner4 = new User(octalilyContract.owners(new BigInt(4)).toHexString());
+    owner4.save();
+  }
+
   octalily.pairedToken = pairedToken.id;
   octalily.owner = owner.id;
   octalily.owner2 = owner2.id;
   octalily.owner3 = owner3.id;
+  octalily.owner4 = owner4.id;
   octalily.save()
 }
 
+export function handleAnotherOctalilyBeginsToGrow(event: AnotherOctalilyBeginsToGrow): void{
+
+}
 // export function handleWaveOfLove(event: WaveOfLove): void {
 //   let octalily = Octalily.load(event.address.toHexString());
 //   let octalilyContract = OctalilyContract.bind(event.address);
@@ -75,6 +85,10 @@ export function handleOwnershipTransferred(event: OwnershipTransferred): void {
     owner = new User(event.params.newOwner.toHexString());
     owner.save();
   }
+  // else{
+  //   owner.id = event.params.newOwner.toHexString();
+  //   owner.save();
+  // }
   octalily.owner = owner.id;
   octalily.save();
 }
