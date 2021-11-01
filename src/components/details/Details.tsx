@@ -4,8 +4,58 @@ import DetailsOne from './DetailsOne';
 import DetailsTwo from './DetailsTwo';
 import DetailsThree from './DetailsThree';
 import DetailsFour from './DetailsFour';
+import { useParams } from "react-router-dom"
+import {
+    useQuery,
+    gql
+  } from "@apollo/client";
+import { FlowerService } from 'services/FlowerService';
 
 export default function Details() {
+    
+    const { token, address } = useParams<{ token: string, address: string }>();
+    
+    // const flowerService = new FlowerService();
+    // let dataFlower = flowerService.getFlower(address);
+    // console.log(dataFlower);
+
+    const query = gql`
+        query getPairTokens($address: String!){
+            octalilies(where: {id: $address}) {
+                id
+                pairedToken {
+                    id
+                }
+                price
+                burnRate
+                totalFees
+                upPercent
+                upDelay
+                totalSupply
+                nonce
+                owner {
+                    id
+                }
+                owner2 {
+                    id
+                }
+                owner3 {
+                    id
+                }
+                owner4 {
+                    id
+                }
+            }           
+        }
+    `;
+
+        let {data: dataFlower} = useQuery(query, { variables: { address: address }});
+
+        if(dataFlower != undefined){
+            // console.log(dataFlower)
+            dataFlower = dataFlower.octalilies[0];
+        }
+
     useEffect(() => {
         const body = document.querySelector("body");
             document.body.classList.add("dark_theme");
@@ -26,7 +76,7 @@ export default function Details() {
                                 <DetailsOne />
                             </Grid>
                             <Grid item xs={12} lg={5}>
-                                <DetailsTwo />
+                                <DetailsTwo flower={dataFlower}/>
                             </Grid>
                         </Grid>
                     </Box>

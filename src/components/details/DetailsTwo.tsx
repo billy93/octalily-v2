@@ -1,7 +1,8 @@
 import React from 'react'
 import { Box, Grid, Typography, Button } from '@mui/material';
+import { formatAddress } from 'utils/address';
 
-function DetailsTwo() {
+const DetailsTwo = ({ flower }) =>  {
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn dtls_d_prnt02">
@@ -12,11 +13,11 @@ function DetailsTwo() {
                         <Box className="d_all_infobx">
                             <Typography component="h4">
                                 <span>Price:</span>
-                                0.0000000069
+                                {flower!=null?flower.price:""} 
                             </Typography>
                             <Typography component="h4">
                                 <span>Total Supply:</span>
-                                183 596
+                                {flower!=null?flower.totalSupply:""} 
                             </Typography>
                             <Typography component="h4">
                                 <span>Paired Balance:</span>
@@ -28,15 +29,15 @@ function DetailsTwo() {
                             </Typography>
                             <Typography component="h4">
                                 <span>Burn Rate:</span>
-                                6.9%
+                                {flower!=null?flower.burnRate:""} %
                             </Typography>
                             <Typography component="h4">
                                 <span>Up Percent:</span>
-                                4.2%
+                                {flower!=null?flower.upPercent:""} %
                             </Typography>
                             <Typography component="h4">
                                 <span>Up Delay:</span>
-                                690 seconds
+                                {flower!=null?flower.upDelay:""}  seconds
                             </Typography>
                             <Typography component="h4">
                                 <span>Petal Count:</span>
@@ -44,15 +45,19 @@ function DetailsTwo() {
                             </Typography>
                             <Typography component="h4">
                                 <span>Owner:</span>
-                                0x804C...ABdf
+                                {flower!=null ? formatAddress(flower.owner.id):""} 
                             </Typography>
                             <Typography component="h4">
                                 <span>Owner 2:</span>
-                                0x804C...ABdf
+                                {flower!=null ? formatAddress(flower.owner2.id):""} 
                             </Typography>
                             <Typography component="h4">
                                 <span>Owner 3:</span>
-                                0x804C...ABdf
+                                {flower!=null?formatAddress(flower.owner3.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 4:</span>
+                                {flower!=null?formatAddress(flower.owner4.id):""} 
                             </Typography>
                         </Box>
                         <hr className="d_hr" />

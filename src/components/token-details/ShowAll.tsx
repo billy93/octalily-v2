@@ -30,7 +30,8 @@ export default function ShowAll() {
         }
     `;
 
-    let {data: dataFlower} = useQuery(query, { variables: { address: address }});
+    let {data: dataFlower} = useQuery(query, { variables: { address: "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270" }});
+    console.log(dataFlower)
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
