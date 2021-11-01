@@ -1,9 +1,34 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Box, Grid, Typography, Button, Stack } from '@mui/material';
 import { Table } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import { isAddress, supportedChain } from "../../utils"
+import { useWeb3React } from "@web3-react/core"
+import { useParams } from "react-router-dom"
+import {
+    useQuery,
+    gql
+  } from "@apollo/client";
 
-function ShowAll() {
+export default function ShowAll() {
+    const { address } = useParams<{ address: string }>();
+    const { account, library, chainId } = useWeb3React();
+    
+    const query = gql`
+        query getPairTokens($address: String!){
+            pairedTokens(where:{id: $address }) {
+                id
+                flowers {
+                    id
+                    burnRate
+                    upPercent
+                    upDelay
+                }
+            }
+        }
+    `;
+
+    let {data: dataFlower} = useQuery(query, { variables: { address: address }});
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
@@ -24,34 +49,28 @@ function ShowAll() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* <tr>
-                                    <td>0x235D...1A2A</td>
-                                    <td>6.9</td>
-                                    <td>4.2</td>
-                                    <td>690</td>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                        <Link to="/" className="tbldrkbtn">Details</Link>
-                                        <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>Buy</Button>
-                                    </td>
-                                </tr> */}
-                                <tr>
-                                    <td>0x235D...1A2A</td>
-                                    <td>6.9</td>
-                                    <td>4.2</td>
-                                    <td>690</td>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                        <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                        <Link to="/details/test" className="tbldrkbtn">Details</Link>
+                                {
+                                    dataFlower != undefined ? dataFlower.pairedTokens[0].flowers?.map(x => (
+                                    
+                                    <tr key={x.id}>
+                                        <td>{x.id}</td>
+                                        <td>{x.burnRate}</td>
+                                        <td>{x.upPercent}</td>
+                                        <td>{x.upDelay}</td>
+                                        <td>
+                                            <Button variant="contained" className="tbldrkbtn">Up Only</Button>
+                                            <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
+                                            <Link to={"/details/"+address+"/"+x.id} className="tbldrkbtn">Details</Link>
 
-                                        <Link to="/details/test">
-                                            <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>
-                                                Buy
-                                            </Button>
-                                        </Link>
-                                    </td>
-                                </tr>
+                                            <Link to={"/details/"+address+"/"+x.id}>
+                                                <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>
+                                                    Buy
+                                                </Button>
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                    )) : <div></div>
+                                } 
                             </tbody>
                         </Table>
                     </Box>
@@ -61,5 +80,3 @@ function ShowAll() {
         </>
     )
 }
-
-export default ShowAll

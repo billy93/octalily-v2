@@ -12,6 +12,17 @@ import { Web3Provider } from '@ethersproject/providers';
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core'
 import { NetworkContextName } from './constants';
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider
+} from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: 'https://api.thegraph.com/subgraphs/name/billy93/octalily-matic',
+  cache: new InMemoryCache()
+});
+
 if ('ethereum' in window) {
   (window.ethereum as any).autoRefreshOnNetworkChange = false; 
 
@@ -40,13 +51,15 @@ const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName)
 
 ReactDOM.render(
   <React.StrictMode>
-    <Web3ReactProvider getLibrary={getLibrary}>   
-      <Web3ProviderNetwork getLibrary={getLibrary}>  
-          <Providers>
-            <App />
-          </Providers>
-      </Web3ProviderNetwork>
-    </Web3ReactProvider>
+    <ApolloProvider client={client}>
+      <Web3ReactProvider getLibrary={getLibrary}>   
+        <Web3ProviderNetwork getLibrary={getLibrary}>  
+            <Providers>
+              <App />
+            </Providers>
+        </Web3ProviderNetwork>
+      </Web3ReactProvider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
