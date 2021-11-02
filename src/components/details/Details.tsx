@@ -38,6 +38,7 @@ export default function Details() {
                 nonce
                 petalCount
                 pendingOwner
+                parentFlower
                 owner {
                     id
                 }
@@ -123,7 +124,7 @@ export default function Details() {
                 <Box className="dt_tw_bx">
                     <Box component="img" src="/img/pl_ex_img03.png" className="img-fluid pl_ex_img03" />
                     <Box className="defmx">
-                        <DetailsThree />
+                        <DetailsThree flower={dataFlower}/>
                     </Box>
                 </Box>
                 <Box className="dt_tw_bx v1_rltv_pddng_tkn_v3">

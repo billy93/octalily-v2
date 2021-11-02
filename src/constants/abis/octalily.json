@@ -1,69 +1,21 @@
 [
   {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
     "inputs": [
       {
-        "internalType": "contract IERC20",
-        "name": "_pairedToken",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_burnRate",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_upPercent",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_upDelay",
-        "type": "uint256"
-      },
-      {
+        "indexed": false,
         "internalType": "address",
-        "name": "_dev3",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_dev6",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_dev9",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_parentFlower",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_strainParent",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_nonce",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "_owner",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_rootkitFeed",
+        "name": "Octalily",
         "type": "address"
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    "name": "AnotherOctalilyBeginsToGrow",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -113,6 +65,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "PriceChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "_from",
@@ -133,6 +98,24 @@
     ],
     "name": "Transfer",
     "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "indexSpot",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "addExtraOwners",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
     "inputs": [
@@ -249,6 +232,19 @@
   },
   {
     "inputs": [],
+    "name": "dictator",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "flowerBloomed",
     "outputs": [
       {
@@ -274,6 +270,73 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "contract IERC20",
+        "name": "_pairedToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_burnRate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_upPercent",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_upDelay",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_parentFlower",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_strainParent",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_rootkitFeed",
+        "type": "address"
+      }
+    ],
+    "name": "init",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "isOwner",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "lastUpTime",
     "outputs": [
@@ -289,24 +352,6 @@
   {
     "inputs": [],
     "name": "letTheFlowersCoverTheEarth",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bool",
-        "name": "OTwo",
-        "type": "bool"
-      },
-      {
-        "internalType": "bool",
-        "name": "OThree",
-        "type": "bool"
-      }
-    ],
-    "name": "lockOwners",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -339,64 +384,50 @@
   },
   {
     "inputs": [],
-    "name": "owner",
+    "name": "ownerCount",
     "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
       {
         "internalType": "address",
         "name": "",
         "type": "address"
       }
     ],
+    "name": "ownerIndex",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "owner2",
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "owners",
     "outputs": [
       {
         "internalType": "address",
         "name": "",
         "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "owner2Locked",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "owner3",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "owner3Locked",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -453,9 +484,9 @@
     "name": "petalCount",
     "outputs": [
       {
-        "internalType": "uint8",
+        "internalType": "uint256",
         "name": "",
-        "type": "uint8"
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -530,16 +561,21 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_owner2",
+        "name": "owner1",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_owner3",
+        "name": "owner2",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "owner3",
         "type": "address"
       }
     ],
-    "name": "sharingIsCaring",
+    "name": "setInitialOwners",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

@@ -1,9 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Box, Grid, Typography, Button, Stack } from '@mui/material';
 import { Table } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import { useWeb3React } from "@web3-react/core";
+import { FlowerService } from 'services/FlowerService';
+import { BalanceInfo } from '../../dtos/BalanceInfo'
 
-function DetailsThree() {
+const DetailsThree = ({ flower }) =>  {
+    const { account, library, chainId } = useWeb3React();
+    const [ parent, setParent ] = useState<BalanceInfo>();
+    const [ petals, setPetals ] = useState<BalanceInfo[]>([]);
+    const flowerService = new FlowerService(library, account, chainId);
+    
+    useEffect(() => {
+        if(flower != undefined){
+            const getPetals = async() => {
+                let petals = await flowerService.getPetalBalances(flower.id, flower.petalCount);
+                console.log("Petals")
+                console.log(petals)
+                setPetals(petals)
+            }
+            getPetals();
+
+            const getParentData = async() => {
+                console.log("Get parent")
+                let p = await flowerService.getParent(flower.id);
+                console.log(parent)
+                setParent(p);
+            }
+            getParentData();
+            // flowerService.getBalance()
+            // await getBalance(petalAddress, this.account)
+        }
+    }, [account, library, chainId, flower]);
+
     return (
         <>
            <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
@@ -15,97 +45,33 @@ function DetailsThree() {
                     <Box className="p_rltv w-100">
                         <Table responsive className="token_table token_table_wtbrdr">
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Pay Fees</Button>
-                                    </td>
-                                    <td>
-                                        <Typography component="p">0x235DD84213aw64w3a54f4awf34a3w51f12aw</Typography>
-                                    </td>
-                                    <td className="text-end">17 294.9341</td>
-                                    <td>ORLY</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Collect Fees from Petal 1</Button>
-                                    </td>
-                                    <td>
-                                        <Typography component="p">0x235DD84213aw64w3a54f4awf34a3w51f12aw</Typography>
-                                    </td>
-                                    <td className="text-end">0.0000</td>
-                                    <td>ORLY</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Collect Fees from Petal 2</Button>
-                                    </td>
-                                    <td>
-                                        <Typography component="p">0x235DD84213aw64w3a54f4awf34a3w51f12aw</Typography>
-                                    </td>
-                                    <td className="text-end">0.0000</td>
-                                    <td>ORLY</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Pay Collect Fees from Petal 3</Button>
-                                    </td>
-                                    <td>
-                                        <Typography component="p">0x235DD84213aw64w3a54f4awf34a3w51f12aw</Typography>
-                                    </td>
-                                    <td className="text-end">0.0000</td>
-                                    <td>ORLY</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Pay Collect Fees from Petal 4</Button>
-                                    </td>
-                                    <td>
-                                        <Typography component="p">0x235DD84213aw64w3a54f4awf34a3w51f12aw</Typography>
-                                    </td>
-                                    <td className="text-end">0.0000</td>
-                                    <td>ORLY</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Pay Collect Fees from Petal 5</Button>
-                                    </td>
-                                    <td>
-                                        <Typography component="p">0x235DD84213aw64w3a54f4awf34a3w51f12aw</Typography>
-                                    </td>
-                                    <td className="text-end">0.0000</td>
-                                    <td>ORLY</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Pay Collect Fees from Petal 6</Button>
-                                    </td>
-                                    <td>
-                                        <Typography component="p">0x235DD84213aw64w3a54f4awf34a3w51f12aw</Typography>
-                                    </td>
-                                    <td className="text-end">0.0000</td>
-                                    <td>ORLY</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Pay Collect Fees from Petal 7</Button>
-                                    </td>
-                                    <td>
-                                        <Typography component="p">0x235DD84213aw64w3a54f4awf34a3w51f12aw</Typography>
-                                    </td>
-                                    <td className="text-end">0.0000</td>
-                                    <td>ORLY</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Button variant="contained" className="tbldrkbtn">Pay Collect Fees from Petal 8</Button>
-                                    </td>
-                                    <td>
-                                        <Typography component="p">0x235DD84213aw64w3a54f4awf34a3w51f12aw</Typography>
-                                    </td>
-                                    <td className="text-end">0.0000</td>
-                                    <td>ORLY</td>
-                                </tr>
-                                
+                                {
+                                    parent != null ? <tr>
+                                        <td>
+                                            <Button variant="contained" className="tbldrkbtn">Pay Fees</Button>
+                                        </td>
+                                        <td>
+                                            <Typography component="p">{parent?.address}</Typography>
+                                        </td>
+                                        <td className="text-end">{parent?.balance}</td>
+                                        <td>ORLY</td>
+                                    </tr> : ""
+                                }
+                                {
+                                    petals?.map((x, index) => (
+                                        
+                                        <tr key={x.address}>
+                                            <td>
+                                                <Button variant="contained" className="tbldrkbtn">Collect Fees from Petal {index+1}</Button>
+                                            </td>
+                                            <td>
+                                                <Typography component="p">{x.address}</Typography>
+                                            </td>
+                                            <td className="text-end">{x.balance}</td>
+                                            <td>ORLY</td>
+                                        </tr>
+                                    ))
+                                }
                             </tbody>
                         </Table>
                     </Box>
