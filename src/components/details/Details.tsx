@@ -10,11 +10,14 @@ import {
     gql
   } from "@apollo/client";
 import { FlowerService } from 'services/FlowerService';
+import { useWeb3React } from "@web3-react/core";
 
 export default function Details() {
     
     const { token, address } = useParams<{ token: string, address: string }>();
-    
+    const { account, library, chainId } = useWeb3React();
+
+
     // const flowerService = new FlowerService();
     // let dataFlower = flowerService.getFlower(address);
     // console.log(dataFlower);
@@ -33,6 +36,7 @@ export default function Details() {
                 upDelay
                 totalSupply
                 nonce
+                petalCount
                 owner {
                     id
                 }
@@ -49,12 +53,12 @@ export default function Details() {
         }
     `;
 
-        let {data: dataFlower} = useQuery(query, { variables: { address: address }});
+    let {data: dataFlower} = useQuery(query, { variables: { address: address }});
 
-        if(dataFlower != undefined){
-            // console.log(dataFlower)
-            dataFlower = dataFlower.octalilies[0];
-        }
+    if(dataFlower != undefined){
+        dataFlower = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
+        dataFlower.pairedBalance = "100";
+    }
 
     useEffect(() => {
         const body = document.querySelector("body");

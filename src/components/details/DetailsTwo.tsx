@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Box, Grid, Typography, Button } from '@mui/material';
 import { formatAddress } from 'utils/address';
+import { useWeb3React } from "@web3-react/core";
+import { FlowerService } from 'services/FlowerService';
+import BigNumber from "bignumber.js";
 
 const DetailsTwo = ({ flower }) =>  {
+    const { account, library, chainId } = useWeb3React();
+    const [pairTokenBalance, setPairTokenBalance] = useState<string>("");
+    const flowerService = new FlowerService(library, account, chainId);
+    
+    useEffect(() => {
+        if(flower != undefined){
+            const getPairedTokenBalance = async() => {
+                const balance = await flowerService.getBalance(flower.pairedToken.id, flower.id);
+                setPairTokenBalance(balance.toString());
+            }
+            getPairedTokenBalance();
+        }
+    }, [flower]);
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn dtls_d_prnt02">
@@ -21,7 +37,7 @@ const DetailsTwo = ({ flower }) =>  {
                             </Typography>
                             <Typography component="h4">
                                 <span>Paired Balance:</span>
-                                0.1772
+                                {pairTokenBalance}
                             </Typography>
                             <Typography component="h4">
                                 <span>Account Balance:</span>
@@ -29,11 +45,11 @@ const DetailsTwo = ({ flower }) =>  {
                             </Typography>
                             <Typography component="h4">
                                 <span>Burn Rate:</span>
-                                {flower!=null?flower.burnRate:""} %
+                                {flower!=null?flower.burnRate/100:""} %
                             </Typography>
                             <Typography component="h4">
                                 <span>Up Percent:</span>
-                                {flower!=null?flower.upPercent:""} %
+                                {flower!=null?flower.upPercent/100:""} %
                             </Typography>
                             <Typography component="h4">
                                 <span>Up Delay:</span>
@@ -41,7 +57,7 @@ const DetailsTwo = ({ flower }) =>  {
                             </Typography>
                             <Typography component="h4">
                                 <span>Petal Count:</span>
-                                8
+                                {flower!=null?flower.petalCount:""}
                             </Typography>
                             <Typography component="h4">
                                 <span>Owner:</span>

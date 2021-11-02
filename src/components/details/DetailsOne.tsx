@@ -22,7 +22,7 @@ function DetailsOne() {
                                         <span>Balance: <b>0.0000</b></span>
                                     </Box>
                                     <Box className="tkninfo_bx_mddl">
-                                        <input type="text" value="0.0" className="tknipt" />
+                                        <input type="text"  className="tknipt" />
                                         <Box className="tkn_right_info">
                                             <span>MAX</span>
                                             {/* ORLY */}
@@ -42,7 +42,7 @@ function DetailsOne() {
                                         <span>Balance: <b>0.0000</b></span>
                                     </Box>
                                     <Box className="tkninfo_bx_mddl">
-                                        <input type="text" value="0.0" className="tknipt" />
+                                        <input type="text"  className="tknipt" />
                                         <Box className="tkn_right_info">
                                             <span>MAX</span>
                                             ORLY

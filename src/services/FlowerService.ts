@@ -1,26 +1,20 @@
-import {
-    useQuery,
-    gql
-  } from "@apollo/client";
+import { Contract } from '@ethersproject/contracts'
+import erc20abi from '../constants/abis/erc20.json'
+import { Web3Provider } from '@ethersproject/providers'
 
 export class FlowerService {
-    public getAllFlower(){
+    private signer: any;
+    private chain: number;
+    private account: string;
 
+    constructor(library: Web3Provider, account: string, chain: number) {
+        this.signer = library.getSigner(account).connectUnchecked();
+        this.account = account;
+        this.chain = chain;
     }
 
-    public getFlower(address: string){
-    //     const query = gql`
-    //     query getPairTokens($address: String!){
-    //         octalilies(where: {id: $address}) {
-    //             id
-    //             burnRate
-    //             upPercent
-    //             upDelay
-    //         }           
-    //     }
-    // `;
-
-    //     let {data: dataFlower} = useQuery(query, { variables: { address: address }});
-        // return dataFlower;
+    public async getBalance(tokenAddress: string, account: string) {
+        const erc20Contract = new Contract(tokenAddress, erc20abi, this.signer);
+        return await erc20Contract.balanceOf(account);
     }
 }
