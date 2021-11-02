@@ -47,7 +47,7 @@ function RoadmapScThree() {
                         <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                         <Box className="p_rltv mddl_df_cntnt">
                             <Typography component="h4">Give your flower a name.</Typography>
-                            <Typography component="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan in varius integer sit mi</Typography>
+                            <Typography component="p">Label your flower for future reference.</Typography>
                             <Form.Control type="text" placeholder="Name here" className="formfld" />
                             <Link 
                                 to="/"
@@ -68,7 +68,7 @@ function RoadmapScThree() {
                         <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                         <Box className="p_rltv mddl_df_cntnt">
                             <Typography component="h4">Give your flower a picture </Typography>
-                            <Typography component="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan in varius integer sit mi</Typography>
+                            <Typography component="p">Select an icon that represents your flower.</Typography>
                             <Stack direction="row" alignItems="center" spacing={2}>
                                 <Button variant="contained" component="span"
                                     startIcon={<Box component="img" src="/img/fileupld_ic.svg" alt="" />}
@@ -95,8 +95,8 @@ function RoadmapScThree() {
                         <Box className="homesc_one sc_wt_bg sdw_bx_v3">
                         <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                         <Box className="p_rltv mddl_df_cntnt">
-                            <Typography component="h4">Add a description</Typography>
-                            <Typography component="p">Add a tag line or description for your flower for make it unique for other flowers</Typography>
+                            <Typography component="h4">Give your flower a description</Typography>
+                            <Typography component="p">Add a tagline or description to make your flower unique.</Typography>
                             <Form.Control type="text" placeholder="Tag here" className="formfld" />
                             <Link 
                                 to="/"

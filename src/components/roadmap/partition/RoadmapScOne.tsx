@@ -107,14 +107,27 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                         <Grid container spacing={3}>
                         <Grid item xs={12} className="csm_bx_cntnt">
                             <Typography component="h2">Welcome to your garden</Typography>
-                            <Typography component="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum massa leo duis semper viverra fermentum. Pharetra pharetra massa dui mi sapien, facilisis et. Sem gravida neque velit mauris feugiat. Augue lectus felis urna commodo nisi, mauris. Ut consectetur a, in amet, porta tellus.</Typography>
+                            <Typography component="p">
+                            Your garden is where you will plant and grow your flowers.
+                    You can have multiple flower beds within your garden, and
+                    multiple flowers within each flower bed. Let’s start with a
+                    single flower.
+                            </Typography>
                             </Grid>              
                             <Grid item xs={12} lg={5}>
                             <Box component="img" src="/img/plntsd_img.png" className="img-fluid plntsd_img" />
                             </Grid>              
                             <Grid item xs={12} lg={7} className="csm_bx_cntnt csm_bx_cntnt_v2">
                             <Typography component="h2">Plant a Seed</Typography>
-                            <Typography component="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum massa leo duis semper viverra fermentum. Pharetra pharetra massa dui mi sapien, facilisis et. Sem gravida neque velit mauris feugiat. Augue lectus felis urna commodo nisi, mauris. Ut consectetur a, in amet, porta </Typography>
+                            <Typography component="p">
+                            Growing a flower is easy! It starts with planting a seed.
+                    You plant a seed by connecting your wallet to the Octolily
+                    site, and selecting the token with which you want to grow
+                    your flower. Note: The tokens available will change
+                    depending on your wallet settings. Once you have selected
+                    the token you wish to use, just approve the gas fees and the
+                    flower grows!
+                            </Typography>
                             
                             
                             </Grid>  

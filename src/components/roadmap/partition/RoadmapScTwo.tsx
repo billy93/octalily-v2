@@ -28,7 +28,7 @@ const RoadmapScTwo = ({ tokenAddress }) =>  {
                         <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
                         <Box className="p_rltv mddl_df_cntnt">
                         <Typography component="h4">Read the package</Typography>
-                        <Typography component="p">A flower is part of its own ecosystem. When a flower is created it makes an ERC 20 cntract with three slightly randomized statsA flower is part of its own ecosystem. When a flower is created it makes an ERC 20 cntract with three slightly randomized stats A flower is part of its own ecosystem. When a flower is created it makes an ERC 20 cntract with three slightly randomized statsA flower is part of its own ecosystem. </Typography>
+                        <Typography component="p">When a flower is created, Octalily generates an ERC-20 contract with three slightly randomized characteristics.  Click on the seedbag to see the specific traits of your flower.</Typography>
                             <Button 
                                 className="def_blk_btn sdw_nn"
                                 onClick={handleClickOpen}

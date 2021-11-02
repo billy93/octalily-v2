@@ -59,7 +59,7 @@ function RoadmapScFour() {
                                         startIcon={<PlusIcon />}
                                         className="def_blk_btn"
                                     >
-                                        Connect Wallet
+                                        Add to collection
                                     </Button>
                                     </Box>
                                 </Grid>
@@ -72,7 +72,7 @@ function RoadmapScFour() {
                                         startIcon={<PlusIcon />}
                                         className="def_blk_btn"
                                     >
-                                        Connect Wallet
+                                        Add to collection
                                     </Button>
                                     </Box>
                                 </Grid>
