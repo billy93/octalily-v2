@@ -6,9 +6,9 @@ export class CacheService {
         this.chainId = chainId;
     }
 
-    public getParentTokens = async () => await this.loadJsonData(`tokens/${this.chainToFileName()}.json`);
+    public getParentTokens = async () => await this.loadJsonData(`/tokens/${this.chainToFileName()}.json`);
     
-    public getFlowerTokens = async () => await this.loadJsonData(`flowers/${this.chainToFileName()}.json`);
+    public getFlowerTokens = async () => await this.loadJsonData(`/flowers/${this.chainToFileName()}.json`);
 
     private async loadJsonData(path: string) {
         const response = await fetch(path, {

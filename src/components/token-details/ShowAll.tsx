@@ -31,7 +31,6 @@ export default function ShowAll() {
     `;
 
     let {data: dataFlower} = useQuery(query, { variables: { address: address.toLowerCase() }});
-    console.log(dataFlower)
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
@@ -51,6 +50,7 @@ export default function ShowAll() {
                                     <th></th>
                                 </tr>
                             </thead>
+                            
                             <tbody>
                                 {
                                     dataFlower != undefined ? dataFlower.pairedTokens[0].flowers?.map(x => (
@@ -72,7 +72,7 @@ export default function ShowAll() {
                                             </Link>
                                         </td>
                                     </tr>
-                                    )) : <div></div>
+                                    )) : ""
                                 } 
                             </tbody>
                         </Table>

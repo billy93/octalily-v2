@@ -16,21 +16,15 @@ const DetailsThree = ({ flower }) =>  {
         if(flower != undefined){
             const getPetals = async() => {
                 let petals = await flowerService.getPetalBalances(flower.id, flower.petalCount);
-                console.log("Petals")
-                console.log(petals)
                 setPetals(petals)
             }
             getPetals();
 
             const getParentData = async() => {
-                console.log("Get parent")
                 let p = await flowerService.getParent(flower.id);
-                console.log(parent)
                 setParent(p);
             }
             getParentData();
-            // flowerService.getBalance()
-            // await getBalance(petalAddress, this.account)
         }
     }, [account, library, chainId, flower]);
 

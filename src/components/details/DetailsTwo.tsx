@@ -4,15 +4,16 @@ import { formatAddress } from 'utils/address';
 import { useWeb3React } from "@web3-react/core";
 import { FlowerService } from 'services/FlowerService';
 import useTokenBalance from "../../hooks/useTokenBalance";
+import { getDisplayBalance } from '../../utils/formatBalance'
+import { LoadingButton } from '@mui/lab';
 
 const DetailsTwo = ({ flower }) =>  {
     const { account, library, chainId } = useWeb3React();
     const [pairTokenBalance, setPairTokenBalance] = useState<string>("");
+    const [upOnly, setUpOnly] =  useState<boolean>(false);
     const flowerService = new FlowerService(library, account, chainId);
     let accountBalance = useTokenBalance(flower != undefined ? flower.id : null);
-    if(flower != undefined){
-        console.log(flower)
-    }
+
     useEffect(() => {
         if(flower != undefined){
             const getPairedTokenBalance = async() => {
@@ -22,6 +23,36 @@ const DetailsTwo = ({ flower }) =>  {
             getPairedTokenBalance();
         }
     }, [flower]);
+
+    const upOnlyFunc = async () => {
+        try {
+            setUpOnly(true);
+            const service = new FlowerService(library, account!, chainId);
+            const txResponse = await service.upOnly(flower!.id);
+
+            if (txResponse) {
+                const receipt = await txResponse.wait()
+                if (receipt?.status === 1) {
+                    setUpOnly(false);
+                    // setTransactionHash(receipt.transactionHash);
+                    // setUpOnlyStatus(Status.Done);                  
+                }
+                else {
+                    setUpOnly(false);
+                    // setError("Transaction Failed");
+                    // setUpOnlyStatus(Status.None); 
+                }
+            }
+        }
+        catch(e){
+            console.log(e)
+            setUpOnly(false);
+            // const errorMessage = extractErrorMessage(e);
+            // if(errorMessage) {
+            //     setError(errorMessage);
+            // }
+        }
+    } 
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn dtls_d_prnt02">
@@ -32,7 +63,7 @@ const DetailsTwo = ({ flower }) =>  {
                         <Box className="d_all_infobx">
                             <Typography component="h4">
                                 <span>Price:</span>
-                                {flower!=null?flower.price:""} 
+                                {flower!=null? getDisplayBalance(flower.price, 18, 18):""} 
                             </Typography>
                             <Typography component="h4">
                                 <span>Total Supply:</span>
@@ -127,7 +158,11 @@ const DetailsTwo = ({ flower }) =>  {
                         <Box className="d_all_infobx_btm">
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
-                                    <Button variant="contained" className="buy_btn more_shadow">Up Only</Button>
+                                    <LoadingButton 
+                                    loading={upOnly}
+                                    loadingIndicator=""  variant="contained" className="buy_btn more_shadow" onClick={() => upOnlyFunc()}>
+                                        {upOnly ? "Loading..." : "Up Only"}
+                                    </LoadingButton>
                                 </Grid>
                                 <Grid item xs={12}>
                                     <Button variant="contained" className="cncl_btn">Let Flowers Cover The Earth</Button>

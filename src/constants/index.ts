@@ -155,3 +155,6 @@ export const NetworkContextName = "NETWORK"
 export const DEPLOYER_ADDRESS = '0x804CC8D469483d202c69752ce0304F71ae14ABdf'
 
 
+export function escapeRegExp(string: string): string {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') // $& means the whole matched string
+}

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Box, Grid, Typography, Button } from '@mui/material';
 import DetailsOne from './DetailsOne';
 import DetailsTwo from './DetailsTwo';
@@ -11,17 +11,15 @@ import {
   } from "@apollo/client";
 import { FlowerService } from 'services/FlowerService';
 import { useWeb3React } from "@web3-react/core";
+import { TokenInfo } from "../../dtos/TokenInfo"
+import { CacheService } from 'services/CacheService';
 
 export default function Details() {
     
     const { token, address } = useParams<{ token: string, address: string }>();
     const { account, library, chainId } = useWeb3React();
-
-
-    // const flowerService = new FlowerService();
-    // let dataFlower = flowerService.getFlower(address);
-    // console.log(dataFlower);
-
+    const [baseToken, setBaseToken] = useState<TokenInfo[]>();
+  
     const query = gql`
         query getPairTokens($address: String!){
             octalilies(where: {id: $address}) {
@@ -90,11 +88,20 @@ export default function Details() {
 
     let {data: dataFlower} = useQuery(query, { variables: { address: address }});
 
-    console.log("Dataflower "+address+" "+dataFlower)
     if(dataFlower != undefined){
         dataFlower = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
-        console.log(dataFlower);
+        // console.log(dataFlower);
     }
+
+    useEffect(() => {
+        const getTokens = async () => {
+            const service = new CacheService(chainId);
+            let tokens = await service.getParentTokens();
+            tokens = tokens.filter(e => e.address.toLowerCase() == token.toLowerCase());
+            setBaseToken(tokens[0]);
+        }
+        getTokens();
+    }, [ account, library, baseToken])
 
     useEffect(() => {
         const body = document.querySelector("body");
@@ -113,7 +120,7 @@ export default function Details() {
                     <Box className="defmx">
                         <Grid container spacing={1}>
                             <Grid item xs={12} lg={7}>
-                                <DetailsOne />
+                                <DetailsOne flower={dataFlower} baseToken={baseToken}/>
                             </Grid>
                             <Grid item xs={12} lg={5}>
                                 <DetailsTwo flower={dataFlower}/>
