@@ -30,7 +30,7 @@ export default function ShowAll() {
         }
     `;
 
-    let {data: dataFlower} = useQuery(query, { variables: { address: address }});
+    let {data: dataFlower} = useQuery(query, { variables: { address: address.toLowerCase() }});
     console.log(dataFlower)
     return (
         <>

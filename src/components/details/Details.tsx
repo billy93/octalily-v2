@@ -37,6 +37,7 @@ export default function Details() {
                 totalSupply
                 nonce
                 petalCount
+                pendingOwner
                 owner {
                     id
                 }
@@ -49,15 +50,49 @@ export default function Details() {
                 owner4 {
                     id
                 }
+                owner5 {
+                    id
+                }
+                owner6 {
+                    id
+                }
+                owner7 {
+                    id
+                }
+                owner8 {
+                    id
+                }
+                owner9 {
+                    id
+                }
+                owner10 {
+                    id
+                }
+                owner11 {
+                    id
+                }
+                owner12 {
+                    id
+                }
+                owner13 {
+                    id
+                }
+                owner14 {
+                    id
+                }
+                owner15 {
+                    id
+                }
             }           
         }
     `;
 
     let {data: dataFlower} = useQuery(query, { variables: { address: address }});
 
+    console.log("Dataflower "+address+" "+dataFlower)
     if(dataFlower != undefined){
         dataFlower = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
-        dataFlower.pairedBalance = "100";
+        console.log(dataFlower);
     }
 
     useEffect(() => {
@@ -94,7 +129,7 @@ export default function Details() {
                 <Box className="dt_tw_bx v1_rltv_pddng_tkn_v3">
                     <Box component="img" src="/img/pl_ex_img04.png" className="img-fluid pl_ex_img04" />
                     <Box className="defmx">
-                        <DetailsFour />
+                        <DetailsFour flower={dataFlower} />
                     </Box>
                 </Box>
             </Box>

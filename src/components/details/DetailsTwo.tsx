@@ -3,13 +3,16 @@ import { Box, Grid, Typography, Button } from '@mui/material';
 import { formatAddress } from 'utils/address';
 import { useWeb3React } from "@web3-react/core";
 import { FlowerService } from 'services/FlowerService';
-import BigNumber from "bignumber.js";
+import useTokenBalance from "../../hooks/useTokenBalance";
 
 const DetailsTwo = ({ flower }) =>  {
     const { account, library, chainId } = useWeb3React();
     const [pairTokenBalance, setPairTokenBalance] = useState<string>("");
     const flowerService = new FlowerService(library, account, chainId);
-    
+    let accountBalance = useTokenBalance(flower != undefined ? flower.id : null);
+    if(flower != undefined){
+        console.log(flower)
+    }
     useEffect(() => {
         if(flower != undefined){
             const getPairedTokenBalance = async() => {
@@ -41,7 +44,7 @@ const DetailsTwo = ({ flower }) =>  {
                             </Typography>
                             <Typography component="h4">
                                 <span>Account Balance:</span>
-                                0.0000
+                                {accountBalance != null ? accountBalance.toString() : ""}
                             </Typography>
                             <Typography component="h4">
                                 <span>Burn Rate:</span>
@@ -74,6 +77,50 @@ const DetailsTwo = ({ flower }) =>  {
                             <Typography component="h4">
                                 <span>Owner 4:</span>
                                 {flower!=null?formatAddress(flower.owner4.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 5:</span>
+                                {flower!=null?formatAddress(flower.owner5.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 6:</span>
+                                {flower!=null?formatAddress(flower.owner6.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 7:</span>
+                                {flower!=null?formatAddress(flower.owner7.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 8:</span>
+                                {flower!=null?formatAddress(flower.owner8.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 9:</span>
+                                {flower!=null?formatAddress(flower.owner9.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 10:</span>
+                                {flower!=null?formatAddress(flower.owner10.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 11:</span>
+                                {flower!=null?formatAddress(flower.owner11.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 12:</span>
+                                {flower!=null?formatAddress(flower.owner12.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 13:</span>
+                                {flower!=null?formatAddress(flower.owner13.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 14:</span>
+                                {flower!=null?formatAddress(flower.owner14.id):""} 
+                            </Typography>
+                            <Typography component="h4">
+                                <span>Owner 15:</span>
+                                {flower!=null?formatAddress(flower.owner15.id):""} 
                             </Typography>
                         </Box>
                         <hr className="d_hr" />

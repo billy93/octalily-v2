@@ -85,9 +85,12 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                 }
             }
         } catch(e){
-            setAlertMessage(e["data"].message);
-            setLoading(false);
-            setOpenAlert(true);
+            console.log(e);
+            if(e["data"] != null && e["data"].message != null){
+                setAlertMessage(e["data"].message);
+                setLoading(false);
+                setOpenAlert(true);
+            }
         }
     }
 

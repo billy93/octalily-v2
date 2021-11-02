@@ -17,13 +17,14 @@ export class FlowerOwnershipGiverService {
     }
 
     public async giveMeFlower(address: string) {
+        console.log(address);
         const signer = this.library.getSigner(this.account).connectUnchecked()
 
         let contract = null;
-        if(address == "0x0BE4fA46B9a1E484Ba3EDbf507E425C84B07Fa16"){
+        if(address == "0xe6a11f125a834e0676f3f8f33eb347d4e1938264"){
             contract = new Contract(this.UPMATIC_GIVER_ADDRESS, flowerGiverAbi, signer);
         }
-        else if(address == "0xaFb250Da16bD715b32653240937b17bC720d1e99"){
+        else if(address == "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270"){
             contract = new Contract(this.WMATIC_GIVER_ADDRESS, flowerGiverAbi, signer);
         }
         return await contract.giveMeFlower();
