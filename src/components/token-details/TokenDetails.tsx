@@ -6,6 +6,7 @@ import {Tabs, Tab} from 'react-bootstrap'
 import ShowAll from './ShowAll';
 import { FlowerInfo } from "../../dtos/FlowerInfo";
 import { isAddress, supportedChain } from "../../utils";
+import ShowOwned from "./ShowOwned";
 
 enum View {
     All,
@@ -85,7 +86,7 @@ export default function TokenDetails() {
                             <ShowAll />
                         </Tab>
                         <Tab eventKey="show_owned" title="Show Owned">
-                            <ShowAll />
+                            <ShowOwned />
                         </Tab>
                     </Tabs>
                     
