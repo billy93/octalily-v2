@@ -24,6 +24,7 @@ const DetailsOne = ({ flower, baseToken }) =>  {
     const [isApproved, setIsApproved] = useState<boolean>(false);
     const [buyValue, setBuyValue] = useState(0);
     const [sellValue, setSellValue] = useState(0);
+    const [isBuy, setIsBuy] = useState<boolean>(true);
 
     useEffect(() => {
         if(flower != undefined){
@@ -39,10 +40,19 @@ const DetailsOne = ({ flower, baseToken }) =>  {
     }, [library, account, chainId, flower])
 
     let accountBaseBalance = getDisplayBalance(useTokenBalance(baseToken != null ? baseToken.address : ""), 18, 8);
-    let accountBalance = useTokenBalance(flower != undefined ? flower.id : null);
+    let accountBalance = getDisplayBalance(useTokenBalance(flower != undefined ? flower.id : null), 18, 8);
 
     const onBaseMax = () => {
-        setBuyValue(parseFloat(accountBaseBalance));
+        let val = 0;
+        if(isBuy){
+            val = parseFloat(accountBaseBalance);
+            setBuyValue(val);
+        }
+        else{
+            val = parseFloat(accountBalance.toString());
+            setBuyValue(val);
+        }
+        triggerInputChange(val);
     }
 
     const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
@@ -53,9 +63,33 @@ const DetailsOne = ({ flower, baseToken }) =>  {
         const newValue = event.target.value.replace(/,/g, '.')
         setBuyValue(newValue)
 
-        const sellValue = newValue / toNumber(flower.price);
-        console.log(sellValue);
-        setSellValue(sellValue);
+        triggerInputChange(newValue);       
+    }
+
+    const triggerInputChange = (newValue) => {
+        const amount = parseFloat(newValue);
+
+        const price = parseFloat(flower.price);
+        const outputAmount = isBuy ? amount / toNumber(price) : amount * toNumber(price);
+        // console.log("Amount "+toNumber(outputAmount, 9))
+
+        if(isBuy){
+            var res = toNumber(outputAmount,9);
+            var result = res - (res * (parseFloat(flower.burnRate) / 100) / 100)
+            setSellValue(result);
+        }
+        else{
+            var res = amount;
+            res = res / 1e9;
+            var exitAmount = (res - res * parseFloat(flower.totalFees) / 10000) * price;
+            setSellValue(exitAmount);
+        }
+        // if(isBuy){
+        // }
+        // else{
+        //     const sellValue = toNumber(newValue *  new BigNumber(flower.price).toNumber(), 18);
+        //     setSellValue(sellValue);
+        // }
     }
 
     const approve = async () =>{
@@ -98,7 +132,7 @@ const DetailsOne = ({ flower, baseToken }) =>  {
 
             console.log("Swapping....")
             const service = new FlowerService(library, account!, chainId);
-            const txResponse =  await service.buy(flower.id, buyValue.toString());
+            const txResponse =  isBuy ? await service.buy(flower.id, buyValue.toString()) : await service.sell(flower.id, buyValue.toString());
 
             if (txResponse) {
                 const receipt = await txResponse.wait()
@@ -126,6 +160,16 @@ const DetailsOne = ({ flower, baseToken }) =>  {
             setStatus(SwapStatus.None);
         }
     }
+
+    const changeSide = async () => {
+        setIsBuy(!isBuy);
+
+        let tempBuyValue = sellValue;
+        let tempSellValue = buyValue;
+        setBuyValue(tempBuyValue);
+        setSellValue(tempSellValue);
+    }
+
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn dtls_d_prnt01">
@@ -143,20 +187,23 @@ const DetailsOne = ({ flower, baseToken }) =>  {
                                 <Box className="tkninfo_bx">
                                     <Box className="tkninfo_bx_top">
                                         From
-                                        <span>Balance: <b>{accountBaseBalance != null ? accountBaseBalance.toString() : ""}</b></span>
+                                        <span>Balance: <b>{
+                                            isBuy && accountBaseBalance != null ? accountBaseBalance.toString() : 
+                                            !isBuy && accountBalance != null ? accountBalance.toString() : "" 
+                                        }</b></span>
                                     </Box>
                                     <Box className="tkninfo_bx_mddl">
                                         <input type="text"  className="tknipt" value={buyValue} onInput={val => onUserInput(val)}
 />
                                         <Box className="tkn_right_info">
                                             <span onClick={ accountBaseBalance ? onBaseMax : () =>{} }>MAX</span>
-                                            {/* ORLY */}
+                                            {!isBuy ? "ORLY" : baseToken?.symbol}
                                         </Box>
                                     </Box>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} className="text-center">
-                                <Button className="tknbtn">
+                                <Button className="tknbtn" onClick={() => changeSide()}>
                                     <Box component="img" src="/img/tknarrow.svg" />
                                 </Button>
                             </Grid>
@@ -164,13 +211,17 @@ const DetailsOne = ({ flower, baseToken }) =>  {
                                 <Box className="tkninfo_bx">
                                     <Box className="tkninfo_bx_top">
                                         To
-                                        <span>Balance: <b>{accountBalance != null ? accountBalance.toString() : ""}</b></span>
+                                        <span>Balance: <b>
+                                        {
+                                            !isBuy && accountBaseBalance != null ? accountBaseBalance.toString() : 
+                                            isBuy && accountBalance != null ? accountBalance.toString() : "" 
+                                        }
+                                            </b></span>
                                     </Box>
                                     <Box className="tkninfo_bx_mddl">
                                         <input type="text"  className="tknipt" value={sellValue}/>
                                         <Box className="tkn_right_info">
-                                            <span>MAX</span>
-                                            ORLY
+                                            {isBuy ? "ORLY" : baseToken?.symbol}
                                         </Box>
                                     </Box>
                                 </Box>

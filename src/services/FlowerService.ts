@@ -52,6 +52,12 @@ export class FlowerService {
         return await contract.buy(buyValue);
     }
 
+    public async sell(flowerAddress: string, value: string) {
+        const contract = new Contract(flowerAddress, octalilyAbi, this.signer);
+        const sellValue = parseEther(value);
+        return await contract.sell(sellValue);
+    }
+
     public async upOnly(flowerAddress: string) {
         const contract = new Contract(flowerAddress, octalilyAbi, this.signer);
         return await contract.upOnly();
