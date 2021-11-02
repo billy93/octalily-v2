@@ -5,6 +5,7 @@ import WalletConnectLogo from '../../assets/img/walletconnect.svg';
 import { Web3ProviderButton } from './components/Web3ProviderButton';
 // import { useWallet } from '@binance-chain/bsc-use-wallet';
 import { InjectedConnector } from '@web3-react/injected-connector'
+import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { useWeb3React, UnsupportedChainIdError } from "@web3-react/core"
 
 import { Modal, ModalProps } from '../Modal';
@@ -32,12 +33,17 @@ export const Web3ConnectModal: React.FC<ModalProps> = ({
     const chainId = parseInt(window.localStorage.getItem('chain'));
     networkSetup(chainId ? chainId : currentChainId)
       .then(() => {
-
+        const walletconnect = new WalletConnectConnector({
+          rpc: { 137: 'https://rpc-mainnet.maticvigil.com/' }, // Infura URL does not work 
+          bridge: 'https://bridge.walletconnect.org',
+          qrcode: true
+        })
         const conn = new InjectedConnector({
           supportedChainIds: [137]
         });
 
-        activate(conn, undefined, true).then(() => {
+        
+        activate(connectorId == "injected" ? conn : walletconnect, undefined, true).then(() => {
           onDismiss();
         }).catch(error => {
           // console.log("ERROR");

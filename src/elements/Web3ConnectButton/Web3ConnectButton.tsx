@@ -38,7 +38,7 @@ export const Web3ConnectButton = ({ useWalletIcon, ...props }) => {
       onClick={
         !!account
           ? () => {
-              console.log("Already  connected");
+              console.log("Already connected");
             }
           : showConnectModal
       }
