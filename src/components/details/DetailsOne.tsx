@@ -37,7 +37,7 @@ const DetailsOne = ({ flower, baseToken }) =>  {
                 getIsApprove();
             }
         }
-    }, [library, account, chainId, flower])
+    }, [library, account, chainId, flower == undefined])
 
     let accountBaseBalance = getDisplayBalance(useTokenBalance(baseToken != null ? baseToken.address : ""), 18, 8);
     let accountBalance = getDisplayBalance(useTokenBalance(flower != undefined ? flower.id : null), 18, 8);
@@ -63,7 +63,12 @@ const DetailsOne = ({ flower, baseToken }) =>  {
         const newValue = event.target.value.replace(/,/g, '.')
         setBuyValue(newValue)
 
-        triggerInputChange(newValue);       
+        if(newValue != ""){
+            triggerInputChange(newValue);       
+        }
+        else{
+            triggerInputChange(0);
+        }
     }
 
     const triggerInputChange = (newValue) => {
@@ -95,22 +100,30 @@ const DetailsOne = ({ flower, baseToken }) =>  {
     const approve = async () =>{
         try {
             setStatus(SwapStatus.Approving);
+            console.log("Before init token service")
             const service = new TokenService(library, account!, flower.pairedToken.id);
+            console.log("Before approve")
             const txResponse = await service.approve(flower.id);
+            console.log("Before check tx approve")
             if (txResponse) {
                 const receipt = await txResponse.wait()
                 if (receipt?.status === 1) {
+                    console.log("Success approve")
                     setStatus(SwapStatus.Approved);
                     setIsApproved(true);
                 }
                 else {
-                    // setStatus(SwapStatus.None);
+                    setStatus(SwapStatus.None);
                 }
-            }          
+            }  
+            else{
+                console.log("Error")
+                console.log(txResponse)
+            }        
         }
         catch (e) {
             console.log(e);
-            // setStatus(SwapStatus.None);
+            setStatus(SwapStatus.None);
             // const errorMessage = extractErrorMessage(e);
             // if(errorMessage) {
                 // setError(errorMessage);
@@ -169,7 +182,8 @@ const DetailsOne = ({ flower, baseToken }) =>  {
         setBuyValue(tempBuyValue);
         setSellValue(tempSellValue);
     }
-
+ 
+    const handleChange = () => {}
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn dtls_d_prnt01">
@@ -193,7 +207,7 @@ const DetailsOne = ({ flower, baseToken }) =>  {
                                         }</b></span>
                                     </Box>
                                     <Box className="tkninfo_bx_mddl">
-                                        <input type="text"  className="tknipt" value={buyValue} onInput={val => onUserInput(val)}
+                                        <input type="text"  className="tknipt" value={buyValue} onChange={val => onUserInput(val)}
 />
                                         <Box className="tkn_right_info">
                                             <span onClick={ accountBaseBalance ? onBaseMax : () =>{} }>MAX</span>
@@ -219,7 +233,7 @@ const DetailsOne = ({ flower, baseToken }) =>  {
                                             </b></span>
                                     </Box>
                                     <Box className="tkninfo_bx_mddl">
-                                        <input type="text"  className="tknipt" value={sellValue}/>
+                                        <input type="text"  className="tknipt" value={sellValue} onChange={() => {handleChange()}}/>
                                         <Box className="tkn_right_info">
                                             {isBuy ? "ORLY" : baseToken?.symbol}
                                         </Box>

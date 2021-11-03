@@ -28,7 +28,7 @@ export default function TokenList() {
 
     useEffect(() => {
         const body = document.querySelector("body");
-        
+        console.log( document.body.classList)
         if(chainId == 137){
             document.body.classList.add("dark_theme");
         }

@@ -22,7 +22,7 @@ const DetailsTwo = ({ flower }) =>  {
             }
             getPairedTokenBalance();
         }
-    }, [flower]);
+    }, [account, library, chainId, flower == undefined]);
 
     const upOnlyFunc = async () => {
         try {

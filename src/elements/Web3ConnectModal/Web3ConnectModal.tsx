@@ -31,12 +31,14 @@ export const Web3ConnectModal: React.FC<ModalProps> = ({
 
     // onDismiss();
     const chainId = parseInt(window.localStorage.getItem('chain'));
-    networkSetup(chainId ? chainId : currentChainId)
-      .then(() => {
+    // networkSetup(chainId ? chainId : currentChainId)
+    //   .then(() => {
         const walletconnect = new WalletConnectConnector({
-          rpc: { 137: 'https://rpc-mainnet.maticvigil.com/' }, // Infura URL does not work 
+          rpc: { 137: 'https://matic-mainnet.chainstacklabs.com' }, // Infura URL does not work 
           bridge: 'https://bridge.walletconnect.org',
-          qrcode: true
+          qrcode: true,
+          chainId: 137,
+          supportedChainIds: [137]
         })
         const conn = new InjectedConnector({
           supportedChainIds: [137]
@@ -44,21 +46,22 @@ export const Web3ConnectModal: React.FC<ModalProps> = ({
 
         
         activate(connectorId == "injected" ? conn : walletconnect, undefined, true).then(() => {
+          console.log("Success connected")
           onDismiss();
         }).catch(error => {
-          // console.log("ERROR");
-          // console.log(error);
+          console.log("ERROR");
+          console.log(error);
           if (error instanceof UnsupportedChainIdError) {
               activate(conn) // a little janky...can't use setError because the connector isn't set
           } else {
               // setPendingError(true)
           }
         })
-      })
-      .catch((e) => {
-        onDismiss();
-        console.error(e);
-      });
+      // })
+      // .catch((e) => {
+      //   onDismiss();
+      //   console.error(e);
+      // });
   };
 
   return (

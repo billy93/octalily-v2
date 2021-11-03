@@ -27,8 +27,11 @@ export class TokenService {
     }
 
     public async approve (spender: string) {    
+        console.log("Check is approved")
         const approved = await this.isApproved(spender);
+        console.log("Is approved? "+approved)
         if (!approved) {
+            console.log("Approving... "+spender)
             return await this.contract.approve(spender, MaxUint256);
         }        
     }

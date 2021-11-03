@@ -90,6 +90,10 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                 setAlertMessage(e["data"].message);
                 setLoading(false);
                 setOpenAlert(true);
+            }else if(e != null){
+                setAlertMessage(e.toString());
+                setLoading(false);
+                setOpenAlert(true);
             }
         }
     }

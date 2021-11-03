@@ -63,7 +63,7 @@ const DetailsThree = ({ flower }) =>  {
             }
             getParentData();
         }
-    }, [account, library, chainId, flower]);
+    }, [account, library, chainId, flower == undefined]);
 
     return (
         <>
@@ -86,7 +86,7 @@ const DetailsThree = ({ flower }) =>  {
                                         </td>
                                         <td className="text-end">{parent?.balance}</td>
                                         <td>ORLY</td>
-                                    </tr> : ""
+                                    </tr> : <></>
                                 }
                                 {
                                     petals?.map((x, index) => (

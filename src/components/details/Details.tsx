@@ -101,17 +101,20 @@ export default function Details() {
             setBaseToken(tokens[0]);
         }
         getTokens();
-    }, [ account, library, baseToken])
+    }, [ baseToken == null])
 
     useEffect(() => {
         const body = document.querySelector("body");
+        console.log( document.body.classList)
+        if(chainId == 137){
             document.body.classList.add("dark_theme");
+        }
             // document.body.classList.add("bsc_theme");
             // document.body.classList.add("eth_theme");
         return () => {
             body.classList.remove("dark_theme");
         }
-    });
+    }, [chainId, library, account]);
     return (
         <>
             <Box className="main plgn_d_pg_bg">
