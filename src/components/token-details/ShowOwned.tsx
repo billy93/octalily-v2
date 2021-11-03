@@ -167,21 +167,23 @@ export default function ShowOwned() {
     
     let flowers = [];
     if(dataFlower != null){
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers2.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers3.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers4.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers5.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers6.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers7.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers8.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers9.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers10.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers11.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers12.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers13.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers14.filter(filterFlower));
-        flowers = flowers.concat(dataFlower.users[0].ownedFlowers15.filter(filterFlower));
+        if(dataFlower.users != null && dataFlower.users.size > 0){
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers2.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers3.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers4.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers5.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers6.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers7.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers8.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers9.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers10.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers11.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers12.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers13.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers14.filter(filterFlower));
+            flowers = flowers.concat(dataFlower.users[0].ownedFlowers15.filter(filterFlower));
+        }
     }
     return (
         <>
