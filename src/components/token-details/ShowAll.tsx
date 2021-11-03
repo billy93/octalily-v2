@@ -72,7 +72,7 @@ export default function ShowAll() {
                                             </Link>
                                         </td>
                                     </tr>
-                                    )) : ""
+                                    )) : <tr></tr>
                                 } 
                             </tbody>
                         </Table>
