@@ -1,17 +1,54 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Grid, Typography, Button, Stack } from '@mui/material';
+import { Box, Grid, Typography, Button, Stack, Dialog } from '@mui/material';
 import { Table } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { useWeb3React } from "@web3-react/core";
 import { FlowerService } from 'services/FlowerService';
 import { BalanceInfo } from '../../dtos/BalanceInfo'
+import LoadingButton from '@mui/lab/LoadingButton';
 
 const DetailsThree = ({ flower }) =>  {
     const { account, library, chainId } = useWeb3React();
     const [ parent, setParent ] = useState<BalanceInfo>();
     const [ petals, setPetals ] = useState<BalanceInfo[]>([]);
+    const [ isPayFee, setIsPayFee] = useState<boolean>(false);
+    
+
     const flowerService = new FlowerService(library, account, chainId);
     
+
+    const collectFee = async (petal) => {
+        try {
+            setIsPayFee(true)
+            const txResponse = await flowerService.collectFees(flower.id, petal.address);
+            if (txResponse) {
+                const receipt = await txResponse.wait()               
+                if (receipt?.status === 1) {
+                    setIsPayFee(false)
+
+                    // setTransactionHash(receipt.transactionHash);
+                    // setCollectFeeStatus(Status.Done); 
+                    // setBalance(await service.getBalance(petal.address, account!))          
+                }
+                else {
+                    setIsPayFee(false)
+
+                    // setError("Transaction Failed");
+                    // setCollectFeeStatus(Status.None); 
+                }
+            }          
+        }
+        catch (e) {
+            console.log(e)
+            setIsPayFee(false)
+            // const errorMessage = extractErrorMessage(e);
+            // if(errorMessage) {
+            //     setError(errorMessage);
+            // }
+            // setCollectFeeStatus(Status.None); 
+        }
+    }
+
     useEffect(() => {
         if(flower != undefined){
             const getPetals = async() => {
@@ -56,7 +93,13 @@ const DetailsThree = ({ flower }) =>  {
                                         
                                         <tr key={x.address}>
                                             <td>
-                                                <Button variant="contained" className="tbldrkbtn">Collect Fees from Petal {index+1}</Button>
+                                                <LoadingButton 
+                                                    loading={isPayFee}
+                                                    loadingIndicator="" 
+                                                    variant="contained" 
+                                                    className="tbldrkbtn" onClick={() => collectFee(x)}>
+                                                        {isPayFee ? "Collect fees..." : "Collect Fees from Petal "+(index+1)}
+                                                    </LoadingButton>
                                             </td>
                                             <td>
                                                 <Typography component="p">{x.address}</Typography>

@@ -312,7 +312,7 @@ font-family: $f_primary;
 .eth_theme .tkn_right_info {
     font-family: 'Montserrat', sans-serif;
     margin-left: auto;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 20.5263px;
     color: #5D5D5D;
     span {
@@ -321,6 +321,7 @@ font-family: $f_primary;
         color: $c_white;
         padding: 4px 8px;
         margin-right: 5px;
+        font-weight: 400;
     }
 }
 .tknbtn {
@@ -675,3 +676,29 @@ font-family: $f_primary;
 }
 .eth_theme .wel_img {filter: grayscale(100%) brightness(170%);}
 .eth_theme .tknbtn img {filter: grayscale(100%) brightness(170%);}
+.eth_theme .cstmpgntn ul li button.Mui-selected {
+    background: #5D5D5D;
+    color: $c_white;
+}
+.eth_theme .frst_clmn h4, 
+.eth_theme .cstm_rdo label h4 {
+    color: #5D5D5D;
+}
+.eth_theme .cstm_rdo label {
+    border: 1px solid #5D5D5D;
+}
+.eth_theme .cstm_rdo .redio_inpt:checked + label {
+    box-shadow: 0 0 0px 1px #5D5D5D;
+}
+.eth_theme .cstm_rdo .redio_inpt:checked + label .rdrds {
+    border: 2px solid #5D5D5D;
+}
+.eth_theme .cstm_rdo label .rdrds::before {
+    background: #5D5D5D;
+}
+.eth_theme .mdlv1_tp_bx {
+    border: 1px solid #5D5D5D;
+}
+body.eth_theme .mdl_actions button.sbmt_btn:hover {
+    background: #5D5D5D !important;
+}

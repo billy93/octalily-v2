@@ -310,7 +310,7 @@ font-family: $f_primary;
 .bsc_theme .tkn_right_info {
     font-family: 'Montserrat', sans-serif;
     margin-left: auto;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 20.5263px;
     color: #984900;
     span {
@@ -319,6 +319,7 @@ font-family: $f_primary;
         color: $c_white;
         padding: 4px 8px;
         margin-right: 5px;
+        font-weight: 400;
     }
 }
 .tknbtn {
@@ -666,3 +667,29 @@ font-family: $f_primary;
 }
 .bsc_theme .wel_img {filter: invert(46%) brightness(170%) saturate(95.2) hue-rotate(96deg);}
 .bsc_theme .tknbtn img {filter: invert(48%) brightness(38%) saturate(95.2) hue-rotate(91deg);}
+.bsc_theme .cstmpgntn ul li button.Mui-selected {
+    background: #CC6200;
+    color: $c_white;
+}
+.bsc_theme .frst_clmn h4, 
+.bsc_theme .cstm_rdo label h4 {
+    color: #CC6200;
+}
+.bsc_theme .cstm_rdo label {
+    border: 1px solid #CC6200;
+}
+.bsc_theme .cstm_rdo .redio_inpt:checked + label {
+    box-shadow: 0 0 0px 1px #CC6200;
+}
+.bsc_theme .cstm_rdo .redio_inpt:checked + label .rdrds {
+    border: 2px solid #CC6200;
+}
+.bsc_theme .cstm_rdo label .rdrds::before {
+    background: #CC6200;
+}
+.bsc_theme .mdlv1_tp_bx {
+    border: 1px solid #CC6200;
+}
+body.bsc_theme .mdl_actions button.sbmt_btn:hover {
+    background: #CC6200 !important;
+}

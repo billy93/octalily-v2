@@ -295,7 +295,7 @@ body.dark_theme {
 .dark_theme .tkn_right_info {
     font-family: 'Montserrat', sans-serif;
     margin-left: auto;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 20.5263px;
     color: #3C1F8D;
     span {
@@ -304,6 +304,7 @@ body.dark_theme {
         color: $c_white;
         padding: 4px 8px;
         margin-right: 5px;
+        font-weight: 400;
     }
 }
 .tknbtn {
@@ -647,3 +648,42 @@ body.dark_theme {
     
 }
 /*BSC css*/
+.dark_theme .tkn_title {
+    color: #3C1F8D;
+    position: relative;
+    margin-top: 135px;
+    margin-bottom: 130px;
+}
+@media screen and (max-width: 900px) {
+    .dark_theme .tkn_title {
+        font-size: 34px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+}
+.dark_theme .cstmpgntn ul li button.Mui-selected {
+    background: rgb(60 31 141);
+    color: $c_white;
+}
+.dark_theme .frst_clmn h4, 
+.dark_theme .cstm_rdo label h4 {
+    color: #3C1F8D;
+}
+.dark_theme .cstm_rdo label {
+    border: 1px solid #3C1F8D;
+}
+.dark_theme .cstm_rdo .redio_inpt:checked + label {
+    box-shadow: 0 0 0px 1px #3C1F8D;
+}
+.dark_theme .cstm_rdo .redio_inpt:checked + label .rdrds {
+    border: 2px solid #3C1F8D;
+}
+.dark_theme .cstm_rdo label .rdrds::before {
+    background: #3C1F8D;
+}
+.dark_theme .mdlv1_tp_bx {
+    border: 1px solid #3C1F8D;
+}
+body.dark_theme .mdl_actions button.sbmt_btn:hover {
+    background: #3C1F8D !important;
+}
