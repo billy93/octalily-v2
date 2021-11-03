@@ -167,7 +167,8 @@ export default function ShowOwned() {
     
     let flowers = [];
     if(dataFlower != null){
-        if(dataFlower.users != null && dataFlower.users.size > 0){
+        console.log(dataFlower.users);
+        if(dataFlower.users != null && dataFlower.users.length > 0){
             flowers = flowers.concat(dataFlower.users[0].ownedFlowers.filter(filterFlower));
             flowers = flowers.concat(dataFlower.users[0].ownedFlowers2.filter(filterFlower));
             flowers = flowers.concat(dataFlower.users[0].ownedFlowers3.filter(filterFlower));
