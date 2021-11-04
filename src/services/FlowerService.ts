@@ -77,4 +77,9 @@ export class FlowerService {
         const contract = new Contract(flowerAddress, octalilyAbi, this.signer);
         return await contract.claimOwnership();
     }
+
+    public async payFees(flowerAddress: string) {
+        const contract = new Contract(flowerAddress, octalilyAbi, this.signer);
+        return await contract.payFees();
+    }
 }

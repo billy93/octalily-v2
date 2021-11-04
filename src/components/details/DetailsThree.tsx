@@ -6,6 +6,7 @@ import { useWeb3React } from "@web3-react/core";
 import { FlowerService } from 'services/FlowerService';
 import { BalanceInfo } from '../../dtos/BalanceInfo'
 import LoadingButton from '@mui/lab/LoadingButton';
+import { PlayCircleFilledSharp } from '@mui/icons-material';
 
 const DetailsThree = ({ flower }) =>  {
     const { account, library, chainId } = useWeb3React();
@@ -65,6 +66,33 @@ const DetailsThree = ({ flower }) =>  {
         }
     }, [account, library, chainId, flower == undefined]);
 
+    const payFees = async(address) => {
+        try {
+            setIsPayFee(true)
+            const txResponse = await flowerService.payFees(address);
+            if (txResponse) {
+                const receipt = await txResponse.wait()               
+                if (receipt?.status === 1) {
+                    setIsPayFee(false)
+
+                    // setTransactionHash(receipt.transactionHash);
+                    // setCollectFeeStatus(Status.Done); 
+                    // setBalance(await service.getBalance(petal.address, account!))          
+                }
+                else {
+                    setIsPayFee(false)
+
+                    // setError("Transaction Failed");
+                    // setCollectFeeStatus(Status.None); 
+                }
+            }          
+        }
+        catch (e) {
+            console.log(e)
+            setIsPayFee(false)
+        }
+    }
+    
     return (
         <>
            <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
@@ -79,7 +107,7 @@ const DetailsThree = ({ flower }) =>  {
                                 {
                                     parent != null ? <tr>
                                         <td>
-                                            <Button variant="contained" className="tbldrkbtn">Pay Fees</Button>
+                                            <Button variant="contained" className="tbldrkbtn" onClick={() => {payFees(parent?.address)}}>Pay Fees</Button>
                                         </td>
                                         <td>
                                             <Typography component="p">{parent?.address}</Typography>
