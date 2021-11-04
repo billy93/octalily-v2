@@ -89,18 +89,6 @@ export default function Details() {
     `;
 
     useEffect(() => {
-        // do some checking here to ensure data exist
-        // console.log("Check dataFlower "+(dataFlower != null ? " Yes " : " No "))
-        // console.log("Check currentFlower "+(currentFlower != null ? " Yes " : " No "))
-        if (dataFlower != null) {
-            // mutate data if you need to
-            var d = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
-            setCurrentFlower(d);
-            console.log("Set current flower "+(d != null ? "Ada" : "Tidak ada"))
-        }
-    }, [])
-
-    useEffect(() => {
         if(baseToken == null){
             const getTokens = async () => {
                 const service = new CacheService(chainId);
@@ -125,16 +113,14 @@ export default function Details() {
 
     let {loading, error, data} = useQuery(query, { variables: { address: address }});
     if (loading){ 
-        console.log("Loading...")
-    }
-    else{
-        console.log("Loading complete");
-    }
-    if (error) {
-        console.log(`Error! ${error.message}`);
+        console.log("Loading dulu");
+        return <><h1>Loading...</h1></>
     }
     else{
         dataFlower = data;
+        var d = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
+        setCurrentFlower(d);
+        console.log(currentFlower)
     }
     
     return (
