@@ -140,12 +140,14 @@ export default function Details() {
                         </Grid>
                     </Box>
                 </Box>
+                
                 <Box className="dt_tw_bx">
                     <Box component="img" src="/img/pl_ex_img03.png" className="img-fluid pl_ex_img03" />
                     <Box className="defmx">
                         <FlowerChart flower={currentFlower}/>
                     </Box>
                 </Box>
+
                 <Box className="dt_tw_bx">
                     <Box component="img" src="/img/pl_ex_img03.png" className="img-fluid pl_ex_img03" />
                     <Box className="defmx">
