@@ -25,12 +25,28 @@ export default function ShowAll() {
                     burnRate
                     upPercent
                     upDelay
+                    petalCount
+                    parentFlower
                 }
             }
         }
     `;
 
-    let {data: dataFlower} = useQuery(query, { variables: { address: address.toLowerCase() }});
+    let {loading, error, data: dataFlower} = useQuery(query, { variables: { address: address.toLowerCase() }});
+    if (loading){ 
+        console.log("Loading dulu");
+        return <><h1>Loading...</h1></>
+    }
+
+    // let petals = dataFlower.pairedTokens[0].flowers.filter(e => {
+    //     return e.petalCount > 0;
+    // });
+
+    let petals = dataFlower.pairedTokens[0].flowers;
+    const showPetals = (petal) => {
+        console.log(petal);
+    }
+
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
@@ -53,16 +69,16 @@ export default function ShowAll() {
                             
                             <tbody>
                                 {
-                                    dataFlower != undefined ? dataFlower.pairedTokens[0].flowers?.map(x => (
+                                    petals?.map(x => (
                                     
                                     <tr key={x.id}>
                                         <td>{formatAddress(x.id)}</td>
-                                        <td>{x.burnRate}</td>
-                                        <td>{x.upPercent}</td>
+                                        <td>{x.burnRate/100}</td>
+                                        <td>{x.upPercent/100}</td>
                                         <td>{x.upDelay}</td>
                                         <td>
                                             <Button variant="contained" className="tbldrkbtn">Up Only</Button>
-                                            <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
+                                            <Button variant="contained" className="tbldrkbtn" onClick={() => { showPetals(x) }} >Show Petals</Button>
                                             <Link to={"/details/"+address+"/"+x.id} className="tbldrkbtn">Details</Link>
 
                                             <Link to={"/details/"+address+"/"+x.id}>
@@ -72,7 +88,7 @@ export default function ShowAll() {
                                             </Link>
                                         </td>
                                     </tr>
-                                    )) : <tr></tr>
+                                    ))
                                 } 
                             </tbody>
                         </Table>

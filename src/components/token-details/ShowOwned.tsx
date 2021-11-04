@@ -187,19 +187,6 @@ export default function ShowOwned() {
         }
     }
 
-    const approve = async(flower) => {
-        console.log("Before init token service "+flower.pairedToken.id)
-        const service = new TokenService(library, account!, flower.pairedToken.id);
-        console.log("Before approve")
-        const txResponse = await service.approve(flower.id);
-        console.log("Before check tx approve")
-        if (txResponse) {
-            console.log("SUKSES")
-        }
-        else{
-            console.log(txResponse)
-        }
-    }
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
@@ -226,13 +213,12 @@ export default function ShowOwned() {
                                     
                                     <tr key={x.id}>
                                         <td>{formatAddress(x.id)}</td>
-                                        <td>{x.burnRate}</td>
-                                        <td>{x.upPercent}</td>
+                                        <td>{x.burnRate/100}</td>
+                                        <td>{x.upPercent/100}</td>
                                         <td>{x.upDelay}</td>
                                         <td>
                                             <Button variant="contained" className="tbldrkbtn">Up Only</Button>
                                             <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
-                                            <Button variant="contained" className="tbldrkbtn" onClick={() => approve(x)}>Approve</Button>
                                             <Link to={"/details/"+address+"/"+x.id} className="tbldrkbtn">Details</Link>
 
                                             <Link to={"/details/"+address+"/"+x.id}>
