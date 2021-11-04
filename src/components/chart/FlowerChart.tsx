@@ -1,14 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Box, Grid, Typography, Button } from '@mui/material';
-import useTokenBalance from "../../hooks/useTokenBalance";
-import useBaseBalance from "../../hooks/useBaseBalance";
 import { useWeb3React } from "@web3-react/core";
-import { getDisplayBalance, toNumber } from '../../utils/formatBalance'
-import BigNumber from 'bignumber.js';
-import { escapeRegExp } from '../../utils'
-import { TokenService } from 'services/TokenService';
-import LoadingButton from '@mui/lab/LoadingButton';
-import { FlowerService } from 'services/FlowerService';
+import { getDisplayBalance } from '../../utils/formatBalance'
+
 import ChartWrapper from 'kaktana-react-lightweight-charts';
 
 import {
