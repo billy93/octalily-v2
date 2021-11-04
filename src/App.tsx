@@ -8,10 +8,13 @@ import Header from './elements/Header';
 import TokenListPolygon from 'components/token-list-polygon/TokenListPolygon';
 import TokenDetails from 'components/token-details/TokenDetails';
 import Details from 'components/details/Details';
+import ScrollToTop from 'elements/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+                    <ScrollToTop />
+
       <div className="App">
         <Header />
         <Switch>

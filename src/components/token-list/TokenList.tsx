@@ -102,7 +102,7 @@ export default function TokenList() {
                                             </Link>
                                         </Box>
                                         <Box className="token_chkbx">
-                                            <Link to={'/token-list-polygon/'+token}>
+                                            <Link to={'/token-details/'+token}>
                                                 <input type="radio" name="side" />
                                                 <label>
                                                     <Typography component="h6">Sell Petals</Typography>
