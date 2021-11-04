@@ -116,13 +116,13 @@ export default function Details() {
         console.log("Loading dulu");
         return <><h1>Loading...</h1></>
     }
-    else{
+
+    if(currentFlower == null){
         dataFlower = data;
         var d = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
         setCurrentFlower(d);
-        console.log(currentFlower)
     }
-    
+
     return (
         <>
             <Box className="main plgn_d_pg_bg">
