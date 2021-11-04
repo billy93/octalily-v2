@@ -90,13 +90,14 @@ export default function Details() {
     useEffect(() => {
         // do some checking here to ensure data exist
         // console.log("Check dataFlower "+(dataFlower != null ? " Yes " : " No "))
+        // console.log("Check currentFlower "+(currentFlower != null ? " Yes " : " No "))
         if (dataFlower != null && currentFlower == null) {
             // mutate data if you need to
             dataFlower = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
             setCurrentFlower(dataFlower);
-            // console.log("Set current flower "+(dataFlower != null ? "Ada" : "Tidak ada"))
+            console.log("Set current flower "+(dataFlower != null ? "Ada" : "Tidak ada"))
         }
-    })
+    }, [])
 
     useEffect(() => {
         if(baseToken == null){
@@ -109,7 +110,7 @@ export default function Details() {
             }
             getTokens();
         }
-    })
+    }, [])
 
     useEffect(() => {
         const body = document.querySelector("body");
