@@ -90,7 +90,6 @@ export default function Details() {
 
     if(dataFlower != undefined){
         dataFlower = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
-        // console.log(dataFlower);
     }
 
     useEffect(() => {
@@ -101,20 +100,18 @@ export default function Details() {
             setBaseToken(tokens[0]);
         }
         getTokens();
-    }, [ baseToken == null])
+    }, [ chainId, library, account, baseToken == null])
 
     useEffect(() => {
         const body = document.querySelector("body");
-        console.log( document.body.classList)
         if(chainId == 137){
             document.body.classList.add("dark_theme");
         }
-            // document.body.classList.add("bsc_theme");
-            // document.body.classList.add("eth_theme");
         return () => {
             body.classList.remove("dark_theme");
         }
     }, [chainId, library, account]);
+    
     return (
         <>
             <Box className="main plgn_d_pg_bg">
@@ -126,7 +123,7 @@ export default function Details() {
                                 <DetailsOne flower={dataFlower} baseToken={baseToken}/>
                             </Grid>
                             <Grid item xs={12} lg={5}>
-                                <DetailsTwo flower={dataFlower}/>
+                                {/* <DetailsTwo flower={dataFlower}/> */}
                             </Grid>
                         </Grid>
                     </Box>
@@ -134,13 +131,13 @@ export default function Details() {
                 <Box className="dt_tw_bx">
                     <Box component="img" src="/img/pl_ex_img03.png" className="img-fluid pl_ex_img03" />
                     <Box className="defmx">
-                        <DetailsThree flower={dataFlower}/>
+                        {/* <DetailsThree flower={dataFlower}/> */}
                     </Box>
                 </Box>
                 <Box className="dt_tw_bx v1_rltv_pddng_tkn_v3">
                     <Box component="img" src="/img/pl_ex_img04.png" className="img-fluid pl_ex_img04" />
                     <Box className="defmx">
-                        <DetailsFour flower={dataFlower} />
+                        {/* <DetailsFour flower={dataFlower} /> */}
                     </Box>
                 </Box>
             </Box>

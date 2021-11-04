@@ -32,7 +32,7 @@ export class TokenService {
         console.log("Is approved? "+approved)
         if (!approved) {
             console.log("Approving... "+spender)
-            return await this.contract.approve(spender, MaxUint256);
+            return await this.contract.approve(spender.toLowerCase(), MaxUint256);
         }        
     }
 }

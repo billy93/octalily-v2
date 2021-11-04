@@ -25,6 +25,7 @@ const DetailsOne = ({ flower, baseToken }) =>  {
     const [buyValue, setBuyValue] = useState(0);
     const [sellValue, setSellValue] = useState(0);
     const [isBuy, setIsBuy] = useState<boolean>(true);
+    const [isApproveChecked, setIsApproveChecked] = useState<boolean>(false);
 
     useEffect(() => {
         if(flower != undefined){
@@ -32,12 +33,14 @@ const DetailsOne = ({ flower, baseToken }) =>  {
                 const service = new TokenService(library, account!, flower.pairedToken.id);
                 const approved = await service.isApproved(flower.id);
                 setIsApproved(approved);
+                setIsApproveChecked(true);
+                console.log("Token is approved ? "+approved)
             }
             if(chainId) {
                 getIsApprove();
             }
         }
-    }, [library, account, chainId, flower == undefined])
+    }, [!isApproveChecked])
 
     let accountBaseBalance = getDisplayBalance(useTokenBalance(baseToken != null ? baseToken.address : ""), 18, 8);
     let accountBalance = getDisplayBalance(useTokenBalance(flower != undefined ? flower.id : null), 18, 8);
@@ -243,12 +246,13 @@ const DetailsOne = ({ flower, baseToken }) =>  {
                             {!isApproved ?
                                 <Grid item xs={12} sm={12}>
                                     <LoadingButton 
+                                    disabled={!isApproveChecked}
                                     loading={status == SwapStatus.Approving}
                                     loadingIndicator="" 
                                     variant="contained" 
                                     className="cncl_btn" onClick={() => approve()}>
                                         {
-                                            status == SwapStatus.Approving ? "Approving..." : "Approve"
+                                            !isApproveChecked ? "Loading..." : status == SwapStatus.Approving ? "Approving..." : "Approve"
                                         }
                                     </LoadingButton>
                                 </Grid> : 

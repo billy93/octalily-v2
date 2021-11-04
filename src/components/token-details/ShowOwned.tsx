@@ -11,6 +11,7 @@ import {
     useQuery,
     gql
   } from "@apollo/client";
+import { TokenService } from 'services/TokenService';
 
 export default function ShowOwned() {
     const { address } = useParams<{ address: string }>();
@@ -185,6 +186,7 @@ export default function ShowOwned() {
             flowers = flowers.concat(dataFlower.users[0].ownedFlowers15.filter(filterFlower));
         }
     }
+
     return (
         <>
             <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
@@ -217,6 +219,7 @@ export default function ShowOwned() {
                                         <td>
                                             <Button variant="contained" className="tbldrkbtn">Up Only</Button>
                                             <Button variant="contained" className="tbldrkbtn">Show Petals</Button>
+                                            <Button variant="contained" className="tbldrkbtn">Approve</Button>
                                             <Link to={"/details/"+address+"/"+x.id} className="tbldrkbtn">Details</Link>
 
                                             <Link to={"/details/"+address+"/"+x.id}>
