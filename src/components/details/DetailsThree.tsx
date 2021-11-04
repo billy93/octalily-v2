@@ -92,7 +92,7 @@ const DetailsThree = ({ flower }) =>  {
             setIsPayFee(false)
         }
     }
-    
+
     return (
         <>
            <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
@@ -107,7 +107,12 @@ const DetailsThree = ({ flower }) =>  {
                                 {
                                     parent != null ? <tr>
                                         <td>
-                                            <Button variant="contained" className="tbldrkbtn" onClick={() => {payFees(parent?.address)}}>Pay Fees</Button>
+                                            <LoadingButton 
+                                                    loading={isPayFee}
+                                                    loadingIndicator="" 
+                                                    variant="contained" 
+                                                    className="tbldrkbtn" onClick={() => {payFees(parent?.address)}}>
+                                                        {isPayFee ? "Pay fees..." : "Pay Fees"}</LoadingButton>
                                         </td>
                                         <td>
                                             <Typography component="p">{parent?.address}</Typography>
