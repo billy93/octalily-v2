@@ -36,7 +36,8 @@
     "web-vitals": "^1.0.1",
     "web3": "^1.6.0",
     "@apollo/client": "^3.4.10",
-    "graphql": "^15.5.2"
+    "graphql": "^15.5.2",
+    "kaktana-react-lightweight-charts": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -13,8 +13,7 @@ import ScrollToTop from 'elements/ScrollToTop';
 function App() {
   return (
     <BrowserRouter>
-                    <ScrollToTop />
-
+      <ScrollToTop />
       <div className="App">
         <Header />
         <Switch>

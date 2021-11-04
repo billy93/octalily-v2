@@ -13,6 +13,7 @@ import { FlowerService } from 'services/FlowerService';
 import { useWeb3React } from "@web3-react/core";
 import { TokenInfo } from "../../dtos/TokenInfo"
 import { CacheService } from 'services/CacheService';
+import FlowerChart from 'components/chart/FlowerChart';
 
 export default function Details() {
     
@@ -137,6 +138,12 @@ export default function Details() {
                                 <DetailsTwo flower={currentFlower}/>
                             </Grid>
                         </Grid>
+                    </Box>
+                </Box>
+                <Box className="dt_tw_bx">
+                    <Box component="img" src="/img/pl_ex_img03.png" className="img-fluid pl_ex_img03" />
+                    <Box className="defmx">
+                        <FlowerChart flower={currentFlower}/>
                     </Box>
                 </Box>
                 <Box className="dt_tw_bx">
