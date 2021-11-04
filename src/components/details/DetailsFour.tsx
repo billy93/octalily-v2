@@ -12,6 +12,7 @@ const DetailsFour = ({ flower }) =>  {
     const [open, setOpen] = React.useState(false);
     
     const [isTransferOwnership, setIsTransferOwnership] = React.useState(false);
+    const [isClaimOwnership, setIsClaimOwnership] = React.useState(false);
     const [owner, setOwner] = React.useState<string>("");
     const handleClickOpen = () => {
         setOpen(true);
@@ -44,6 +45,28 @@ const DetailsFour = ({ flower }) =>  {
         }
     }
     
+    const claimOwnership = async () => {
+        setIsClaimOwnership(true);
+        try {
+            const service = new FlowerService(library, account!, chainId);
+            const txResponse = await service.claimOwnership(flower.address);
+
+            if (txResponse) {
+                const receipt = await txResponse.wait()
+                if (receipt?.status === 1) {
+                    setIsClaimOwnership(false);
+                }
+                else {
+                    setIsClaimOwnership(false);
+                }
+            }
+        }
+        catch(e){
+            console.log(e)
+            setIsClaimOwnership(false);
+        }
+    }
+
     return (
         <>
            <Box className="v1_rltv_pddng v1_rltv_pddng_tkn_v2">
@@ -74,7 +97,13 @@ const DetailsFour = ({ flower }) =>  {
                                         <Typography component="p">{flower !=null && flower.owner2 != null ? formatAddress(flower.owner2.id):""} </Typography>
                                     </td>
                                     <td>
-                                        <Button variant="contained" className="tbldrkbtn">Claim Ownership</Button>
+                                        <LoadingButton 
+                                            loading={isClaimOwnership}
+                                            loadingIndicator="" 
+                                            variant="contained" 
+                                            className="tbldrkbtn" onClick={() => {claimOwnership()}}>
+                                                {isClaimOwnership ? "Claiming ownership..." : "Claim Ownership"}
+                                        </LoadingButton>
                                     </td>
                                 </tr>
                                 <tr>

@@ -72,4 +72,9 @@ export class FlowerService {
         const contract = new Contract(flowerAddress, octalilyAbi, this.signer);
         return await contract.transferOwnership(newOwner);
     }
+
+    public async claimOwnership(flowerAddress: string) {
+        const contract = new Contract(flowerAddress, octalilyAbi, this.signer);
+        return await contract.claimOwnership();
+    }
 }
