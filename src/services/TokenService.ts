@@ -21,6 +21,9 @@ export class TokenService {
     }
 
     public async isApproved (spender: string) {
+        // if(this.tokenAddress.toLowerCase() == "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270"){
+        //     return true;
+        // }
         const allowance = await this.contract.allowance(this.account, spender);
         const currentAllowance = new BigNumber(allowance.toString());
         return !currentAllowance.isNaN() && !currentAllowance.isZero();
@@ -32,7 +35,7 @@ export class TokenService {
         console.log("Is approved? "+approved)
         if (!approved) {
             console.log("Approving... "+spender)
-            return await this.contract.approve(spender.toLowerCase(), MaxUint256);
+            return await this.contract.approve(spender, MaxUint256);
         }        
     }
 }

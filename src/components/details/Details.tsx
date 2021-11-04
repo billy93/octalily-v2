@@ -19,7 +19,8 @@ export default function Details() {
     const { token, address } = useParams<{ token: string, address: string }>();
     const { account, library, chainId } = useWeb3React();
     const [baseToken, setBaseToken] = useState<TokenInfo[]>();
-  
+    const [currentFlower, setCurrentFlower] = useState(undefined);
+
     const query = gql`
         query getPairTokens($address: String!){
             octalilies(where: {id: $address}) {
@@ -86,11 +87,15 @@ export default function Details() {
         }
     `;
 
-    let {data: dataFlower} = useQuery(query, { variables: { address: address }});
-
-    if(dataFlower != undefined){
-        dataFlower = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
-    }
+    useEffect(() => {
+        // do some checking here to ensure data exist
+        if (dataFlower != null && currentFlower == null) {
+            // mutate data if you need to
+            dataFlower = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
+            setCurrentFlower(dataFlower);
+            console.log("Set current flower "+(dataFlower != null ? "Ada" : "Tidak ada"))
+        }
+    }, [])
 
     useEffect(() => {
         const getTokens = async () => {
@@ -98,6 +103,7 @@ export default function Details() {
             let tokens = await service.getParentTokens();
             tokens = tokens.filter(e => e.address.toLowerCase() == token.toLowerCase());
             setBaseToken(tokens[0]);
+            console.log("Get Base Token")
         }
         getTokens();
     }, [ chainId, library, account, baseToken == null])
@@ -111,6 +117,20 @@ export default function Details() {
             body.classList.remove("dark_theme");
         }
     }, [chainId, library, account]);
+
+    let {loading, error, data: dataFlower} = useQuery(query, { variables: { address: address }});
+    if (loading){ 
+        console.log("Loading...")
+    }
+    else{
+        console.log("Loading complete");
+    }
+    if (error) {
+        console.log(`Error! ${error.message}`);
+    }
+    else{
+        console.log("Not error")
+    }
     
     return (
         <>
@@ -120,10 +140,10 @@ export default function Details() {
                     <Box className="defmx">
                         <Grid container spacing={1}>
                             <Grid item xs={12} lg={7}>
-                                <DetailsOne flower={dataFlower} baseToken={baseToken}/>
+                                <DetailsOne flower={currentFlower} baseToken={baseToken}/>
                             </Grid>
                             <Grid item xs={12} lg={5}>
-                                {/* <DetailsTwo flower={dataFlower}/> */}
+                                <DetailsTwo flower={currentFlower}/>
                             </Grid>
                         </Grid>
                     </Box>
@@ -131,13 +151,13 @@ export default function Details() {
                 <Box className="dt_tw_bx">
                     <Box component="img" src="/img/pl_ex_img03.png" className="img-fluid pl_ex_img03" />
                     <Box className="defmx">
-                        {/* <DetailsThree flower={dataFlower}/> */}
+                        <DetailsThree flower={currentFlower}/>
                     </Box>
                 </Box>
                 <Box className="dt_tw_bx v1_rltv_pddng_tkn_v3">
                     <Box component="img" src="/img/pl_ex_img04.png" className="img-fluid pl_ex_img04" />
                     <Box className="defmx">
-                        {/* <DetailsFour flower={dataFlower} /> */}
+                        <DetailsFour flower={currentFlower} />
                     </Box>
                 </Box>
             </Box>

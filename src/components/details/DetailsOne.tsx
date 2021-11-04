@@ -29,18 +29,22 @@ const DetailsOne = ({ flower, baseToken }) =>  {
 
     useEffect(() => {
         if(flower != undefined){
-            const getIsApprove = async () => {
+            const getIsApprove = () => {
                 const service = new TokenService(library, account!, flower.pairedToken.id);
-                const approved = await service.isApproved(flower.id);
-                setIsApproved(approved);
-                setIsApproveChecked(true);
-                console.log("Token is approved ? "+approved)
+                service.isApproved(flower.id).then((approved) => {
+                    setIsApproved(approved);
+                    setIsApproveChecked(true);
+                    console.log("Token is approved ? "+approved)    
+                });
             }
             if(chainId) {
                 getIsApprove();
             }
         }
-    }, [!isApproveChecked])
+        else{
+            console.log("Flower undefined")
+        }
+    }, [flower != null])
 
     let accountBaseBalance = getDisplayBalance(useTokenBalance(baseToken != null ? baseToken.address : ""), 18, 8);
     let accountBalance = getDisplayBalance(useTokenBalance(flower != undefined ? flower.id : null), 18, 8);
