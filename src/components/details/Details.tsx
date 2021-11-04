@@ -20,6 +20,7 @@ export default function Details() {
     const { account, library, chainId } = useWeb3React();
     const [baseToken, setBaseToken] = useState<TokenInfo[]>();
     const [currentFlower, setCurrentFlower] = useState(undefined);
+    let dataFlower = null;
 
     const query = gql`
         query getPairTokens($address: String!){
@@ -91,11 +92,11 @@ export default function Details() {
         // do some checking here to ensure data exist
         // console.log("Check dataFlower "+(dataFlower != null ? " Yes " : " No "))
         // console.log("Check currentFlower "+(currentFlower != null ? " Yes " : " No "))
-        if (dataFlower != null && currentFlower == null) {
+        if (dataFlower != null) {
             // mutate data if you need to
-            dataFlower = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
-            setCurrentFlower(dataFlower);
-            console.log("Set current flower "+(dataFlower != null ? "Ada" : "Tidak ada"))
+            var d = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
+            setCurrentFlower(d);
+            console.log("Set current flower "+(d != null ? "Ada" : "Tidak ada"))
         }
     }, [])
 
@@ -122,7 +123,7 @@ export default function Details() {
         }
     }, [chainId, library, account]);
 
-    let {loading, error, data: dataFlower} = useQuery(query, { variables: { address: address }});
+    let {loading, error, data} = useQuery(query, { variables: { address: address }});
     if (loading){ 
         console.log("Loading...")
     }
@@ -133,7 +134,7 @@ export default function Details() {
         console.log(`Error! ${error.message}`);
     }
     else{
-        console.log("Not error")
+        dataFlower = data;
     }
     
     return (
