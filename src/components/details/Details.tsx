@@ -89,24 +89,27 @@ export default function Details() {
 
     useEffect(() => {
         // do some checking here to ensure data exist
+        // console.log("Check dataFlower "+(dataFlower != null ? " Yes " : " No "))
         if (dataFlower != null && currentFlower == null) {
             // mutate data if you need to
             dataFlower = JSON.parse(JSON.stringify(dataFlower.octalilies[0]));
             setCurrentFlower(dataFlower);
-            console.log("Set current flower "+(dataFlower != null ? "Ada" : "Tidak ada"))
+            // console.log("Set current flower "+(dataFlower != null ? "Ada" : "Tidak ada"))
         }
-    }, [])
+    })
 
     useEffect(() => {
-        const getTokens = async () => {
-            const service = new CacheService(chainId);
-            let tokens = await service.getParentTokens();
-            tokens = tokens.filter(e => e.address.toLowerCase() == token.toLowerCase());
-            setBaseToken(tokens[0]);
-            console.log("Get Base Token")
+        if(baseToken == null){
+            const getTokens = async () => {
+                const service = new CacheService(chainId);
+                let tokens = await service.getParentTokens();
+                tokens = tokens.filter(e => e.address.toLowerCase() == token.toLowerCase());
+                setBaseToken(tokens[0]);
+                console.log("Get Base Token")
+            }
+            getTokens();
         }
-        getTokens();
-    }, [ chainId, library, account, baseToken == null])
+    })
 
     useEffect(() => {
         const body = document.querySelector("body");

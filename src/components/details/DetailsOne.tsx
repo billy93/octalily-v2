@@ -28,7 +28,9 @@ const DetailsOne = ({ flower, baseToken }) =>  {
     const [isApproveChecked, setIsApproveChecked] = useState<boolean>(false);
 
     useEffect(() => {
-        if(flower != undefined){
+        // console.log("Check flower "+(flower != null ? " Yes " : " No "))
+        // console.log("isApproveChecked "+isApproveChecked)
+        if(flower != null && !isApproveChecked){
             const getIsApprove = () => {
                 const service = new TokenService(library, account!, flower.pairedToken.id);
                 service.isApproved(flower.id).then((approved) => {
@@ -39,12 +41,9 @@ const DetailsOne = ({ flower, baseToken }) =>  {
             }
             if(chainId) {
                 getIsApprove();
-            }
+            }     
         }
-        else{
-            console.log("Flower undefined")
-        }
-    }, [flower != null])
+    })
 
     let accountBaseBalance = getDisplayBalance(useTokenBalance(baseToken != null ? baseToken.address : ""), 18, 8);
     let accountBalance = getDisplayBalance(useTokenBalance(flower != undefined ? flower.id : null), 18, 8);
@@ -120,6 +119,7 @@ const DetailsOne = ({ flower, baseToken }) =>  {
                     setIsApproved(true);
                 }
                 else {
+                    console.log("Approve rejected")
                     setStatus(SwapStatus.None);
                 }
             }  
