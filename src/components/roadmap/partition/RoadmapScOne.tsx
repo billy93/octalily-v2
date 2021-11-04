@@ -113,13 +113,25 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                             <Typography component="h2">Welcome to your garden</Typography>
                             <Typography component="p">
                             Your garden is where you will plant and grow your flowers.
-                    You can have multiple flower beds within your garden, and
-                    multiple flowers within each flower bed. Let’s start with a
-                    single flower.
+                            You can have multiple flower beds within your garden, and
+                            multiple flowers within each flower bed. Let’s start with a
+                            single flower.
                             </Typography>
                             </Grid>              
                             <Grid item xs={12} lg={5}>
-                            <Box component="img" src="/img/plntsd_img.png" className="img-fluid plntsd_img" />
+                            {account ? (
+                                <Box
+                                component='img'
+                                src='/img/plntsd_img_v2.png'
+                                className='img-fluid plntsd_img'
+                                />
+                            ) : (
+                                <Box
+                                component='img'
+                                src='/img/plntsd_img.png'
+                                className='img-fluid plntsd_img'
+                                />
+                            )}
                             </Grid>              
                             <Grid item xs={12} lg={7} className="csm_bx_cntnt csm_bx_cntnt_v2">
                             <Typography component="h2">Plant a Seed</Typography>
@@ -142,7 +154,7 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                                         <Box component="img" src="/img/bsd_arrow.png" className="bsd_arr_img" />
                                         <FormControl className="cstmslct">
                                             <Select
-                                            
+                                            disabled={account ? false : true}
                                             displayEmpty
                                             value={tokenAddress}
                                             onChange={handleChange}
@@ -177,6 +189,7 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                                         <Button 
                                             className="def_blk_btn sdw_nn"
                                             onClick={handleClickOpen}
+                                            disabled={tokenAddress === '' ? true : false}
                                         >
                                             Pay Gas Fee
                                         </Button>
