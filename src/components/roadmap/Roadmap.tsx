@@ -24,7 +24,7 @@ export default function Roadmap() {
             <Grid container spacing={0}>
                 <Grid item xs={12} lg={5} className="hn_ttl hn_ttl_v2">
                     <Box className="m-auto-lg">
-                        <Typography component="h3">Give life for your Flower...</Typography>
+                        <Typography component="h3">Give your flower life...</Typography>
                         <Box component="img" src="/img/wtcvd_ttl.png" className="img-fluid" />
                     </Box>
                 </Grid>

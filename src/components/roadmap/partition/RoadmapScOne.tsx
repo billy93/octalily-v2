@@ -199,13 +199,6 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                                                         <span>{x.symbol}</span>
                                                         <Box component="img" src="/img/slsctarrow.svg" width="45px" className="slsct_in_arr" />
                                                     </MenuItem>
-                                                    // <Box key={x.address} className="token_chkbx" >
-                                                    //     <input onChange={() => selectToken(x.address)} type="radio" name="token" value={x.address}/>
-                                                    //     <label>
-                                                    //         <Typography component="h6">{x.symbol}</Typography>
-                                                    //         <Box component="img" src="/img/tkn_i.svg" />
-                                                    //     </label>
-                                                    // </Box>
                                                     ))
                                                 }                                                 
                                             </Select>

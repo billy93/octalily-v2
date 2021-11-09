@@ -19,16 +19,16 @@ const RoadmapScTwo = ({ tokenAddress }) =>  {
                 <Box component="img" src="/img/rdsc3_tp_img.png" className="img-fluid rdsc3_tp_img" />
                 <Grid container spacing={3} className='zindx1'>
                 <Grid item xs={12} lg={6}>
-                    <Box component="img" src="/img/seeds_img.png" className="img-fluid sc3_lft_img" />
+                    <Box component="img" src="/img/seeds_img_v2.png" className="img-fluid sc3_lft_img" />
                 </Grid>
                 <Grid item xs={12} lg={6}>
                     <Box className="v1_rltv_pddng">
                     <Box component="img" src="/img/rdmp_wl_03.png" className="wel_img" />
                     <Box className="homesc_one sc_wt_bg sdw_bx_v3">
                         <Box component="img" src="/img/vctr_bg_v1.png" className="bg_img" />
-                        <Box className="p_rltv mddl_df_cntnt">
-                        <Typography component="h4">Read the package</Typography>
-                        <Typography component="p">When a flower is created, Octalily generates an ERC-20 contract with three slightly randomized characteristics.  Click on the seedbag to see the specific traits of your flower.</Typography>
+                        <Box className="p_rltv mddl_df_cntnt mddl_df_cntnt_wtmrpdng">
+                        <Typography component="h4">Seed Planting Details:</Typography>
+                        <Typography component="p">When a flower is created, Octolily generates an ERC-20 contract with three slightly randomized characteristics.  Click on the seedbag to see the specific traits of your flower.</Typography>
                             <Button 
                                 className="def_blk_btn sdw_nn"
                                 onClick={handleClickOpen}

@@ -645,7 +645,7 @@ a.def_blk_btn {
 .rdsc3_tp_img {
   position: absolute;
   left: 21%;
-  top: -90px;
+  top: -26px;
   z-index: 0;
 }
 .zindx1 {
@@ -655,6 +655,7 @@ a.def_blk_btn {
 .rdmp_sc03 .v1_rltv_pddng {
   padding: 12px 30px 0px 30px;
   max-width: 465px;
+  margin-top: 145px;
 }
 .rdmp_sc03 .homesc_one {
   height: auto;
@@ -665,7 +666,7 @@ a.def_blk_btn {
   font-family: $f_primary;
   font-weight: bold;
   font-size: 28px;
-  color: #2c3d17;
+  color: #2C3D17;
   margin-bottom: 17px;
 }
 .mddl_df_cntnt p {
@@ -698,6 +699,10 @@ a.def_blk_btn {
     width: 466px;
     transform: rotate(90deg);
   }
+  .rdmp_sc03 .v1_rltv_pddng {
+    margin-top: 20px;
+  }
+  
 }
 @media screen and (max-width: 636px) {
   .rdsc3_tp_img {
@@ -1569,7 +1574,13 @@ body {
   }
 }
 .mddl_df_cntnt_wtmrpdng {
-  margin-top: 60px !important;
+  margin-top: 0px !important;
+  h4 {
+    @media screen and (min-width: 1200px) {
+      font-size: 45px !important;
+      line-height: 55px !important;  
+    }
+  }
 }
 .MuiTable-stickyHeader tr th {
   top: 0;
