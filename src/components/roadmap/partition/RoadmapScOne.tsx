@@ -176,7 +176,7 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                                 <Grid item xs={12} lg={9}>
                                     <Box className="bttn_bx">
                                         <Web3ConnectButton useWalletIcon={false} />
-                                        <Box component="img" src="/img/bsd_arrow.png" className="bsd_arr_img" />
+                                        <Box component="img" src="/img/bsd_arrow.png" className="bsd_arr_img" aria-disabled={account ? false : true}/>
                                         <FormControl className="cstmslct">
                                             <Select
                                             disabled={account ? false : true}
@@ -203,7 +203,7 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                                                 }                                                 
                                             </Select>
                                         </FormControl>
-                                        <Box component="img" src="/img/bsd_arrow.png" className="bsd_arr_img" />
+                                        <Box component="img" src="/img/bsd_arrow.png" className="bsd_arr_img" aria-disabled={account ? false : true} />
                                         <Button 
                                             className="def_blk_btn sdw_nn"
                                             onClick={handleClickOpen}
