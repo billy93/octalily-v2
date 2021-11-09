@@ -76,7 +76,7 @@ function Footer() {
                     <Box className="bottom_footer">
                         <Grid container spacing={2} alignItems="center">
                             <Grid item xs={12} lg={4}>
-                                <Typography component="p">RootFinance. All rights reserved (c) 2021</Typography>
+                                <Typography component="p">Rootkit Finance. All rights reserved (c) 2021</Typography>
                             </Grid>
                             <Grid item xs={12} lg={4} className="text-center">
                                 <a href="#" className="social_link">
