@@ -16,7 +16,7 @@ export class FlowerOwnershipGiverService {
         this.account = account;
     }
 
-    public async giveMeFlower(address: string) {
+    public async giveMeFlower(address: string, gas: number) {
         console.log(address);
         const signer = this.library.getSigner(this.account).connectUnchecked()
 
@@ -27,6 +27,19 @@ export class FlowerOwnershipGiverService {
         else if(address == "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270"){
             contract = new Contract(this.WMATIC_GIVER_ADDRESS, flowerGiverAbi, signer);
         }
-        return await contract.giveMeFlower();
+        return await contract.giveMeFlower({gasPrice: gas});
+    }
+
+    public async estimateGiveMeFlower(address: string, gas: number) {
+        const signer = this.library.getSigner(this.account).connectUnchecked()
+
+        let contract = null;
+        if(address == "0xe6a11f125a834e0676f3f8f33eb347d4e1938264"){
+            contract = new Contract(this.UPMATIC_GIVER_ADDRESS, flowerGiverAbi, signer);
+        }
+        else if(address == "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270"){
+            contract = new Contract(this.WMATIC_GIVER_ADDRESS, flowerGiverAbi, signer);
+        }
+        return await contract.estimateGas.giveMeFlower({gasPrice: gas});
     }
 }

@@ -16,6 +16,8 @@ import { CacheService } from "../../../services/CacheService"
 import { TokenInfo } from "../../../dtos/TokenInfo"
 import { FlowerOwnershipGiverService } from 'services/FlowerOwnershipGiver';
 import LoadingButton from '@mui/lab/LoadingButton';
+import { GasStationService } from 'services/GasStationService';
+import { toNumber } from "../../../utils/formatBalance"
 
 const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
     const { account, library, chainId } = useWeb3React();
@@ -24,6 +26,19 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
     const [tokens, setTokens] = useState<TokenInfo[]>();
     const [loading, setLoading] = React.useState(false);
     const [alertMessage, setAlertMessage] = React.useState("");
+    const [gas, setGas] = React.useState([0,0,0]);
+    const [gasType, setGasType] = React.useState(3);
+    const [estimation, setEstimation] = React.useState(3);
+
+    const updateGasEstimation = async() => {
+        const gasService = new GasStationService(chainId);
+        const gas = await gasService.getGas();
+        setGas(gas);
+
+        const flowerGiver = new FlowerOwnershipGiverService(library, account);
+        const est = await flowerGiver.estimateGiveMeFlower(tokenAddress[0], gas[gasType-1]);
+        setEstimation(est);
+    }
 
     useEffect(() => {
         const getTokens = async () => {
@@ -46,6 +61,7 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
     
     const handleClickOpen = () => {
         if(tokenAddress != ""){
+            updateGasEstimation();
             setOpen(true);
         }
         else{
@@ -62,12 +78,17 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
         setOpenAlert(false);
     };
 
+    const handleGasType = async(type) => {
+        updateGasEstimation();
+        setGasType(type);
+    }
+
     const buy = async () => {
         setLoading(true);
 
         try{
             const flowerGiver = new FlowerOwnershipGiverService(library, account);
-            const txResponse = await flowerGiver.giveMeFlower(tokenAddress[0]);
+            const txResponse = await flowerGiver.giveMeFlower(tokenAddress[0], gas[gasType-1]);
             if (txResponse) {
                 const receipt = await txResponse.wait()
                 console.log(receipt);
@@ -85,9 +106,13 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                 }
             }
         } catch(e){
-            console.log(e);
             if(e["data"] != null && e["data"].message != null){
                 setAlertMessage(e["data"].message);
+                setLoading(false);
+                setOpenAlert(true);
+            }
+            else if(e["message"] != null && e["message"] != null){
+                setAlertMessage(e["message"]);
                 setLoading(false);
                 setOpenAlert(true);
             }else if(e != null){
@@ -222,45 +247,63 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                             <Box className="mdlv1_tp_bx">
                                 <Box className="frst_clmn">
                                     <Typography component="p">Amount to spend:</Typography>
-                                    <Typography component="h4">0.0254 ETH <span>$150.414</span></Typography>
+                                    <Typography component="h4">0 MATIC 
+                                        {/* <span>$150.414</span> */}
+                                    </Typography>
                                 </Box>
                                 <Box className="frst_clmn">
                                     <Typography component="p">Network fee:</Typography>
-                                    <Typography component="h4">0.0003 ETH <span>$4.4514</span></Typography>
+                                    <Typography component="h4">{     
+                                        gas != undefined ? toNumber((estimation*gas[gasType-1]),18) : "0"
+                                    } MATIC 
+                                        {/* <span>$4.4514</span> */}
+                                    </Typography>
                                 </Box>
                             </Box>
                             <Box className="scnd_clmn">
                                 <Grid container spacing={3}>
                                     <Grid item xs={12} md={4}>
                                         <Box className="cstm_rdo">
-                                            <input type="radio" name="network_r" id="radio_one" className="redio_inpt" />
+                                            <input checked={gasType == 1} onChange={() => {handleGasType(1)}} type="radio" name="network_r" id="radio_one" className="redio_inpt" />
                                             <label html-for="radio_one">
                                                 <Box component="span" className="rdrds" />
                                                 <Typography component="p">Slow</Typography>
-                                                <Typography component="h4">0.00022</Typography>
-                                                <Typography component="h5">$3.76313</Typography>
+                                                <Typography component="h4">
+                                                    {
+                                                         gas != undefined ? toNumber((estimation*gas[0]),18) : "0"
+                                                    }
+                                                </Typography>
+                                                {/* <Typography component="h5">$3.76313</Typography> */}
                                             </label>
                                         </Box>
                                     </Grid>
                                     <Grid item xs={12} md={4}>
                                         <Box className="cstm_rdo">
-                                            <input type="radio" name="network_r" id="radio_two" className="redio_inpt" />
+                                            <input checked={gasType == 2} onChange={() => {handleGasType(2)}} type="radio" name="network_r" id="radio_two" className="redio_inpt" />
                                             <label html-for="radio_two">
                                                 <Box component="span" className="rdrds" />
-                                                <Typography component="p">Slow</Typography>
-                                                <Typography component="h4">0.0003</Typography>
-                                                <Typography component="h5">$4.4514</Typography>
+                                                <Typography component="p">Normal</Typography>
+                                                <Typography component="h4">
+                                                {
+                                                    gas != undefined ? toNumber((estimation*gas[1]),18) : "0"
+                                                }
+                                                </Typography>
+                                                {/* <Typography component="h5">$4.4514</Typography> */}
                                             </label>
                                         </Box>
                                     </Grid>
                                     <Grid item xs={12} md={4}>
                                         <Box className="cstm_rdo">
-                                            <input type="radio" name="network_r" id="radio_three" className="redio_inpt" />
+                                            <input checked={gasType == 3} onChange={() => {handleGasType(3)}} type="radio" name="network_r" id="radio_three" className="redio_inpt" />
                                             <label html-for="radio_three">
                                                 <Box component="span" className="rdrds" />
-                                                <Typography component="p">Slow</Typography>
-                                                <Typography component="h4">0.0045</Typography>
-                                                <Typography component="h5">$6.46313</Typography>
+                                                <Typography component="p">Fastest</Typography>
+                                                <Typography component="h4">
+                                                {
+                                                     gas != undefined ? toNumber((estimation*gas[2]),18) : "0"
+                                                }
+                                                </Typography>
+                                                {/* <Typography component="h5">$6.46313</Typography> */}
                                             </label>
                                         </Box>
                                     </Grid>
