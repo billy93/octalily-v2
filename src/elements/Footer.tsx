@@ -79,13 +79,13 @@ function Footer() {
                                 <Typography component="p">Rootkit Finance. All rights reserved (c) 2021</Typography>
                             </Grid>
                             <Grid item xs={12} lg={4} className="text-center">
-                                <a href="#" className="social_link">
+                                <a href="https://rootkitfinance.medium.com" className="social_link">
                                     <Box component="img" src="/img/medium_ic.svg" />
                                 </a>
-                                <a href="#" className="social_link">
+                                <a href="https://github.com/RootkitFinance" className="social_link">
                                     <Box component="img" src="/img/github_ic.svg" />
                                 </a>
-                                <a href="#" className="social_link">
+                                <a href="https://discord.gg/d4BHxkW4au" className="social_link">
                                     <Box component="img" src="/img/discord_ic.svg" />
                                 </a>
                             </Grid>
