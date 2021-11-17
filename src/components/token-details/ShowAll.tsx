@@ -86,6 +86,11 @@ export default function ShowAll() {
                                                     Buy
                                                 </Button>
                                             </Link>
+                                            <Link to={"/details/"+address+"/"+x.id}>
+                                                <Button variant="contained" className="buy_btn" startIcon={<Box component="img" src="/img/wallet_ic.svg" alt="" />}>
+                                                    Sell
+                                                </Button>
+                                            </Link>
                                         </td>
                                     </tr>
                                     ))

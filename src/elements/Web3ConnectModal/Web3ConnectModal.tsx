@@ -49,12 +49,13 @@ export const Web3ConnectModal: React.FC<ModalProps> = ({
           console.log("Success connected")
           onDismiss();
         }).catch(error => {
-          console.log("ERROR");
-          console.log(error);
+          // activate(conn);
           if (error instanceof UnsupportedChainIdError) {
-              activate(conn) // a little janky...can't use setError because the connector isn't set
+               alert("Please change your network to Polygon")
+               //console.log("UnsupportedChainIdError")
+              //activate(conn) // a little janky...can't use setError because the connector isn't set
           } else {
-              // setPendingError(true)
+          //     // setPendingError(true)
           }
         })
       // })

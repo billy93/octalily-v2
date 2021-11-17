@@ -19,7 +19,7 @@ export const Web3ConnectButton = ({ useWalletIcon, ...props }) => {
   const classes = useStyles();
   const [showConnectModal] = useModal(<Web3ConnectModal />);
 
-  const { account, library, chainId } = useWeb3React()
+  const { account, library, chainId, error } = useWeb3React()
 
   // const { account, reset, connect, status } = useWallet();
   // console.log(account);

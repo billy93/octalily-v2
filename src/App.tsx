@@ -9,6 +9,7 @@ import TokenListPolygon from 'components/token-list-polygon/TokenListPolygon';
 import TokenDetails from 'components/token-details/TokenDetails';
 import Details from 'components/details/Details';
 import ScrollToTop from 'elements/ScrollToTop';
+import Web3ReactManager from 'components/Web3ReactManager';
 
 function App() {
   return (
@@ -16,15 +17,18 @@ function App() {
       <ScrollToTop />
       <div className="App">
         <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/roadmap" component={Roadmap} />
-          <Route exact path="/token-list" component={TokenList} />
-          <Route exact path="/token-list-polygon/:address" component={TokenListPolygon} />
-          <Route exact path="/token-details/:address" component={TokenDetails} />
-          <Route exact path="/details/:token/:address" component={Details} />
-          
-        </Switch>
+
+        <Web3ReactManager>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/roadmap" component={Roadmap} />
+            <Route exact path="/token-list" component={TokenList} />
+            <Route exact path="/token-list-polygon/:address" component={TokenListPolygon} />
+            <Route exact path="/token-details/:address" component={TokenDetails} />
+            <Route exact path="/details/:token/:address" component={Details} />
+            
+          </Switch>
+        </Web3ReactManager>
         <Footer />
       </div>
     </BrowserRouter>
