@@ -19,7 +19,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { GasStationService } from 'services/GasStationService';
 import { toNumber } from "../../../utils/formatBalance"
 
-const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
+const RoadmapScOne = ({ setTokenAddress, tokenAddress, setTransaction }) =>  {
     const { account, library, chainId } = useWeb3React();
     const [open, setOpen] = React.useState(false);
     const [openAlert, setOpenAlert] = React.useState(false);
@@ -35,9 +35,11 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
         const gas = await gasService.getGas();
         setGas(gas);
 
+        console.log(gas);
         const flowerGiver = new FlowerOwnershipGiverService(library, account);
         const est = await flowerGiver.estimateGiveMeFlower(tokenAddress[0], gas[gasType-1]);
         setEstimation(est);
+        console.log(est);
     }
 
     useEffect(() => {
@@ -94,8 +96,10 @@ const RoadmapScOne = ({ setTokenAddress, tokenAddress }) =>  {
                 console.log(receipt);
                 if (receipt?.status === 1) {
                     console.log("Success");
+
+                    setTransaction(receipt);
                     setLoading(false);
-                    handleClose();
+                    handleClose();    
                 }
                 else {
                     console.log("Error");

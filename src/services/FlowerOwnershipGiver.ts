@@ -28,6 +28,7 @@ export class FlowerOwnershipGiverService {
             contract = new Contract(this.WMATIC_GIVER_ADDRESS, flowerGiverAbi, signer);
         }
         return await contract.giveMeFlower({gasPrice: gas});
+        // return await contract.giveMeFlower();
     }
 
     public async estimateGiveMeFlower(address: string, gas: number) {

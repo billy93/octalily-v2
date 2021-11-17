@@ -1,10 +1,23 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useWeb3React } from "@web3-react/core"
 import { Box, Grid, Typography, Button, Dialog } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
 import ClockIcon from '@mui/icons-material/WatchLaterOutlined';
+import { formatEther, formatUnits } from "@ethersproject/units";
 
-const RoadmapScTwo = ({ tokenAddress }) =>  {
+const RoadmapScTwo = ({ tokenAddress, transaction }) =>  {
+    const { account, library, chainId } = useWeb3React();
     const [open, setOpen] = React.useState(false);
+    const [timestamp, setTimestamp] = React.useState(0);
+
+    useEffect(() => {
+        if(transaction != null && transaction.blockNumber != "-"){
+            library.getBlock(transaction.blockNumber).then((e) => {
+                setTimestamp(e.timestamp)
+            })
+        }
+        console.log("Retrieve timestamp")
+    }, [chainId, library, account, transaction])
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -61,53 +74,54 @@ const RoadmapScTwo = ({ tokenAddress }) =>  {
                             <Box className="mdlv2_tp_bx">
                                 <Box className="mdlv2_frst_clmn">
                                     <Typography component="p">Teansaction Hash</Typography>
-                                    <Typography component="h4">0x1023135aw151faw1awd5a1wd35aw151f3a1w5f1aw61f65aw1f561aw16f</Typography>
+                                    <Typography component="h4">{transaction.transactionHash}</Typography>
                                 </Box>
                                 <Box className="mdlv2_frst_clmn">
-                                    <Typography component="p">Status</Typography>
-                                    <Typography component="h4">13379687</Typography>
+                                    <Typography component="p">Status</Typography>                            
+
+                                    {transaction.status == 1 ? 
+                                    <Box className="sccss_stts">
+                                        <DoneIcon /> Success
+                                    </Box> : <div></div>}
                                 </Box>
                                 <Box className="mdlv2_frst_clmn">
                                     <Typography component="p">Block</Typography>
-                                    <Box className="sccss_stts">
-                                        <DoneIcon /> Success
-                                    </Box>
+                                    <Typography component="h4">{transaction.blockNumber}</Typography>
                                 </Box>
                                 <Box className="mdlv2_frst_clmn">
                                     <Typography component="p">Timestamp</Typography>
                                     <Typography component="h4">
-                                        12 days 19 hrs ago (Oct-8-2021 06:01:21 PM +UTC)
-                                        <span>
+                                        {new Date(timestamp).toString()}
+                                        {/* <span>
                                             <ClockIcon /> 
                                             Confirmed within 29 secs
-                                        </span>
+                                        </span> */}
                                     </Typography>
                                 </Box>
                                 <Box className="mdlv2_frst_clmn">
-                                    <Typography component="p">Teansaction Fee</Typography>
+                                    <Typography component="p">Transaction Fee</Typography>
                                     <Typography component="h4">
-                                        0.004169645192475 Ether
+                                        {formatEther((parseInt(transaction.effectiveGasPrice._hex) * parseInt(transaction.gasUsed._hex)).toString())} MATIC
                                         &nbsp;
-                                        <Box className="prcbx">
+                                        {/* <Box className="prcbx">
                                             $58.53
-                                        </Box>
+                                        </Box> */}
                                     </Typography>
                                     
                                 </Box>
                                 <Box className="mdlv2_frst_clmn">
                                     <Typography component="p">Gas Price</Typography>
                                     <Typography component="h4">
-                                        0.0000000019875645131 Ether (198.554546 Gwel)
+                                    {formatEther(parseInt(transaction.effectiveGasPrice._hex).toString())} MATIC ({formatUnits(parseInt(transaction.effectiveGasPrice._hex).toString(), 'gwei')} Gwel)
                                     </Typography>
                                     
                                 </Box>
-                                <Box className="mdlv2_frst_clmn">
+                                {/* <Box className="mdlv2_frst_clmn">
                                     <Typography component="p">Tnx Type</Typography>
                                     <Typography component="h4">
                                         2 (EIP - 1559)
                                     </Typography>
-                                    
-                                </Box>
+                                </Box> */}
                             </Box>
                             
                         </Box>
